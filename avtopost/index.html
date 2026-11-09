@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Автопостинг окошек и акций — пример</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Каждый день в группе сам выходит пост со свободным временем на завтра и акцией дня. Владелец только отмечает окошки в таблице.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#fff;--soft:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#0071e3;--card:#fff;--vk:#0077ff;--tg:#229ed9;--ok:#1f8a4c}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--soft:#161617;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff;--card:#1c1c1e;--ok:#5cc58a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.top{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+header{text-align:center;padding:64px 0 24px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;letter-spacing:-.025em;margin:0 0 16px;font-weight:800;text-wrap:balance}
+.lead{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:700px;margin:0 auto;text-wrap:pretty}
+.flow{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center;padding:44px 0 64px}
+.arrow{font-size:28px;color:var(--muted);text-align:center}
+@media (max-width:800px){.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+.label{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:14px}
+.sheet .bar{background:#1e8e3e;color:#fff;padding:9px 14px;font-weight:600;font-size:13px}
+table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+td:first-child{white-space:nowrap}
+.flow>div{min-width:0}
+th{background:var(--soft);font-weight:600;font-size:12px;color:var(--muted)}
+td.free{color:var(--ok);font-weight:600}
+.posts{display:grid;gap:16px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+.post .who{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.post .av{width:38px;height:38px;border-radius:50%;background:#e11d74;color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.post .who b{display:block;font-size:15px}.post .who span{font-size:12px;color:var(--muted)}
+.post .src{margin-left:auto;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;color:#fff}
+.post .who .src{color:#fff}
+.vk .src{background:var(--vk)}.tg .src{background:var(--tg)}
+.post pre{margin:0;font:inherit;font-size:15px;white-space:pre-wrap;line-height:1.45}
+section.how{background:var(--soft);padding:60px 0}
+h2{font-size:clamp(28px,4.5vw,42px);letter-spacing:-.02em;margin:0 0 22px;line-height:1.1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border-radius:20px;padding:22px}
+.card b{display:block;font-size:18px;margin-bottom:6px}.card span{color:var(--muted);font-size:15px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.price{text-align:center;padding:60px 0}
+.sum{font-size:clamp(34px,5vw,48px);font-weight:800;letter-spacing:-.02em}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;border-radius:980px;padding:12px 22px;margin-top:18px}
+footer{padding:24px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">Пример на вымышленной студии «Nail Room Лилия» · <a href="/">все работы</a></div></div>
+<header><div class="wrap">
+  <h1>Посты про свободные окошки выходят сами.</h1>
+  <p class="lead">Мастер отмечает свободное время в таблице с телефона. Каждый день в 10:00 в группе ВКонтакте и в Telegram-канале сам выходит пост на завтра — с акцией дня и ссылкой на запись.</p>
+</div></header>
+
+<div class="wrap"><div class="flow">
+  <div>
+    <p class="label">1. Вы заполняете таблицу</p>
+    <div class="sheet"><div class="bar">Google Таблица · Окошки</div>
+      <table><tr><th>Дата</th><th>Время</th><th>Мастер</th><th>Услуга</th></tr>
+        <tr><td>11.11.2026</td><td class="free">12:00</td><td>Лилия</td><td>маникюр + покрытие</td></tr>
+        <tr><td>11.11.2026</td><td class="free">15:30</td><td>Анна</td><td>педикюр</td></tr>
+        <tr><td>11.11.2026</td><td class="free">18:00</td><td>Лилия</td><td></td></tr>
+      </table>
+      <div class="bar" style="background:#188038">Лист «Акции»</div>
+      <table><tr><th>День</th><th>Акция</th></tr>
+        <tr><td>ср</td><td>Каждую среду: дизайн на два ногтя в подарок к покрытию</td></tr>
+        <tr><td>любой</td><td>Приведи подругу — обеим скидка 10%</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="arrow">→</div>
+  <div>
+    <p class="label">2. Пост выходит сам</p>
+    <div class="posts">
+      <div class="post vk"><div class="who"><div class="av">NR</div><div><b>Nail Room Лилия</b><span>сегодня в 10:00</span></div><span class="src">ВКонтакте</span></div>
+<pre>✨ Свободное время на завтра, 11.11 (ср):
+• 12:00 — маникюр + покрытие, мастер Лилия
+• 15:30 — педикюр, мастер Анна
+• 18:00 — любая услуга, мастер Лилия
+
+🔥 Каждую среду: дизайн на два ногтя в подарок к покрытию
+
+Записаться онлайн: <a href="https://fygaport-hash.github.io/nail-room-liliya-ekaterinburg-demo/">fygaport-hash.github.io/nail-room…</a></pre></div>
+      <div class="post tg"><div class="who"><div class="av">NR</div><div><b>Nail Room Лилия</b><span>канал · 10:00</span></div><span class="src">Telegram</span></div>
+<pre>Тот же пост — в Telegram-канале, в то же время.</pre></div>
+    </div>
+  </div>
+</div></div>
+
+<section class="how"><div class="wrap">
+  <h2>Зачем это салону.</h2>
+  <div class="grid">
+    <div class="card"><b>Окошки не пропадают</b><span>Пост выходит каждый день, даже если мастер занят или забыл. Свободное время успевают занять.</span></div>
+    <div class="card"><b>Группа живая</b><span>Лента не пустует неделями. Акции крутятся по расписанию, без ручных постов.</span></div>
+    <div class="card"><b>Минута в день</b><span>Отметить окошки в таблице с телефона. Всё остальное — автоматически.</span></div>
+  </div>
+</div></section>
+
+<div class="price"><div class="wrap">
+  <p class="label">Подключение</p>
+  <div class="sum">3 000 ₽ + 1 000 ₽/мес</div>
+  <p class="lead">Настройка таблицы и публикаций за один вечер. Входит в тариф «Под ключ» (14 900 ₽) вместе с сайтом.</p>
+  <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Хочу так же</a>
+</div></div>
+<footer><div class="wrap">Андрей · сайты для мастеров и студий · <a href="/">fygaport-hash.github.io</a></div></footer>
+</body>
+</html>
