@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Госзакупки в Telegram — пример</title>
+<meta name="description" content="Новые госзакупки по вашей нише сразу в Telegram: объект, цена, заказчик, срок подачи. Без ручного поиска.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#fff;--soft:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#0071e3;--card:#fff;--tgbg:#dfe9f2}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--soft:#161617;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff;--card:#1c1c1e;--tgbg:#0e1621}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.top{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+header{text-align:center;padding:64px 0 28px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:15px;margin:0 0 10px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;letter-spacing:-.025em;margin:0 0 16px;font-weight:800;text-wrap:balance}
+.lead{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:700px;margin:0 auto;text-wrap:pretty}
+.chat{background:var(--tgbg);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:10px;max-width:520px;margin:40px auto 64px}
+.m{background:var(--card);border-radius:14px;padding:11px 13px;font-size:15px;line-height:1.45;white-space:pre-line}
+.m b{display:block;margin-bottom:2px}
+.t{font-size:11px;color:var(--muted);display:block;text-align:right;margin-top:2px}
+section.alt{background:var(--soft);padding:60px 0}
+h2{font-size:clamp(28px,4.5vw,42px);letter-spacing:-.02em;margin:0 0 22px;line-height:1.1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border-radius:20px;padding:22px}
+.card b{display:block;font-size:18px;margin-bottom:6px}.card span{color:var(--muted);font-size:15px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.price{text-align:center;padding:60px 0}
+.sum{font-size:clamp(34px,5vw,48px);font-weight:800;letter-spacing:-.02em}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;border-radius:980px;padding:12px 22px;margin-top:18px}
+footer{padding:24px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">Пример для клининговой компании · <a href="/">все работы</a></div></div>
+<header><div class="wrap">
+  <p class="eyebrow">Для клининга, ремонта, поставщиков и подрядчиков</p>
+  <h1>Госзаказы по вашей нише — сами приходят в Telegram.</h1>
+  <p class="lead">Бот каждые полчаса проверяет новые закупки на zakupki.gov.ru по вашим словам и присылает только подходящие: нужный регион, нужная сумма, без мусора.</p>
+</div></header>
+<div class="wrap"><div class="chat">
+  <div class="m"><b>🏛 Новая закупка по «уборка помещений»</b>Оказание услуг по уборке помещений административного здания
+Начальная цена: 1 245 000 ₽
+Заказчик: ГКУ Самарской области «Центр обслуживания»
+Подача заявок до: 17.11.2026 08:00
+<a href="#">zakupki.gov.ru/…0142300012126000123</a><span class="t">09:30</span></div>
+  <div class="m"><b>🏛 Новая закупка по «мойка окон»</b>Мойка окон в здании поликлиники
+Начальная цена: 186 400 ₽
+Заказчик: ГБУЗ «Самарская городская поликлиника»
+Подача заявок до: 20.11.2026 09:00
+<a href="#">zakupki.gov.ru/…</a><span class="t">14:00</span></div>
+</div></div>
+<section class="alt"><div class="wrap">
+  <h2>Как это работает.</h2>
+  <div class="grid">
+    <div class="card"><b>Ваши слова</b><span>«уборка помещений», «клининговые услуги», «мойка окон» — сколько нужно. Исключения: «снег», «территории».</span></div>
+    <div class="card"><b>Ваши рамки</b><span>Сумма от и до, только ваш регион. Ни одной лишней закупки из другого города.</span></div>
+    <div class="card"><b>Сразу в Telegram</b><span>Объект, цена, заказчик, срок подачи и ссылка. Успеваете подготовить заявку, а не узнаёте о закупке в последний день.</span></div>
+  </div>
+</div></section>
+<div class="price"><div class="wrap">
+  <p class="eyebrow">Стоимость</p>
+  <div class="sum">990 ₽ в месяц</div>
+  <p class="lead">Настройка слов и фильтров — бесплатно. Или свой отдельный бот — 7 000 ₽ разово.</p>
+  <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Подключить</a>
+</div></div>
+<footer><div class="wrap">Андрей · сайты, боты и автоматизация для малого бизнеса · <a href="/">fygaport-hash.github.io</a></div></footer>
+</body>
+</html>

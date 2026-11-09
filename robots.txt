@@ -3,4 +3,5 @@ Allow: /$
 Allow: /p/
 Allow: /bot/
 Allow: /avito/
+Allow: /tenders/
 Disallow: /
