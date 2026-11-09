@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Бот «Пора снова к нам» — пример</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Клиент подписывается по QR после визита, а через нужное число дней бот сам напоминает: пора снова к нам. Один раз, без спама, с кнопкой записи.">
+<meta property="og:title" content="Бот, который возвращает клиентов">
+<meta property="og:description" content="Напоминание в нужный день с кнопкой записи. Только подписавшимся, отписка в одно касание. Настройка за 1 день.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#fff;--soft:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#0071e3;--card:#fff;--tg-bg:#dfe9f2;--in:#fff;--out:#e1ffc7;--btn:#e8f1fb;--btn-ink:#2a7ab8;--field:#f2f2f4}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--soft:#161617;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff;--card:#1c1c1e;--tg-bg:#0e1621;--in:#182533;--out:#2b5278;--btn:#1f3446;--btn-ink:#79b8ec;--field:#1c1c1e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+@media (max-width:520px){.wrap{padding:0 16px}}
+.top{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+header{text-align:center;padding:64px 0 24px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:15px;margin:0 0 10px}
+h1{font-size:clamp(36px,6.5vw,64px);line-height:1.04;letter-spacing:-.03em;margin:0 0 16px;font-weight:800;text-wrap:balance}
+.lead{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:700px;margin:0 auto;text-wrap:pretty}
+/* шкала времени */
+.line{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:44px auto 0;max-width:820px;position:relative}
+.line::before{content:"";position:absolute;left:16.6%;right:16.6%;top:21px;height:2px;background:linear-gradient(90deg,var(--line),var(--accent))}
+.pt{text-align:center;position:relative;padding:0 8px}
+.pt i{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 12px;border-radius:50%;background:var(--soft);font-style:normal;font-weight:700;font-size:14px;position:relative;border:2px solid var(--bg)}
+.pt:last-child i{background:var(--accent);color:#fff}
+.pt b{display:block;font-size:17px}.pt span{color:var(--muted);font-size:14px}
+@media (max-width:520px){.pt b{font-size:15px}.pt span{font-size:13px}}
+/* чаты */
+.demo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:48px 0 64px}
+@media (max-width:760px){.demo{grid-template-columns:1fr}}
+.label{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.chat{background:var(--tg-bg);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.chat .head{display:flex;align-items:center;gap:10px;padding:2px 2px 10px;border-bottom:1px solid rgba(0,0,0,.06)}
+.chat .av{width:36px;height:36px;border-radius:50%;background:#1d1d1f;color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.chat .head b{font-size:15px}.chat .head span{display:block;font-size:12px;color:var(--muted)}
+.chat .head b span{display:inline;font-size:inherit;color:inherit}
+.m{max-width:88%;padding:9px 12px;border-radius:14px;font-size:15px;line-height:1.4;white-space:pre-line}
+.in{background:var(--in);align-self:flex-start;border-bottom-left-radius:4px}
+.out{background:var(--out);align-self:flex-end;border-bottom-right-radius:4px}
+.kb{display:grid;gap:6px;align-self:flex-start;width:88%}
+.kb div{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.kb span{background:var(--btn);color:var(--btn-ink);text-align:center;border-radius:10px;padding:8px;font-size:14px;font-weight:500}
+.sys{align-self:center;font-size:12px;color:var(--muted);background:rgba(0,0,0,.05);padding:3px 10px;border-radius:999px}
+@media (prefers-color-scheme:dark){.sys{background:rgba(255,255,255,.08)}}
+.stop{color:var(--muted);font-size:13px}
+section.alt{background:var(--soft);padding:60px 0}
+h2{font-size:clamp(28px,4.5vw,42px);letter-spacing:-.025em;margin:0 0 22px;line-height:1.1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:20px;padding:22px}
+.card b{display:block;font-size:18px;margin-bottom:6px}.card span{color:var(--muted);font-size:15px}
+/* сроки */
+.days{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.days span{background:var(--card);border-radius:999px;padding:8px 14px;font-size:15px}
+.days b{color:var(--accent);font-weight:600}
+/* калькулятор */
+.calc{padding:64px 0}
+.calc-box{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;background:var(--soft);border-radius:28px;padding:clamp(20px,4vw,40px)}
+@media (max-width:760px){.calc-box{grid-template-columns:1fr}}
+.rng{margin-bottom:18px}
+.rng label{display:flex;justify-content:space-between;font-size:15px;font-weight:500;margin-bottom:8px}
+.rng label b{font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.res{text-align:center}
+.res .big{font-size:clamp(44px,7vw,68px);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.res p{color:var(--muted);font-size:15px;margin:10px 0 0}
+.res small{display:block;color:var(--muted);font-size:13px;margin-top:14px}
+.price{text-align:center;padding:60px 0;border-top:1px solid var(--line)}
+.sum{font-size:clamp(34px,5vw,48px);font-weight:800;letter-spacing:-.02em}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;border-radius:980px;padding:12px 22px;margin-top:18px}
+.cmp{max-width:720px;margin:24px auto 0;border-collapse:collapse;width:100%;font-size:15px;text-align:left}
+.cmp th,.cmp td{padding:10px 12px;border-bottom:1px solid var(--line)}
+.cmp th{color:var(--muted);font-weight:600;font-size:13px}
+@media (max-width:520px){.cmp{font-size:13px}.cmp th,.cmp td{padding:8px 6px}}
+footer{padding:24px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span id="topnote">Пример на вымышленном барбершопе «Гвоздь»</span> · <a href="/">все работы</a></div></div>
+<header><div class="wrap">
+  <p class="eyebrow">Для барбершопов, салонов, маникюра, косметологов, массажа и бань</p>
+  <h1>Клиенты возвращаются сами.</h1>
+  <p class="lead">Клиенты редко уходят к конкурентам. Чаще они просто забывают записаться. Бот один раз напомнит в нужный день, и запись займёт одно касание.</p>
+  <div class="line">
+    <div class="pt"><i>0</i><b>Визит</b><span>клиент сканирует QR на стойке</span></div>
+    <div class="pt"><i id="d1">28</i><b>Напоминание</b><span>«самое время <span class="ph">освежить стрижку</span>»</span></div>
+    <div class="pt"><i>✓</i><b>Запись</b><span>кнопка ведёт в онлайн-запись</span></div>
+  </div>
+</div></header>
+
+<div class="wrap"><div class="demo">
+  <div>
+    <p class="label">Клиент</p>
+    <div class="chat">
+      <div class="head"><div class="av">Г</div><div><b><span class="nm">Гвоздь</span> · напоминания</b><span>бот</span></div></div>
+      <div class="sys">отсканировал QR после визита</div>
+      <div class="m out">/start</div>
+      <div class="m in">Спасибо, что были в «<span class="nm">Гвоздь</span>»! 🙌
+
+Запомнил: <span class="sv">стрижка</span>, сегодня. Примерно через <span class="dd">28</span> дней напомню: самое время <span class="ph">освежить стрижку</span>. Без рекламы и спама — одно напоминание и изредка наши акции.
+<span class="stop">Не хотите напоминаний — /stop</span></div>
+      <div class="sys">через <span class="dd">28</span> дней, 12:40</div>
+      <div class="m in">Артём, здравствуйте! Прошло <span class="wk">4 недели</span> после визита в «<span class="nm">Гвоздь</span>» (<span class="sv">стрижка</span>). Самое время <span class="ph">освежить стрижку</span> 🙂
+<span class="stop">Не хотите напоминаний — /stop</span></div>
+      <div class="kb"><span>Записаться</span><div><span>Напомнить через 7 дн.</span><span>Уже записан(а)</span></div></div>
+      <div class="sys">нажал «Записаться» и выбрал время</div>
+      <div class="sys">следующий визит, снова QR</div>
+      <div class="m in">С возвращением! Визит отмечен ✅
+Следующее напоминание — примерно через <span class="dd">28</span> дней.</div>
+    </div>
+  </div>
+  <div>
+    <p class="label">Владелец</p>
+    <div class="chat">
+      <div class="head"><div class="av">Г</div><div><b><span class="nm">Гвоздь</span> · напоминания</b><span>сообщения для владельца</span></div></div>
+      <div class="m in">🆕 Новый подписчик: Артём (@artem_k), <span class="sv">стрижка</span>. ID для /visit: 48213977</div>
+      <div class="m out">/stats</div>
+      <div class="m in">Подписаны: 214 (отписались: 9)
+За 30 дней: новых 63, визитов 151
+Напоминаний отправлено: 88, вернулись после напоминания: 31
+Напомню в ближайшие 7 дней: 24</div>
+      <div class="m out">/broadcast В четверг с 11 до 15 — скидка 15%. Окошки ещё есть 🔥</div>
+      <div class="m in">Отправлено: 214</div>
+      <div class="sys">клиент пришёл без QR</div>
+      <div class="m out">/visit @artem_k</div>
+      <div class="m in">Визит отмечен: Артём, <span class="sv">стрижка</span>. Напомню через <span class="dd">28</span> дней.</div>
+    </div>
+  </div>
+</div></div>
+
+<section class="alt"><div class="wrap">
+  <h2>Только по-честному.</h2>
+  <div class="grid">
+    <div class="card"><b>Подписываются сами</b><span>Никаких баз и номеров телефонов. Пишем только тем, кто сам отсканировал QR и нажал «Старт».</span></div>
+    <div class="card"><b>Одно напоминание</b><span>Ровно в срок и днём, не ночью. Не спамим каждый день: напомнили один раз и ждём.</span></div>
+    <div class="card"><b>Отписка в одно касание</b><span>/stop в каждом сообщении. После этого бот молчит: ни напоминаний, ни акций.</span></div>
+  </div>
+  <div class="days">
+    <span>Стрижка — <b>28 дней</b></span><span>Борода — <b>21</b></span><span>Маникюр — <b>21</b></span><span>Окрашивание — <b>42</b></span>
+    <span>Брови — <b>28</b></span><span>Ресницы — <b>21</b></span><span>Массаж — <b>14</b></span><span>Баня — <b>14</b></span><span>сроки настраиваются под вас</span>
+  </div>
+</div></section>
+
+<div class="calc"><div class="wrap">
+  <h2>Сколько это может вернуть.</h2>
+  <div class="calc-box">
+    <div>
+      <div class="rng"><label for="r1">Подписываются в месяц <b id="v1"></b></label><input id="r1" type="range" min="10" max="300" step="10" value="60"></div>
+      <div class="rng"><label for="r2">Из них вернутся после напоминания <b id="v2"></b></label><input id="r2" type="range" min="2" max="30" step="1" value="10"></div>
+      <div class="rng" style="margin:0"><label for="r3">Средний чек <b id="v3"></b></label><input id="r3" type="range" min="500" max="5000" step="100" value="1500"></div>
+    </div>
+    <div class="res">
+      <div class="big" id="out"></div>
+      <p>в месяц от тех, кто иначе мог и не прийти</p>
+      <small>Это оценка, а не обещание: точные цифры бот покажет в /stats. Бот стоит 500 ₽ в месяц.</small>
+    </div>
+  </div>
+</div></div>
+
+<div class="price"><div class="wrap">
+  <p class="eyebrow">Стоимость</p>
+  <div class="sum">5 000 ₽ + 500 ₽/мес</div>
+  <p class="lead">Настройка под ваши услуги и сроки, тексты и QR-карточки для стойки за 1 день. В месячную плату входят сервер и поддержка.</p>
+  <div style="overflow-x:auto"><table class="cmp">
+    <tr><th></th><th>Вручную</th><th>Рассылка в WhatsApp</th><th>Этот бот</th></tr>
+    <tr><td>Ваше время</td><td>часы на обзвон</td><td>собирать базу, писать</td><td>0</td></tr>
+    <tr><td>Напомнит вовремя</td><td>если не забудете</td><td>всем сразу</td><td>каждому в свой день</td></tr>
+    <tr><td>Риск бана и жалоб</td><td>—</td><td>высокий</td><td>нет, подписка добровольная</td></tr>
+  </table></div>
+  <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Хочу такого бота</a>
+  <p class="lead" style="font-size:15px;margin-top:14px">Нужно от вас: список услуг, через сколько дней обычно приходят снова, и ссылка на онлайн-запись (YCLIENTS, DIKIDI, сайт или чат).</p>
+</div></div>
+<footer><div class="wrap">Андрей · сайты и боты для мастеров и малого бизнеса · <a href="/">fygaport-hash.github.io</a></div></footer>
+<script>
+/* Калькулятор */
+(function(){
+  var $=function(id){return document.getElementById(id)}, rub=function(v){return Math.round(v).toLocaleString("ru-RU")+" ₽"};
+  function upd(){var a=+$("r1").value,b=+$("r2").value,c=+$("r3").value;
+    $("v1").textContent=a+" чел.";$("v2").textContent=b+"%";$("v3").textContent=rub(c);
+    $("out").textContent="≈ "+rub(a*b/100*c);}
+  ["r1","r2","r3"].forEach(function(id){$(id).addEventListener("input",upd)});upd();
+})();
+/* Персональное демо: ?n=Название&s=Маникюр&d=21&p=обновить маникюр */
+(function(){
+  var q=new URLSearchParams(location.search), n=q.get("n"); if(!n) return;
+  var s=q.get("s"), d=parseInt(q.get("d"),10), p=q.get("p");
+  var set=function(cls,v){document.querySelectorAll(cls).forEach(function(e){e.textContent=v})};
+  set(".nm",n);
+  document.querySelectorAll(".av").forEach(function(a){a.textContent=n.replace(/[«»"]/g,"").trim().charAt(0).toUpperCase()});
+  if(s){set(".sv",s.toLowerCase()); if(!p) p="записаться на "+s.toLowerCase();}
+  if(p) set(".ph",p);
+  if(d>0){set(".dd",d);document.getElementById("d1").textContent=d;
+    var w=Math.round(d/7);set(".wk",d<10?d+" дн.":w+(w%10==1&&w%100!=11?" неделя":(w%10>=2&&w%10<=4&&(w%100<10||w%100>=20)?" недели":" недель")));}
+  document.getElementById("topnote").textContent="Пример бота для «"+n+"» — так он будет выглядеть у вас";
+  document.title="Бот для «"+n+"» — пример";
+})();
+</script>
+</body>
+</html>
