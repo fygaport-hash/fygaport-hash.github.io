@@ -1,0 +1,50 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Оцените «Бритва и Ножницы»</title><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#B8862E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"><script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114151618,"init",{clickmap:false,trackLinks:true});</script>
+<style>
+:root{--bg:#fff;--soft:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#B8862E;--star:#f5b301}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--soft:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.45 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.demo{background:var(--soft);color:var(--muted);font-size:12px;text-align:center;padding:8px 16px}
+main{max-width:440px;margin:0 auto;padding:40px 20px 48px;text-align:center}
+h1{font-size:30px;line-height:1.1;letter-spacing:-.02em;margin:0 0 8px;font-weight:800}
+p{color:var(--muted);margin:0 0 22px}
+.stars{display:flex;justify-content:center;gap:8px;margin:8px 0 26px}
+.stars button{all:unset;cursor:pointer;font-size:46px;line-height:1;color:var(--line);transition:transform .15s}
+.stars button.on{color:var(--star)}.stars button:active{transform:scale(.9)}
+.box{display:none;text-align:left;background:var(--soft);border-radius:20px;padding:20px}
+.box.show{display:block}
+.btn{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;border-radius:14px;padding:15px;margin-top:10px}
+.btn[hidden]{display:none}
+.btn.alt{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+textarea{width:100%;min-height:96px;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;background:var(--bg);color:var(--ink);resize:vertical}
+.small{display:block;text-align:center;margin-top:14px;color:var(--muted);font-size:14px}
+.small a{color:var(--muted)}
+</style></head><body><div class="demo">Пример страницы отзывов. Подготовлено как предложение, это не официальная страница.</div><main>
+<h1>Как вам в «Бритва и Ножницы»?</h1>
+<p>Оцените визит — это займёт 10 секунд.</p>
+<div class="stars" id="stars"><button aria-label="1 из 5" data-v="1">★</button><button aria-label="2 из 5" data-v="2">★</button><button aria-label="3 из 5" data-v="3">★</button><button aria-label="4 из 5" data-v="4">★</button><button aria-label="5 из 5" data-v="5">★</button></div>
+<div class="box" id="good"><b>Спасибо! Нам очень приятно 🙌</b><br><span style="color:var(--muted)">Пара слов на Картах очень поможет нам — и тем, кто выбирает.</span>
+  <a class="btn" id="go-ya" target="_blank" rel="noopener">Оставить отзыв на Яндекс Картах</a><a class="btn alt" id="go-2gis" target="_blank" rel="noopener" hidden>Оставить отзыв в 2ГИС</a></div>
+<div class="box" id="bad"><b>Нам жаль, что что-то пошло не так.</b><br><span style="color:var(--muted)">Напишите, что случилось, — владелец ответит лично и постарается исправить.</span>
+  <textarea id="txt" placeholder="Что пошло не так?"></textarea><div id="owner"></div>
+  <span class="small">Хотите оставить публичный отзыв? <a id="go-ya2" target="_blank" rel="noopener">Яндекс Карты</a></span></div>
+</main>
+<script>
+const D={"name": "Бритва и Ножницы", "yandex_url": "https://yandex.ru/maps/org/0000000000/reviews/?add-review=true", "twogis_url": "", "telegram": "https://t.me/", "whatsapp": "", "max": "", "phone": "+7 900 000-00-00"};
+const goal=n=>{try{if(window.ym)ym(114151618,"reachGoal",n)}catch(_){}};
+const $=id=>document.getElementById(id);
+["go-ya","go-ya2"].forEach(i=>{$(i).href=D.yandex_url;$(i).onclick=()=>goal("go_yandex")});
+if(D.twogis_url){$("go-2gis").hidden=false;$("go-2gis").href=D.twogis_url}
+const btns=[...document.querySelectorAll("#stars button")];
+btns.forEach(b=>b.onclick=()=>{const v=+b.dataset.v;btns.forEach(x=>x.classList.toggle("on",+x.dataset.v<=v));goal("rate_"+v);
+  $("good").classList.toggle("show",v>=4);$("bad").classList.toggle("show",v<=3);if(v<=3)$("txt").focus();});
+const owner=[];const msg=()=>`Отзыв о «${D.name}»: ${"★".repeat(btns.filter(b=>b.classList.contains("on")).length)}\n${$("txt").value}`;
+if(D.telegram)owner.push(["Отправить в Telegram",()=>{navigator.clipboard&&navigator.clipboard.writeText(msg()).catch(()=>{});return D.telegram}]);
+if(D.whatsapp)owner.push(["Отправить в WhatsApp",()=>D.whatsapp+(D.whatsapp.includes("?")?"&":"?")+"text="+encodeURIComponent(msg())]);
+if(D.max)owner.push(["Отправить в MAX",()=>{navigator.clipboard&&navigator.clipboard.writeText(msg()).catch(()=>{});return D.max}]);
+if(!owner.length&&D.phone)owner.push(["Позвонить владельцу",()=>"tel:"+D.phone.replace(/[^+\d]/g,"")]);
+$("owner").innerHTML=owner.map((o,i)=>`<a class="btn${i?" alt":""}" href="#" data-i="${i}">${o[0]}</a>`).join("");
+$("owner").querySelectorAll("a").forEach(a=>a.onclick=ev=>{ev.preventDefault();goal("go_owner");location.href=owner[+a.dataset.i][1]();});
+</script></body></html>
