@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Автоответчик для Авито — пример</title>
+<meta name="description" content="ИИ-помощник отвечает покупателям на Авито за секунды, днём и ночью, а горячих клиентов сразу передаёт вам в Telegram.">
+<meta property="og:title" content="Автоответчик для Авито: отвечает за секунды, 24/7">
+<meta property="og:description" content="Кто ответил первым — тому и продали. Бот отвечает по вашему прайсу и передаёт горячих клиентов вам.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#fff;--soft:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#0071e3;--card:#fff;--av:#f6f6f6;--in:#fff;--out:#e3f1ff;--tgbg:#dfe9f2}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--soft:#161617;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff;--card:#1c1c1e;--av:#141414;--in:#232325;--out:#123552;--tgbg:#0e1621}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.top{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+header{text-align:center;padding:64px 0 28px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:15px;margin:0 0 10px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;letter-spacing:-.025em;margin:0 0 16px;font-weight:800;text-wrap:balance}
+.lead{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:700px;margin:0 auto;text-wrap:pretty}
+.demo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:40px 0 64px}
+@media (max-width:760px){.demo{grid-template-columns:1fr}}
+.label{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+.chat{background:var(--av);border:1px solid var(--line);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.tg{background:var(--tgbg);border:0}
+.head{display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.ph{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#9ec5e8,#cfe3f3);flex:none}
+.head b{font-size:15px;display:block;line-height:1.3}.head span{font-size:13px;color:var(--muted)}
+.m{max-width:86%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;white-space:pre-line}
+.in{background:var(--in);align-self:flex-start;border:1px solid var(--line)}
+.out{background:var(--out);align-self:flex-end}
+.t{font-size:11px;color:var(--muted);display:block;margin-top:3px;text-align:right}
+.sys{align-self:center;font-size:12px;color:var(--muted);background:rgba(127,127,127,.12);padding:3px 10px;border-radius:999px}
+.tgm{background:var(--card);border-radius:14px;padding:10px 12px;font-size:14px;line-height:1.45;align-self:flex-start;max-width:92%;white-space:pre-line}
+section.alt{background:var(--soft);padding:60px 0}
+h2{font-size:clamp(28px,4.5vw,42px);letter-spacing:-.02em;margin:0 0 22px;line-height:1.1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border-radius:20px;padding:22px}
+.card b{display:block;font-size:18px;margin-bottom:6px}.card span{color:var(--muted);font-size:15px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.price{text-align:center;padding:60px 0}
+.sum{font-size:clamp(34px,5vw,48px);font-weight:800;letter-spacing:-.02em}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;border-radius:980px;padding:12px 22px;margin-top:18px}
+footer{padding:24px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">Пример на вымышленном клининге «Чистый дом» · <a href="/">все работы</a></div></div>
+<header><div class="wrap">
+  <p class="eyebrow">Для продавцов и мастеров на Авито</p>
+  <h1>На Авито продаёт тот, кто ответил первым.</h1>
+  <p class="lead">Помощник отвечает покупателям за секунды, днём и ночью — по вашему прайсу и условиям. Тех, кто готов заказать, сразу передаёт вам в Telegram. Вы подключаетесь только к горячим.</p>
+</div></header>
+
+<div class="wrap"><div class="demo">
+  <div>
+    <p class="label">Чат на Авито · 23:40</p>
+    <div class="chat">
+      <div class="head"><div class="ph"></div><div><b>Генеральная уборка квартиры</b><span>от 90 ₽ за м² · Самара</span></div></div>
+      <div class="m in">Здравствуйте, актуально?<span class="t">23:40</span></div>
+      <div class="m out">Здравствуйте! Да, актуально. Генеральная уборка — от 90 ₽ за м², свои средства и оборудование. Подскажите площадь квартиры?<span class="t">23:40</span></div>
+      <div class="m in">58 метров, двушка. Окна тоже нужно<span class="t">23:42</span></div>
+      <div class="m out">Тогда уборка примерно от 5 220 ₽, мойка окон — 450 ₽ за створку. Оплата после уборки. Когда вам удобно?<span class="t">23:42</span></div>
+      <div class="m in">Хочу на субботу утром<span class="t">23:43</span></div>
+      <div class="m out">Отлично, уточню свободное время на субботу и напишу вам утром.<span class="t">23:43</span></div>
+      <div class="sys">дальше переписку ведёт владелец</div>
+    </div>
+  </div>
+  <div>
+    <p class="label">Вам в Telegram · 23:43</p>
+    <div class="chat tg">
+      <div class="tgm">🔥 <b>Авито: нужен ваш ответ</b>
+Объявление: Генеральная уборка квартиры
+Покупатель: «Хочу на субботу утром»
+Бот ответил: «Отлично, уточню свободное время на субботу…»
+Почему: хочет записаться, 58 м² + окна
+<a href="#">Открыть чат на Авито</a></div>
+      <div class="sys">утром</div>
+      <div class="tgm">Вы открываете чат, подтверждаете время — клиент уже тёплый, цену знает.</div>
+    </div>
+  </div>
+</div></div>
+
+<section class="alt"><div class="wrap">
+  <h2>Что получаете.</h2>
+  <div class="grid">
+    <div class="card"><b>Ответ за секунды, 24/7</b><span>Ночью, в выходные, когда вы на объекте. Покупатель не уходит к тем, кто ответил быстрее.</span></div>
+    <div class="card"><b>Только ваши цены и условия</b><span>Отвечает строго по вашей базе: прайс, график, условия. Чего нет в базе — не выдумывает, а передаёт вам.</span></div>
+    <div class="card"><b>Вы — только к горячим</b><span>«Хочу записаться», «когда можете», «позвоните» — сразу уведомление вам. Если вы сами вступили в чат, помощник молчит.</span></div>
+  </div>
+</div></section>
+
+<div class="price"><div class="wrap">
+  <p class="eyebrow">Стоимость</p>
+  <div class="sum">15 000 ₽ + 1 500 ₽/мес</div>
+  <p class="lead">Настройка по вашему прайсу и неделя донастройки. В месячную плату входят сервер, нейросеть и правки базы. Работает через официальный API Авито — без риска блокировки за серые схемы.</p>
+  <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Хочу такого помощника</a>
+</div></div>
+<footer><div class="wrap">Андрей · сайты, боты и автоматизация для малого бизнеса · <a href="/">fygaport-hash.github.io</a></div></footer>
+</body>
+</html>
