@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Дома Чисто — демо-сайт</title>
+<meta name="description" content="Уборка в удобное время. Заявка за минуту. Липецк, Липецк. +7 (919) 255-30-15">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Дома Чисто · Химчистка мебели · Липецк">
+<meta property="og:description" content="Уборка в удобное время. Заявка за минуту. Липецк, Липецк. +7 (919) 255-30-15">
+<meta property="og:url" content="https://fygaport-hash.github.io/himchistka-mebeli-v-lipecke-lipeck-demo/">
+<meta property="og:image" content="https://fygaport-hash.github.io/himchistka-mebeli-v-lipecke-lipeck-demo/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FBBF00">
+<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114151618,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/114151618" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+<link rel="icon" type="image/png" href="img/icon.png"><link rel="apple-touch-icon" href="img/icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HousekeepingService","name":"Дома Чисто","telephone":"+7 (919) 255-30-15","address":{"@type":"PostalAddress","addressLocality":"Липецк","streetAddress":"Липецк"},"sameAs":["https://vk.com/himchistkalipetsk"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: Apple-style product page. Alternating white / #f5f5f7 bands, centered display type,
+   hero shows the product itself (booking on a phone), bento tiles, iOS-style controls. */
+:root{
+  --bg:#FFFFFF; --alt:#F5F5F7; --ink:#1D1D1F; --muted:#6E6E73; --faint:#86868B; --line:#D2D2D7;
+  --field:#F2F2F4; --ok:#1F9D55; --danger:#D70015;
+  --accent:#FBBF00;--accent-ink:#1D1D1F;--accent-text:#8A6900;--link:#8A6900;--hero-bg:#FFFFFF;--hero-ink:#1D1D1F;--hero-muted:#6E6E73;--accent-on-hero:#0B7F72;--accent-on-dark:#FABE00;--glow:rgba(251,191,0,.25);--star:#FF9F0A;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --tile-r:28px; --ctl-r:12px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.47 var(--font);letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;letter-spacing:inherit}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 60%,transparent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1000px;margin:0 auto;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:600;text-wrap:balance}
+.num{font-variant-numeric:tabular-nums}
+
+/* top strip + glass nav */
+.strip{background:var(--alt);color:var(--muted);font-size:12px;line-height:1.4;text-align:center;padding-block:9px;padding-top:calc(9px + env(safe-area-inset-top,0px))}
+.strip b{color:var(--ink);font-weight:600}
+nav.bar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+nav.bar .wrap{height:52px;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;min-width:0;margin-right:auto}
+.brand img,.brand .mono{width:28px;height:28px;border-radius:8px;object-fit:cover;flex:none}
+.brand .mono{display:grid;place-items:center;background:var(--ink);color:#fff;font-size:12px;font-weight:700;letter-spacing:0}
+.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav.bar .links{display:flex;gap:22px;font-size:13px;color:var(--muted)}
+nav.bar .links a:hover{color:var(--ink)}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:980px;background:var(--accent);color:var(--accent-ink);font-weight:500;cursor:pointer;white-space:nowrap;transition:filter .2s}
+.pill:hover{filter:brightness(1.08)}
+.pill.sm{font-size:13px;padding:6px 14px}
+.pill.lg{font-size:17px;padding:12px 24px}
+.more{color:var(--link);font-size:17px;display:inline-flex;align-items:center;gap:2px}
+.more::after{content:"›";font-size:1.25em;line-height:1;transform:translateY(-1px)}
+.more:hover{text-decoration:underline}
+
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);text-align:center;padding-block:64px 0;overflow:hidden}
+.hero .eyebrow{font-size:17px;font-weight:600;color:var(--accent-on-hero);margin-bottom:6px}
+.hero h1{font-size:clamp(44px,8.4vw,88px);line-height:1.04;letter-spacing:-.045em;font-weight:700}
+.hero .tag{font-size:clamp(21px,2.8vw,28px);line-height:1.2;letter-spacing:-.03em;font-weight:500;color:var(--hero-muted);margin:14px auto 0;max-width:22em}
+.hero .acts{display:flex;justify-content:center;align-items:center;gap:26px;flex-wrap:wrap;margin-top:28px}
+.hero .more{color:var(--accent-on-hero)}
+.stage{margin-top:52px;display:flex;justify-content:center;position:relative}
+.stage::before{content:"";position:absolute;left:50%;bottom:-40%;width:min(900px,140%);aspect-ratio:2/1;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none}
+@keyframes rise{from{transform:translateY(40px);opacity:.0}to{transform:none;opacity:1}}
+.hero h1,.hero .tag,.hero .acts{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .tag{animation-delay:.08s}.hero .acts{animation-delay:.16s}
+.device{animation:rise 1.1s .2s cubic-bezier(.2,.7,.2,1) both}
+
+/* the phone showing the booking product */
+.device{position:relative;width:300px;max-width:78vw;aspect-ratio:300/560;border-radius:52px 52px 0 0;background:#0B0B0C;padding:12px 12px 0;box-shadow:0 0 0 2px #2A2A2E,0 30px 60px -20px rgba(0,0,0,.45)}
+.screen{height:100%;border-radius:41px 41px 0 0;background:#fff;color:#1D1D1F;overflow:hidden;text-align:left;display:flex;flex-direction:column}
+.island{width:96px;height:28px;border-radius:20px;background:#0B0B0C;margin:10px auto 0;flex:none}
+.app{padding:18px 18px 0;display:flex;flex-direction:column;gap:14px;flex:1}
+.app-h{display:flex;align-items:center;gap:10px}
+.app-h img,.app-h .mono{width:36px;height:36px;border-radius:10px;object-fit:cover;display:grid;place-items:center;background:#1D1D1F;color:#fff;font-weight:700;font-size:13px}
+.app-h b{font-size:15px;display:block;line-height:1.2}
+.app-h span{font-size:12px;color:#6E6E73}
+.app-t{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.app-card{background:#F5F5F7;border-radius:16px;padding:12px 14px;display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.app-card span{color:#6E6E73;font-size:12px;display:block}
+.app-card b{font-weight:600}
+.app-l{font-size:12px;color:#6E6E73;font-weight:500;margin-bottom:-6px}
+.app-days{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;text-align:center;font-size:11px;color:#6E6E73}
+.app-days div{padding:6px 0;border-radius:12px;display:grid;gap:2px}
+.app-days b{font-size:16px;color:#1D1D1F;font-weight:600}
+.app-days .on{background:#1D1D1F;color:rgba(255,255,255,.7)}.app-days .on b{color:#fff}
+.app-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.app-slots span{padding:9px 0;text-align:center;border-radius:10px;background:#F5F5F7;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums}
+.app-slots .on{background:var(--accent);color:var(--accent-ink)}
+.app-slots .off{color:#C7C7CC;text-decoration:line-through}
+.app-go{margin-top:auto;margin-bottom:22px;border-radius:14px;background:var(--accent);color:var(--accent-ink);text-align:center;padding:13px;font-weight:600;font-size:15px}
+
+/* bands */
+.band{padding-block:96px}
+.band.alt{background:var(--alt)}
+/* hero with the business's own photo */
+.hero.photo{position:relative;background:#000 var(--hero-photo) center/cover no-repeat;--hero-ink:#fff;--hero-muted:rgba(255,255,255,.85);--accent-on-hero:#fff}
+.hero.photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.34) 38%,rgba(0,0,0,.55) 62%,rgba(0,0,0,.9) 100%)}
+.hero.photo h1,.hero.photo .tag,.hero.photo .eyebrow{text-shadow:0 1px 18px rgba(0,0,0,.45)}
+.hero.photo>*{position:relative}
+.hero.photo .stage::before{display:none}
+.hero .facts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.hero .facts span{font-size:14px;padding:7px 14px;border-radius:980px;background:color-mix(in srgb,var(--hero-ink) 12%,transparent);color:var(--hero-ink);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+/* about: the business's own words from its VK description */
+.about{max-width:680px;margin:0 auto;font-size:18px;line-height:1.55;color:var(--ink)}
+.about p{margin:0 0 12px}.about ul{margin:4px 0 16px;padding-left:1.2em}.about li{margin:5px 0}
+.about-more{text-align:center;margin-top:18px}
+.src-note{max-width:760px;margin:18px auto 0;text-align:center;font-size:13px;color:var(--muted)}
+.sched{max-width:680px;margin:28px auto 0;display:grid;gap:16px}
+.sched .card{background:var(--bg);border-radius:18px;padding:18px 20px}
+.sched h3{font-size:19px;letter-spacing:-.02em;margin:0 0 8px}
+.sched table{width:100%;border-collapse:collapse;font-size:15px}
+.sched td{padding:8px 0;border-top:1px solid var(--line);vertical-align:top}
+.sched td:first-child{font-weight:600;white-space:nowrap;padding-right:16px;width:1%}
+.quote .when{display:block;font-size:13px;color:var(--faint);margin-top:2px}
+/* compact perks: one quiet row about the site itself */
+#perks-sec.compact{padding-block:56px}
+#perks-sec.compact .head{margin-bottom:24px}
+#perks-sec.compact h2{font-size:clamp(24px,3.4vw,32px)}
+.mperks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mperks div{background:var(--alt);border-radius:16px;padding:16px}
+.mperks b{display:block;font-size:15px;line-height:1.25}
+.mperks span{display:block;font-size:13px;color:var(--muted);margin-top:4px;line-height:1.35}
+@media(max-width:820px){.mperks{grid-template-columns:1fr 1fr;gap:8px}}
+/* gallery: photos from the business's VK posts */
+.gal{display:grid;grid-template-columns:repeat(var(--cols-d,4),1fr);gap:8px;max-width:960px;margin:0 auto}
+.gal button{all:unset;cursor:pointer;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--alt);display:block}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gal button:hover img{transform:scale(1.04)}
+.gal-more{text-align:center;margin-top:22px}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.92);display:grid;grid-template-rows:minmax(0,1fr) auto;padding:max(16px,env(safe-area-inset-top,0px)) 16px max(16px,env(safe-area-inset-bottom,0px))}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:100%;min-height:0;min-width:0;object-fit:contain;place-self:center;border-radius:10px}
+.lb .lb-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:12px}
+.lb button,.lb a{all:unset;cursor:pointer;color:#fff;font-size:15px;padding:10px 14px;border-radius:980px;background:rgba(255,255,255,.14)}
+@media(max-width:820px){.gal{grid-template-columns:repeat(var(--cols-m,3),1fr);gap:4px}.gal button{border-radius:8px}}
+.head{text-align:center;margin-bottom:48px}
+.head .k{font-size:17px;font-weight:600;color:var(--accent-text);margin-bottom:6px}
+.head h2{font-size:clamp(34px,5.6vw,56px);line-height:1.07;letter-spacing:-.04em;font-weight:700}
+.head p{font-size:21px;line-height:1.38;color:var(--muted);max-width:30em;margin:14px auto 0;letter-spacing:-.025em}
+
+/* numbers */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.stat b{display:block;font-size:clamp(36px,5vw,52px);line-height:1;font-weight:700;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:10px;font-size:14px;color:var(--muted);line-height:1.35}
+.stat b .live{display:inline-flex;align-items:center;gap:8px;margin:0;font-size:inherit;color:inherit}
+@media(max-width:820px){.stats.odd .stat:last-child{grid-column:1/-1}}
+.stat .live i{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 20%,transparent)}
+.stat .live.closed i{background:var(--faint);box-shadow:none}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.tile{background:var(--bg);border-radius:var(--tile-r);padding:36px 32px;display:flex;flex-direction:column;gap:10px;min-height:240px;grid-column:span 2;min-width:0}
+.tile.wide{grid-column:span 4}
+.tile.half{grid-column:span 3}
+.tile.dark{background:#1D1D1F;color:#F5F5F7}
+.tile.dark p{color:#A1A1A6}
+.tile .big{font-size:clamp(40px,5vw,64px);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--accent-text);margin-top:auto}
+.tile.dark .big{color:var(--accent-on-dark)}
+.tile h3{font-size:24px;line-height:1.17;letter-spacing:-.03em;font-weight:600}
+.tile p{margin:0;color:var(--muted);font-size:17px}
+
+/* services */
+.seg{display:inline-flex;background:#E8E8ED;border-radius:10px;padding:2px;gap:2px;max-width:100%;overflow-x:auto}
+.seg button{border:0;background:transparent;color:var(--ink);font-size:14px;font-weight:500;padding:7px 18px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}
+.seg-wrap{display:flex;justify-content:center;margin-bottom:36px}
+.list{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline;min-width:0}
+.row h3{font-size:19px;font-weight:600;letter-spacing:-.02em}
+.row .price{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.row p{margin:0;font-size:15px;color:var(--muted)}
+.row .side{display:flex;align-items:baseline;justify-content:flex-end;gap:14px;font-size:15px}
+.row .dur{color:var(--muted);white-space:nowrap}
+.row button{border:0;background:none;color:var(--link);font-size:15px;cursor:pointer;padding:0}
+.row button:hover{text-decoration:underline}
+
+/* team */
+.team{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.person{text-align:center;width:160px}
+.ava{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-size:36px;font-weight:600;letter-spacing:-.03em;background:linear-gradient(160deg,#fff,#E8E8ED);color:var(--ink);object-fit:cover;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.person b{display:block;font-size:19px;font-weight:600}
+.person span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+
+/* booking */
+.book{max-width:680px;margin:0 auto}
+form{background:var(--bg);border-radius:var(--tile-r);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:22px 18px;min-width:0}
+.field{display:grid;gap:8px;min-width:0}
+.field.full{grid-column:1/-1}
+label,.flabel{font-size:14px;font-weight:600;color:var(--ink)}
+input,select,textarea{width:100%;font:400 17px/1.3 var(--font);letter-spacing:-.02em;color:var(--ink);background:var(--field);border:1px solid transparent;border-radius:var(--ctl-r);padding:13px 15px;-webkit-appearance:none;appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236E6E73' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent);background:#fff}
+.chips{display:inline-flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:15px;padding:9px 16px;border-radius:980px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:8px}
+.slots button{border:0;background:var(--field);color:var(--ink);font-size:15px;font-weight:500;font-variant-numeric:tabular-nums;padding:11px 0;border-radius:10px;cursor:pointer}
+.slots button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.slots button:disabled{color:#C7C7CC;text-decoration:line-through;cursor:not-allowed}
+form .pill{grid-column:1/-1;font-size:17px;padding:15px;border-radius:14px}
+.err{grid-column:1/-1;color:var(--danger);font-size:15px;margin:0}
+.fine{grid-column:1/-1;margin:-6px 0 0;text-align:center;font-size:12px;color:var(--faint)}
+.done{grid-column:1/-1;text-align:center;padding:24px 0;display:grid;gap:10px;justify-items:center}
+.done>i{width:64px;height:64px;border-radius:50%;background:var(--ok);display:grid;place-items:center}
+.done>i::after{content:"";width:22px;height:12px;border:solid #fff;border-width:0 0 4px 4px;transform:translateY(-3px) rotate(-45deg)}
+.done>b{font-size:28px;font-weight:700;letter-spacing:-.035em}
+.done p{margin:0;color:var(--muted);max-width:30em}
+
+/* reviews carousel */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(380px,84%);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px max(22px,calc((100vw - 956px)/2)) 24px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.quote{scroll-snap-align:center;background:var(--alt);border-radius:var(--tile-r);padding:32px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.quote p{margin:0;font-size:21px;line-height:1.33;letter-spacing:-.025em;font-weight:500}
+.quote span{color:var(--muted);font-size:14px;margin-top:auto}
+.quote .st{color:var(--star);font-size:14px;letter-spacing:2px}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.visit .tile{min-height:0}
+.addr b{font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-.04em;font-weight:700}
+.addr .acts{display:flex;gap:22px;flex-wrap:wrap;margin-top:auto;padding-top:20px}
+.addr .acts a{color:var(--link)}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:17px}
+.hours td{padding:10px 0;border-bottom:1px solid var(--line)}
+.hours tr:last-child td{border-bottom:0}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{font-weight:600;color:var(--ink)}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-size:19px;font-weight:600;letter-spacing:-.02em;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:28px;font-weight:300;color:var(--muted);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{margin:0 0 22px;color:var(--muted);max-width:60ch}
+/* map */
+.map{grid-column:1/-1;border-radius:var(--tile-r);overflow:hidden;background:var(--bg);aspect-ratio:16/7;min-height:280px;max-width:100%}
+.map iframe{width:100%;height:100%;border:0;display:block}
+/* calculator */
+.calc{max-width:760px;margin:40px auto 0;background:var(--alt);border-radius:var(--tile-r);padding:28px;display:grid;gap:16px}
+.calc h3{font-size:24px;letter-spacing:-.03em}
+.calc .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.calc .sum{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--line);padding-top:16px;flex-wrap:wrap}
+.calc .sum b{font-size:clamp(32px,5vw,44px);font-weight:700;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.calc .sum span{color:var(--muted);font-size:14px}
+/* request preview after booking */
+.tg{width:100%;max-width:360px;margin:6px auto 0;background:#E7F0F7;border-radius:18px;padding:14px;text-align:left;color:#1D1D1F}
+.tg .from{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#2A7AB8;margin-bottom:6px}
+.tg .from i{width:26px;height:26px;border-radius:50%;background:#2AABEE;display:grid;place-items:center;color:#fff;font-style:normal;font-size:13px}
+.tg .bubble{background:#fff;border-radius:14px 14px 14px 4px;padding:10px 12px;font-size:14px;line-height:1.45;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.tg .bubble small{display:block;text-align:right;color:#8E8E93;font-size:11px;margin-top:4px}
+.done .acts2{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.send{display:grid;gap:10px;max-width:360px;margin:10px auto 0}
+.send a{display:flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;padding:14px;font-size:16px;font-weight:500;color:#fff;text-decoration:none}
+.send a svg{width:20px;height:20px}
+.send .s-tg{background:#2AABEE}.send .s-vk{background:#0077FF}.send .s-wa{background:#25D366}.send .s-max{background:linear-gradient(135deg,#3D7BFF,#8A4DFF)}
+.send-note{font-size:12px;min-height:1em}
+.done .ghost{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:980px;padding:10px 18px;font-size:15px;cursor:pointer;text-decoration:none}
+/* quick contact buttons in mobile bar */
+.fab{display:none}
+.fab .bar2{display:flex;gap:10px;align-items:center}
+.fab .bar2 .pill{flex:1;width:auto}
+.fab .round{width:52px;height:52px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--bg);color:var(--ink);box-shadow:0 10px 30px -8px rgba(0,0,0,.35),0 0 0 1px var(--line);font-size:12px;font-weight:700;text-decoration:none}
+.fab .round svg{width:22px;height:22px}
+footer{background:var(--alt);color:var(--faint);font-size:12px;line-height:1.5;padding-block:24px 110px}
+footer .wrap{display:grid;gap:8px}
+footer .sep{border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.fab{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none;transition:transform .25s}
+.fab .pill{width:100%;font-size:17px;padding:15px;border-radius:14px;box-shadow:0 10px 30px -8px rgba(0,0,0,.35)}
+.fab.away{transform:translateY(130%)}
+
+@media (max-width:820px){
+  nav.bar .links{display:none}
+  .band{padding-block:72px}
+  .stats{grid-template-columns:1fr 1fr;row-gap:40px}
+  .bento{grid-template-columns:1fr 1fr}
+  .tile,.tile.wide,.tile.half{grid-column:span 2;min-height:0}
+  .visit{grid-template-columns:1fr}
+  .map{aspect-ratio:4/5}
+  .calc .row2{grid-template-columns:1fr}
+  .fab{display:block}
+}
+@media (max-width:540px){
+  form{grid-template-columns:1fr;padding:24px 20px}
+  .row{grid-template-columns:1fr}
+  .row .side{justify-content:space-between;margin-top:8px}
+  .row .price{grid-row:auto}
+  .tile{padding:28px 24px}
+  .team{gap:28px}
+  .person{width:130px}.ava{width:96px;height:96px;font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="strip"><b>Демо-версия сайта</b> для «<span id="demo-name"></span>». Подготовлено как предложение, это не официальный сайт.</div>
+<nav class="bar" aria-label="Навигация"><div class="wrap">
+  <a class="brand" href="#top" id="brand"></a>
+  <div class="links"><a href="#services">Цены</a><a href="#team-sec" id="nav-team">Мастера</a><a href="#reviews-sec" id="nav-rev">Отзывы</a><a href="#visit">Контакты</a></div>
+  <a class="pill sm" href="#book" id="nav-cta"></a>
+</div></nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow" id="eyebrow"></div>
+      <h1 id="h1"></h1>
+      <p class="tag" id="tag"></p>
+      <div class="acts"><a class="pill lg" href="#book" id="cta"></a><a class="more" href="#services">Цены и услуги</a></div>
+      <div class="facts" id="facts" hidden></div>
+    </div>
+    <div class="stage"><div class="device" aria-hidden="true"><div class="screen"><div class="island"></div><div class="app" id="app"></div></div></div></div>
+  </header>
+
+  <section class="band"><div class="wrap"><div class="stats" id="stats"></div></div></section>
+
+  <section class="band" id="gal-sec" hidden><div class="wrap">
+    <div class="head"><div class="k">Фото</div><h2>Из ленты ВКонтакте.</h2></div>
+    <div class="gal" id="gal"></div>
+    <div class="gal-more" id="gal-more"></div>
+  </div></section>
+  <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Фото">
+    <img id="lb-img" alt="" referrerpolicy="no-referrer">
+    <div class="lb-bar"><button type="button" id="lb-prev" aria-label="Предыдущее">‹</button><a id="lb-post" target="_blank" rel="noopener">Открыть пост</a><button type="button" id="lb-next" aria-label="Следующее">›</button><button type="button" id="lb-x">Закрыть</button></div>
+  </div>
+
+  <section class="band alt" id="about-sec" hidden><div class="wrap">
+    <div class="head"><div class="k">О нас</div><h2 id="about-title"></h2></div>
+    <div class="about" id="about"></div>
+    <div class="sched" id="sched" hidden></div>
+    <div class="about-more" id="about-more"></div>
+  </div></section>
+
+  <section class="band alt" id="perks-sec"><div class="wrap">
+    <div class="head"><h2 id="perks-title"></h2></div>
+    <div class="bento" id="bento"></div>
+  </div></section>
+
+  <section class="band" id="services"><div class="wrap">
+    <div class="head"><div class="k">Цены</div><h2 id="svc-title"></h2></div>
+    <div class="seg-wrap" id="seg-wrap"><div class="seg" id="seg" role="group" aria-label="Категории"></div></div>
+    <div class="list" id="list"></div>
+    <p class="src-note" id="svc-note" hidden></p>
+    <div class="calc" id="calc" hidden></div>
+  </div></section>
+
+  <section class="band alt" id="team-sec"><div class="wrap">
+    <div class="head"><h2 id="team-title"></h2></div>
+    <div class="team" id="team"></div>
+  </div></section>
+
+  <section class="band alt" id="book"><div class="wrap book">
+    <div class="head"><div class="k">Онлайн</div><h2 id="book-title"></h2><p id="book-lead"></p></div>
+    <form id="form" novalidate></form>
+  </div></section>
+
+  <section class="band" id="reviews-sec">
+    <div class="wrap"><div class="head"><h2 id="rev-title"></h2><p id="rev-meta"></p></div></div>
+    <div class="rail" id="rail"></div>
+    <div class="wrap"><p class="src-note" id="rev-note" hidden></p></div>
+  </section>
+
+  <section class="band" id="faq-sec"><div class="wrap">
+    <div class="head"><h2>Частые вопросы</h2></div>
+    <div class="faq" id="faq"></div>
+  </div></section>
+
+  <section class="band alt" id="visit"><div class="wrap">
+    <div class="head"><h2>Как нас найти</h2></div>
+    <div class="visit">
+      <div class="tile addr" id="addr"></div>
+      <div class="tile"><h3 style="margin-bottom:6px">Часы работы</h3><table class="hours"><tbody id="hours"></tbody></table></div>
+      <div class="map" id="map"></div>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <div id="foot-note">Это демонстрационная версия сайта, подготовленная как предложение для владельца. Данные взяты из открытых источников: карточек на картах и в соцсетях. Кнопки отправки заявки открывают обычный чат с бизнесом в мессенджере, сама страница данные не собирает и не хранит.</div>
+  <div class="sep"><span id="foot-name"></span><span id="foot-demo"></span></div>
+</div></footer>
+<div class="fab"><div class="bar2"><a class="pill" href="#book" id="fab"></a><span id="quick" style="display:contents"></span></div></div>
+
+<script>
+const D = {"madeBy":"Андрей","madeByUrl":"https://vk.ru/id578525802","madeByLabel":"ВКонтакте","pagesRepo":"https://github.com/fygaport-hash/fygaport-hash.github.io","pagesUrl":"https://fygaport-hash.github.io","metrikaId":114151618,"niche":"cleaning","label":"Химчистка мебели","name":"Дома Чисто","city":"Липецк","address":"Липецк","phone":"+7 (919) 255-30-15","services":[],"reviews":[],"headline":"Уборка в удобное время. Заявка за минуту.","perks":[["Заказ онлайн, круглосуточно.","Оставьте заявку в пару касаний даже ночью — не нужно звонить и ждать ответа.","24/7"],["Пишите, где удобно.","Заявка уходит в {channels}, ответ придёт туда же."],["Маршрут в одно касание.","Адрес сразу открывается в картах."],["Всё в одном сообщении.","Повод, дата и пожелания уходят сразу, без долгой переписки.","1 клик"]],"texts":{"perksTitle":"Записаться проще простого.","bookLead":"Заполните заявку и отправьте её в {channels} — одним нажатием.","fine":"Заявка уйдёт в выбранный мессенджер, ответ придёт туда же.","doneText":"с вами свяжутся, чтобы подтвердить. Удобная дата:","servicesTitle":"Услуги и цены."},"compactPerks":true,"faq":[],"stats":[["6,7 тыс.","подписчиков ВКонтакте"]],"vk":"https://vk.com/himchistkalipetsk","logo":"data:image/jpeg;base64,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","gallery":[{"thumb":"img/g00_s.webp","src":"img/g00.webp","post":"https://vk.com/wall-171111571_3220","w":2560,"h":1920},{"thumb":"img/g01_s.webp","src":"img/g01.webp","post":"https://vk.com/wall-171111571_3220","w":2560,"h":1920},{"thumb":"img/g02_s.webp","src":"img/g02.webp","post":"https://vk.com/wall-171111571_3220","w":1500,"h":2000},{"thumb":"img/g03_s.webp","src":"img/g03.webp","post":"https://vk.com/wall-171111571_3211","w":1920,"h":2560},{"thumb":"img/g04_s.webp","src":"img/g04.webp","post":"https://vk.com/wall-171111571_3213","w":1500,"h":2000},{"thumb":"img/g05_s.webp","src":"img/g05.webp","post":"https://vk.com/wall-171111571_3213","w":1500,"h":2000},{"thumb":"img/g06_s.webp","src":"img/g06.webp","post":"https://vk.com/wall-171111571_3201","w":2560,"h":1920},{"thumb":"img/g07_s.webp","src":"img/g07.webp","post":"https://vk.com/wall-171111571_3201","w":2560,"h":1920},{"thumb":"img/g08_s.webp","src":"img/g08.webp","post":"https://vk.com/wall-171111571_3201","w":2560,"h":1920},{"thumb":"img/g09_s.webp","src":"img/g09.webp","post":"https://vk.com/wall-171111571_3201","w":2560,"h":1920},{"thumb":"img/g10_s.webp","src":"img/g10.webp","post":"https://vk.com/wall-171111571_3198","w":2560,"h":1920},{"thumb":"img/g11_s.webp","src":"img/g11.webp","post":"https://vk.com/wall-171111571_3211","w":2000,"h":1500}],"about":[["p","Хотите чтобы ваша мягкая мебель и ковровые покрытия радовали вас внешним видом, и была абсолютно чистой? Тогда пишите нам."],["p","Написать сообщение в сообщество"],["li","Аккуратные мастера"],["li","Скидки и бонусы постоянным клиентам"],["p","Сэкономим ваше время и силы для более приятных дел! Сделаем всю «грязную» работу, Вам останется только оценить результат."],["p","Избавим от всех видов пятен, запахов (моча, затхлость), аллергенов и пылевых клещей."],["p","Можем сдать Вам в аренду моющий пылесос и сами попробуете все прелести аква чистки 😜"],["li","химчистка и чистка ковров"],["li","химчистка и чистка мебели"],["li","химчистка и чистка диванов"],["li","чистка матрасов"],["li","химчистка ковролина"],["li","стирка паласов"],["li","стирка пледов и одеял"]],"slug":"himchistka-mebeli-v-lipecke-lipeck","hero":"img/hero.webp","icon":"img/icon.png","theme":{"accent":"#FBBF00","accent-ink":"#1D1D1F","accent-text":"#8A6900","link":"#8A6900","accent-on-dark":"#FABE00","glow":"rgba(251,191,0,.25)"}};
+const N = {"ldType":"HousekeepingService","faq":[["Как узнать точную цену?","Укажите площадь и тип уборки в заявке — назовём цену. Для сложных случаев попросим фото."],["Нужны ли наши средства?","Нет, приезжаем со своими средствами и оборудованием."]],"label":"Химчистка мебели","theme":{"accent":"#0E9F8E","accent-ink":"#FFFFFF","accent-text":"#0B7F72","link":"#0B7F72","hero-bg":"#FFFFFF","hero-ink":"#1D1D1F","hero-muted":"#6E6E73","accent-on-hero":"#0B7F72","accent-on-dark":"#0E9F8E","glow":"rgba(14,159,142,.2)","star":"#FF9F0A"},"texts":{"ctaShort":"Заказать","cta":"Заказать уборку","pick":"Выбрать","appTitle":"Заказ уборки","appSvc":"Тип уборки","fromPrice":"от","reviewsTitle":"Что говорят клиенты.","fine":"Подтвердим время и цену до выезда.","doneTitle":"Заявка принята.","doneText":"подтвердим время и цену. Удобная дата:","headline":"Чистота без ваших выходных. Расчёт за минуту.","servicesTitle":"Услуги и цены.","perksTitle":"Как мы работаем.","teamTitle":"Команда","bookTitle":"Рассчитайте и закажите уборку.","bookLead":"Тип уборки, площадь и дата — подтвердим время и цену.","submit":"Отправить заявку"},"perks":null,"form":[{"key":"service","label":"Тип уборки","type":"select","options":"services","full":true},{"key":"area","label":"Площадь","type":"chips","options":["до 40 м²","40–60 м²","60–90 м²","больше 90 м²"]},{"key":"extra","label":"Дополнительно","type":"chips","options":["Окна","Балкон","Химчистка мебели","Ничего"]},{"key":"comment","label":"Адрес или район","placeholder":"Например: Советский район, 5 этаж без лифта","full":true},{"key":"date","label":"Удобная дата","type":"date"},{"key":"name","label":"Имя","placeholder":"Как к вам обращаться","required":true,"err":"укажите имя"},{"key":"phone","label":"Телефон","type":"tel","placeholder":"+7 900 000-00-00","required":true,"err":"введите телефон полностью"}]};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const initials = s => s.split(/\s+/).filter(w=>/[\p{L}\d]/u.test(w)).slice(0,2).map(w=>w.match(/[\p{L}\d]/u)[0]).join("").toUpperCase();
+const rub = p => p === 0 ? "бесплатно" : typeof p === "number" ? p.toLocaleString("ru-RU") + " ₽" : esc(p);
+// Каналы, которые реально подключены у бизнеса, для текстов вида «Заявка уходит в {channels}»
+const CHS = (()=>{ const order = Array.isArray(D.sendTo) && D.sendTo.length ? D.sendTo : ["vk","telegram","max","whatsapp"];
+  const nm = {vk:[D.vk,"ВКонтакте"], telegram:[D.telegram,"Telegram"], max:[D.max,"MAX"], whatsapp:[D.whatsapp,"WhatsApp"]};
+  const l = order.filter(k=>nm[k] && nm[k][0]).map(k=>nm[k][1]);
+  return l.length ? (l.length===1 ? l[0] : l.slice(0,-1).join(", ")+" или "+l[l.length-1]) : "мессенджер"; })();
+const fillCh = x => typeof x === "string" ? x.replace(/\{channels\}/g, CHS) : x;
+const t = k => fillCh((D.texts && D.texts[k]) || N.texts[k]);
+const plural = (n,a,b,c) => { const m=n%10,h=n%100; return m===1&&h!==11?a:m>=2&&m<=4&&(h<10||h>=20)?b:c; };
+const logoHtml = cls => D.logo ? `<img src="${esc(D.logo)}" alt="" referrerpolicy="no-referrer" onerror="logoFail(this)">` : `<span class="mono">${esc(initials(D.name))}</span>`;
+// Логотип по ссылке не загрузился: заменяем на инициалы
+window.logoFail = img => { const s = document.createElement("span"); s.className = "mono"; s.textContent = initials(D.name); img.replaceWith(s); };
+
+/* nav + hero */
+$("demo-name").textContent = D.name;
+$("brand").innerHTML = logoHtml() + `<span>${esc(D.name)}</span>`;
+$("nav-cta").textContent = t("ctaShort"); $("cta").textContent = t("cta"); $("fab").textContent = t("cta");
+$("eyebrow").textContent = [D.label || N.label, D.city].filter(Boolean).join(" · ");
+$("h1").textContent = D.name;
+$("tag").textContent = (D.headline || t("headline")).replace(/\*/g,"");
+
+/* hours / open now */
+const DAYS=["Воскресенье","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"], SH=["Вс","Пн","Вт","Ср","Чт","Пт","Сб"];
+const H = D.hours || {}, now = new Date(), wd = now.getDay(), hoursKnown = Object.keys(H).length > 0;
+if (!hoursKnown) { document.querySelector("#hours").closest(".tile").hidden = true; document.getElementById("addr").style.gridColumn = "1/-1"; }
+const hoursOf = d => H[d] ?? H.all ?? null;
+const span = h => { if(!h||!/\d/.test(h)) return null; const [a,b]=h.split(/[–-]/).map(s=>s.trim()); const m=s=>{const[x,y]=s.split(":").map(Number);return x*60+(y||0)}; return {a,b,ma:m(a),mb:m(b)}; };
+const today = span(hoursOf(wd)), cur = now.getHours()*60+now.getMinutes();
+const isOpen = !!today && cur>=today.ma && cur<today.mb;
+$("hours").innerHTML = [1,2,3,4,5,6,0].map(d=>`<tr class="${d===wd?"today":""}"><td>${DAYS[d]}${d===wd?" (сегодня)":""}</td><td>${esc(hoursOf(d)||"выходной")}</td></tr>`).join("");
+
+/* phone mock: the booking product */
+const services = D.services || [], team = D.team || [];
+const firstSvc = services[0] || {name:t("appSvcFallback")||"Консультация",price:"",duration:""};
+const days = []; for (let i=0;i<5;i++){ const d=new Date(now); d.setDate(now.getDate()+i+1); days.push(d); }
+const slotsFor = () => { const s = span(hoursOf(days[0].getDay())) || span("10:00–20:00"); const out=[]; for(let x=Math.ceil(s.ma/60);x<Math.floor(s.mb/60);x++) out.push(String(x).padStart(2,"0")+":00"); return out; };
+const ms = slotsFor().slice(2,8);
+// Есть ли запись на время (салоны) или это заказ/заявка без времени (торты, фото, ремонт...)
+const FORM = D.form || N.form, HAS_SLOTS = FORM.some(f=>f.type==="slots");
+const chipF = FORM.find(f=>f.type==="chips" && Array.isArray(f.options));
+const orderMock = `
+  <div class="app-h">${logoHtml()}<div><b>${esc(D.name)}</b><span>${esc(D.address)}</span></div></div>
+  <div class="app-t">${esc(t("appTitle"))}</div>
+  ${chipF?`<div class="app-l">${esc(chipF.label)}</div><div class="app-slots">${chipF.options.slice(0,6).map((o,i)=>`<span class="${i===0?"on":""}" style="font-size:11px">${esc(o)}</span>`).join("")}</div>`:""}
+  <div class="app-l">${esc((FORM.find(f=>f.type==="date")||{}).label||"Дата")}</div>
+  <div class="app-days">${days.map((d,i)=>`<div class="${i===2?"on":""}">${SH[d.getDay()]}<b>${d.getDate()}</b></div>`).join("")}</div>
+  <div class="app-go">${esc(t("submit")||t("ctaShort"))}</div>`;
+$("app").innerHTML = !HAS_SLOTS ? orderMock : `
+  <div class="app-h">${logoHtml()}<div><b>${esc(D.name)}</b><span>${esc(D.address)}</span></div></div>
+  <div class="app-t">${esc(t("appTitle"))}</div>
+  <div class="app-card"><div><span>${esc(t("appSvc"))}</span><b>${esc(firstSvc.name)}</b></div><div style="text-align:right"><span>${esc(firstSvc.duration||"")}</span><b>${firstSvc.price!==""?(firstSvc.from?"от ":"")+rub(firstSvc.price):"по записи"}</b></div></div>
+  <div class="app-l">${days[0].toLocaleDateString("ru-RU",{month:"long"}).replace(/^./,c=>c.toUpperCase())}</div>
+  <div class="app-days">${days.map((d,i)=>`<div class="${i===0?"on":""}">${SH[d.getDay()]}<b>${d.getDate()}</b></div>`).join("")}</div>
+  <div class="app-slots">${ms.map((s,i)=>`<span class="${i===2?"on":i===1||i===4?"off":""}">${s}</span>`).join("")}</div>
+  <div class="app-go">${esc(t("ctaShort"))}${ms[2]?" на "+ms[2]:""}</div>`;
+
+/* stats */
+// Если есть цены «за кг», минимальную цену считаем только по ним (капкейки «за шт» не путаем с ценой торта)
+const perKgSvc = services.filter(s=>typeof s.price==="number" && s.price > 0 && /кг/.test(s.duration||""));
+const minPrice = (perKgSvc.length ? perKgSvc : services.filter(s=>typeof s.price==="number" && s.price > 0)).reduce((m,s)=>Math.min(m,s.price),Infinity);
+const stats = [];
+if (D.rating) stats.push([`${esc(D.rating)}`, `рейтинг${D.ratingSource?" в "+esc(D.ratingSource):""}`]);
+if (D.reviewsCount) stats.push([`${D.reviewsCount}`, plural(D.reviewsCount,"отзыв","отзыва","отзывов")+" клиентов"]);
+if (isFinite(minPrice)) stats.push([`${minPrice.toLocaleString("ru-RU")} ₽`, t("fromPrice")]);
+if (hoursKnown) stats.push([`<span class="live ${isOpen?"":"closed"}"><i></i>${today?(isOpen?today.b:today.a):"—"}</span>`, isOpen ? "открыто сегодня до" : today ? (cur<today.ma?"откроемся сегодня в":"сегодня работали до "+today.b) : "сегодня выходной", "live"]);
+(D.stats||[]).forEach(s=>stats.push(s));
+if (hoursKnown && stats.length < 4){ const open=[0,1,2,3,4,5,6].filter(d=>span(hoursOf(d))).length; if (open) stats.push([open===7?"7/7":`${open}`, open===7?"без выходных":plural(open,"день","дня","дней")+" в неделю"]); }
+$("stats").innerHTML = stats.slice(0,4).map(s=>`<div class="stat"><b>${s[0]}</b><span>${esc(s[1]).replace(/&lt;br&gt;/g,"<br>")}</span></div>`).join("");
+if (!stats.length) $("stats").closest("section").hidden = true;
+// Одна-две цифры смотрятся одиноко отдельным блоком: показываем их на первом экране
+if (stats.length && stats.length <= 2){
+  const txt = h => { const e = document.createElement("div"); e.innerHTML = h; return e.textContent.trim(); };
+  $("facts").innerHTML = stats.map(s => { const v = txt(s[0]), l = txt(s[1]); return `<span>${esc(s[2]==="live" ? l.charAt(0).toUpperCase()+l.slice(1)+" "+v : v+" "+l)}</span>`; }).join("");
+  $("facts").hidden = false; $("stats").closest("section").hidden = true;
+}
+$("stats").classList.toggle("odd", stats.length===3);
+$("stats").style.gridTemplateColumns = stats.length===1 ? "1fr" : stats.length<4 && innerWidth>820 ? `repeat(${stats.length},1fr)` : "";
+
+/* bento */
+const perks = D.perks || N.perks;
+if (perks && perks.length){
+  $("perks-title").textContent = t("perksTitle");
+  if (D.compactPerks){
+    $("perks-sec").classList.add("compact"); $("perks-sec").classList.remove("alt");
+    $("bento").className = "mperks";
+    $("bento").innerHTML = perks.slice(0,4).map(p=>[p[0], fillCh(p[1]), p[2]]).map(p=>`<div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div>`).join("");
+  } else {
+  const layout = ["wide dark","","","wide","half","half"];
+  $("bento").innerHTML = perks.slice(0,6).map((p,i)=>`<div class="tile ${perks.length===3&&i>0?"half":layout[i]||""}"><h3>${esc(p[0])}</h3><p>${esc(p[1])}</p>${p[2]?`<div class="big">${esc(p[2])}</div>`:""}</div>`).join("");
+  }
+} else $("perks-sec").hidden = true;
+
+/* services */
+$("svc-title").textContent = t("servicesTitle");
+if (D.servicesNote){ $("svc-note").textContent = D.servicesNote; $("svc-note").hidden = false; }
+if (!services.length){ $("services").hidden = true; document.querySelector('nav.bar .links a[href="#services"]').hidden = true; document.querySelector('.hero .more').hidden = true; }
+const cats = [...new Set(services.map(s=>s.cat).filter(Boolean))];
+let cat = cats[0] || null;
+function renderList(){
+  $("list").innerHTML = services.filter(s=>!cat||s.cat===cat).map(s=>`
+    <div class="row"><div><h3>${esc(s.name)}</h3>${s.desc?`<p>${esc(s.desc)}</p>`:""}</div>
+    <div class="side"><span class="dur">${esc(s.duration||"")}</span><span class="price">${s.from?"от ":""}${rub(s.price)}</span></div>
+    <div><button type="button" data-s="${esc(s.name)}">${esc(t("pick"))} ›</button></div></div>`).join("");
+  $("list").querySelectorAll("button[data-s]").forEach(b=>b.onclick=()=>{ const sel=$("f-service"); if(sel) sel.value=b.dataset.s; $("book").scrollIntoView({behavior:"smooth"}); });
+}
+if (cats.length>1){
+  $("seg").innerHTML = cats.map(c=>`<button type="button" aria-pressed="${c===cat}">${esc(c)}</button>`).join("");
+  $("seg").querySelectorAll("button").forEach(b=>b.onclick=()=>{cat=b.textContent;$("seg").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderList();});
+} else { cat=null; $("seg-wrap").hidden=true; }
+renderList();
+
+/* team */
+if (team.length){ $("team-title").textContent = t("teamTitle"); $("nav-team").textContent = t("teamTitle");
+  $("team").innerHTML = team.map(p=>`<div class="person">${p.photo?`<img class="ava" src="${p.photo}" alt="">`:`<div class="ava">${esc(initials(p.name))}</div>`}<b>${esc(p.name)}</b><span>${esc(p.role||"")}</span></div>`).join("");
+} else { $("team-sec").hidden = true; $("nav-team").hidden = true; }
+
+/* booking form */
+$("book-title").textContent = t("bookTitle"); $("book-lead").textContent = t("bookLead");
+const form = $("form"), state = {}, fields = D.form || N.form;
+const iso = d => new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+form.innerHTML = fields.map(f=>{
+  const id="f-"+f.key, full=f.full?" full":"";
+  const opts = f.options==="services" ? services.map(s=>s.name) : f.options==="team" ? ["Любой свободный",...team.map(p=>p.name)] : f.options;
+  if (f.options==="team" && !team.length) return "";
+  if (f.options==="services" && !services.length) return `<div class="field full"><label for="${id}">${esc(f.label)}</label><input id="${id}" placeholder="Например: ${esc(N.texts.appSvcExample||"что вас интересует")}"></div>`;
+  if (f.type==="select") return `<div class="field${full}"><label for="${id}">${esc(f.label)}</label><select id="${id}">${opts.map(o=>`<option>${esc(o)}</option>`).join("")}</select></div>`;
+  if (f.type==="chips"||f.type==="multi") return `<div class="field${full}"><span class="flabel" id="${id}-l">${esc(f.label)}</span><div class="chips" role="group" aria-labelledby="${id}-l" data-key="${f.key}" data-multi="${f.type==="multi"}">${opts.map((o,i)=>`<button type="button" aria-pressed="${f.type==="chips"&&i===0}">${esc(o)}</button>`).join("")}</div></div>`;
+  if (f.type==="slots") return `<div class="field full"><span class="flabel" id="${id}-l">${esc(f.label)}</span><div class="slots" role="group" aria-labelledby="${id}-l" data-key="${f.key}">${slotsFor().map((s,i)=>`<button type="button" aria-pressed="false" ${[1,4,5].includes(i)?"disabled":""}>${s}</button>`).join("")}</div></div>`;
+  if (f.type==="textarea") return `<div class="field${full}"><label for="${id}">${esc(f.label)}</label><textarea id="${id}" placeholder="${esc(f.placeholder||"")}"></textarea></div>`;
+  return `<div class="field${full}"><label for="${id}">${esc(f.label)}</label><input id="${id}" type="${f.type||"text"}" ${f.type==="tel"?'inputmode="tel" autocomplete="tel"':""} ${f.key==="name"?'autocomplete="given-name"':""} placeholder="${esc(f.placeholder||"")}"></div>`;
+}).join("") + `<p class="err" id="err" hidden></p><button class="pill" type="submit">${esc(t("submit"))}</button><p class="fine">${esc(t("fine"))}</p>`;
+form.querySelectorAll(".chips").forEach(g=>{
+  const multi=g.dataset.multi==="true", first=g.querySelector("button");
+  if(!multi&&first) state[g.dataset.key]=first.textContent;
+  g.querySelectorAll("button").forEach(b=>b.onclick=()=>{
+    if(multi){ b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")!=="true"); state[g.dataset.key]=[...g.querySelectorAll('[aria-pressed="true"]')].map(x=>x.textContent).join(", "); }
+    else { g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b)); state[g.dataset.key]=b.textContent; }
+  });
+});
+form.querySelectorAll(".slots").forEach(g=>g.querySelectorAll("button").forEach(b=>b.onclick=()=>{g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state[g.dataset.key]=b.textContent;}));
+const dateIn = form.querySelector('input[type="date"]');
+if (dateIn){
+  const first = new Date(now); first.setDate(now.getDate() + (D.minDays || (HAS_SLOTS ? 0 : 1)));
+  dateIn.min = iso(first);
+  if (HAS_SLOTS) dateIn.value = iso(days[0]);  // для заказов дату выбирает клиент, не подставляем «завтра»
+}
+// Макет телефона на первом экране: нажатие ведёт к настоящей форме
+const stg = document.querySelector(".stage");
+if (stg){ stg.style.cursor = "pointer"; stg.addEventListener("click", ()=>$("book").scrollIntoView({behavior:"smooth"})); }
+// Цели Яндекс Метрики (если счётчик подключён в config.json): что делали на демо
+const goal = n => { try { if (window.ym && D.metrikaId) ym(D.metrikaId, "reachGoal", n); } catch(_){} };
+if (D.metrikaId){
+  $("foot-note").textContent = $("foot-note").textContent.replace("сама страница данные не собирает и не хранит.", "сама страница введённые данные не собирает и не хранит. Посещения считает Яндекс Метрика.");
+  document.querySelectorAll('a[href="#book"]').forEach(a=>a.addEventListener("click",()=>goal("cta")));
+}
+form.addEventListener("input", ()=>{ const er=$("err"); if (er) er.hidden = true; });
+form.addEventListener("click", e=>{ if (e.target.closest("button[type=button]")) { const er=$("err"); if (er) er.hidden = true; } });
+form.addEventListener("submit", e=>{
+  e.preventDefault();
+  const val = k => { const el=form.querySelector("#f-"+k); return el ? el.value.trim() : (state[k]||""); };
+  const bad = fields.filter(f=>f.required).filter(f=>{ const v=val(f.key); return f.type==="tel" ? v.replace(/\D/g,"").length<10 : !v; }).map(f=>f.err||("заполните «"+f.label+"»"));
+  if (bad.length){ $("err").textContent = "Чтобы отправить: " + bad.join(", ") + "."; $("err").hidden=false; return; }
+  const name=val("name"), time=val("time");
+  const when = dateIn && dateIn.value ? new Date(dateIn.value+"T00:00").toLocaleDateString("ru-RU",{weekday:"long",day:"numeric",month:"long"}) : "";
+  const lines = fields.filter(f=>val(f.key)).map(f=>`<b>${esc(f.label)}:</b> ${esc(f.type==="date"&&when?when:val(f.key))}`);
+  const hhmm = new Date().toTimeString().slice(0,5);
+  let ics = "";
+  if (HAS_SLOTS && time && dateIn && dateIn.value){
+    const [hh,mm] = (time||"10:00").split(":"); const d0 = dateIn.value.replace(/-/g,"");
+    const st = `${d0}T${hh.padStart(2,"0")}${(mm||"00").padStart(2,"0")}00`, en = `${d0}T${String(+hh+1).padStart(2,"0")}${(mm||"00").padStart(2,"0")}00`;
+    ics = "data:text/calendar;charset=utf-8," + encodeURIComponent(["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//demo//RU","BEGIN:VEVENT",`UID:${Date.now()}@demo`,`DTSTART:${st}`,`DTEND:${en}`,`SUMMARY:${D.name}${val("service")?": "+val("service"):""}`,`LOCATION:${[D.city,D.address].filter(Boolean).join(", ")}`,`DESCRIPTION:Телефон ${D.phone||""}`,"END:VEVENT","END:VCALENDAR"].join("\r\n"));
+  }
+  // Текст заявки для мессенджера
+  const plain = [`Здравствуйте! Заявка с сайта «${D.name}»`].concat(fields.filter(f=>val(f.key)).map(f=>`${f.label}: ${f.type==="date"&&when?when:val(f.key)}`)).join("\n");
+  const ch = sendChannels(plain);
+  form.innerHTML = `<div class="done"><i></i><b>${esc(ch.length?"Почти готово!":t("doneTitle"))}</b><p>${esc(name)}, ${ch.length?"выберите, куда отправить заявку. Откроется чат, а текст заявки мы подготовим":esc(t("doneText"))+(when?" "+esc(when):"")+(time?" в "+esc(time):"")}.</p>
+    ${ch.length?`<div class="send">${ch.map((c,i)=>`<a class="s-${c.id}" href="${esc(c.href)}" target="_blank" rel="noopener" data-i="${i}">${c.icon}${esc(c.label)}</a>`).join("")}</div><p class="send-note" id="send-note"></p>`:""}
+    ${ics?`<div class="acts2"><a class="ghost" href="${ics}" download="zapis.ics">Добавить в календарь</a></div>`:""}
+    ${D.live ? "" : `<p style="font-size:13px;margin-top:14px">Так сообщение придёт владельцу в мессенджер:</p>`}
+    ${D.live ? "" : `<div class="tg"><div class="from"><i>${esc((name||"К").charAt(0).toUpperCase())}</i>${esc(name||"Клиент")}</div><div class="bubble">Здравствуйте! Заявка с сайта «${esc(D.name)}»\n${lines.join("\n")}<small>${hhmm}</small></div></div>${ch.some(c=>c.id!=="tg"&&c.id!=="wa")?`<p style="font-size:12px">В ВКонтакте и MAX текст заявки вставляется в чат одним нажатием «Вставить».</p>`:""}<p style="font-size:12px">Сюда можно подключить и Telegram или MAX владельца.</p>`}</div>`;
+  $("book").scrollIntoView({behavior:"smooth", block:"start"});
+  goal("form_filled");
+  form.querySelectorAll(".send a").forEach(a=>a.addEventListener("click", e=>{
+    const c = ch[+a.dataset.i];
+    goal("send_" + c.id);
+    if (c.fake){ e.preventDefault(); $("send-note").textContent = `Это демо: после подключения кнопка откроет ${c.app} бизнеса, и заявка уйдёт туда.`; return; }
+    // Текст копируется всегда: VK и ссылки по номеру не умеют подставлять его сами
+    try { navigator.clipboard.writeText(plain); } catch(_){}
+    $("send-note").textContent = c.paste ? "Текст заявки скопирован: вставьте его в чат и отправьте." : "Если текст не подставился, он уже скопирован: просто вставьте его.";
+  }));
+});
+
+/* Куда можно отправить заявку: только реальные каналы бизнеса.
+   В JSON можно ограничить: "sendTo": ["telegram","vk"] (порядок = порядок кнопок). */
+function sendChannels(text){
+  const enc = encodeURIComponent(text);
+  const handle = (u, re) => { const m = (u||"").match(re); return m ? m[1] : ""; };
+  const out = [];
+  // always: кнопка видна даже без ссылки (в демо показывает, что канал можно подключить)
+  const add = (id, url, re, make, always) => {
+    if (!url) return;
+    const h = handle(url, re);
+    out.push(Object.assign({ id, fake: !h }, h ? make(h) : { href: url, label: "", paste: true }));
+  };
+  const tg = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 3.6 2.9 10.7c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.6z"/></svg>';
+  const vk = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 18.5c-6.4 0-10-4.4-10.2-11.7h3.2c.1 5.4 2.5 7.6 4.4 8.1V6.8h3v4.6c1.9-.2 3.8-2.3 4.5-4.6h3c-.5 2.8-2.6 4.9-4.1 5.8 1.5.7 3.9 2.6 4.8 5.9h-3.3c-.7-2.2-2.5-3.9-4.9-4.2v4.2z"/></svg>';
+  const wa = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>';
+  const mx = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 3 6.6 3 11.2c0 2.6 1.2 4.8 3.2 6.3L5.6 21l3.6-2c.9.2 1.8.3 2.8.3 5.5 0 9-3.6 9-8.1S17.5 3 12 3z"/></svg>';
+  const order = Array.isArray(D.sendTo) && D.sendTo.length ? D.sendTo : ["telegram","max","vk","whatsapp"];
+  for (const k of order){
+    if (k==="telegram") add("tg", D.telegram, /t\.me\/([A-Za-z0-9_+]{3,})/, h => h[0]==="+"
+      ? { href: "https://t.me/"+h, paste: true }
+      : { href: "https://t.me/"+h+"?text="+enc, paste: false }, true);
+    if (k==="max") add("max", D.max, /max\.ru\/([A-Za-z0-9_\/.\-]{2,})/, h => ({ href: "https://max.ru/"+h, paste: true }), true);
+    if (k==="vk") add("vk", D.vk, /vk\.com\/([A-Za-z0-9_.]{2,})/, h => ({ href: "https://vk.me/"+h, paste: true }));
+    if (k==="whatsapp") add("wa", D.whatsapp, /wa\.me\/(\d{10,})/, h => ({ href: "https://wa.me/"+h+"?text="+enc, paste: false }));
+  }
+  const names = { tg: ["Отправить в Telegram", tg, "Telegram"], max: ["Отправить в MAX", mx, "MAX"], vk: ["Отправить во ВКонтакте", vk, "ВКонтакте"], wa: ["Отправить в WhatsApp", wa, "WhatsApp"] };
+  out.forEach(c => { [c.label, c.icon, c.app] = names[c.id]; if (c.fake) c.href = "#"; });
+  return out;
+}
+
+/* cake price calculator: filling price per kg x weight */
+const perKg = services.filter(s=>typeof s.price==="number" && /кг/.test(s.duration||""));
+if (D.niche==="cakes" && perKg.length){
+  const c=$("calc"); c.hidden=false;
+  c.innerHTML = `<h3>Сколько будет стоить</h3>
+    <div class="row2"><div class="field"><label for="calc-f">Начинка</label><select id="calc-f">${perKg.map((s,i)=>`<option value="${i}">${esc(s.name)}, ${rub(s.price)}/кг</option>`).join("")}</select></div>
+    <div class="field"><span class="flabel" id="calc-w-l">Вес</span><div class="chips" id="calc-w" role="group" aria-labelledby="calc-w-l">${[1.5,2,3,4,5].map((w,i)=>`<button type="button" aria-pressed="${i===1}" data-w="${w}">${String(w).replace(".",",")} кг</button>`).join("")}</div></div></div>
+    <div class="sum"><span>Примерно, без декора и доставки</span><b id="calc-sum"></b></div>
+    <a class="pill lg" href="#book" style="justify-self:start">Заказать такой торт</a>`;
+  let w=2; const upd=()=>{ $("calc-sum").textContent = rub(Math.round(perKg[+$("calc-f").value].price*w)); };
+  $("calc-f").onchange=upd;
+  $("calc-w").querySelectorAll("button").forEach(b=>b.onclick=()=>{w=+b.dataset.w;$("calc-w").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));upd();});
+  upd();
+}
+
+/* area calculator (cleaning / repair): price per m² x area */
+const perM2 = services.filter(s=>typeof s.price==="number" && /м²|м2|кв\.?\s*м/.test(s.duration||""));
+if ((D.niche==="cleaning"||D.niche==="repair") && perM2.length){
+  const c=$("calc"); c.hidden=false;
+  c.innerHTML = `<h3>Сколько будет стоить</h3>
+    <div class="row2"><div class="field"><label for="calc-f">${D.niche==="repair"?"Вид работ":"Тип уборки"}</label><select id="calc-f">${perM2.map((s,i)=>`<option value="${i}">${esc(s.name)}, ${rub(s.price)}/м²</option>`).join("")}</select></div>
+    <div class="field"><label for="calc-a">Площадь, м²</label><input id="calc-a" type="number" inputmode="numeric" min="5" max="1000" value="50"></div></div>
+    <div class="sum"><span>Примерно, ${D.niche==="repair"?"без материалов, точная смета после замера":"точная цена после уточнения"}</span><b id="calc-sum"></b></div>
+    <a class="pill lg" href="#book" style="justify-self:start">${D.niche==="repair"?"Записаться на замер":"Заказать уборку"}</a>`;
+  const upd=()=>{ const a=Math.max(0,Math.min(1000,+$("calc-a").value||0)); $("calc-sum").textContent = rub(Math.round(perM2[+$("calc-f").value].price*a)); };
+  $("calc-f").onchange=upd; $("calc-a").oninput=upd; upd();
+}
+
+/* gallery: photos load from VK in the visitor's browser; broken ones are removed */
+const gal = (D.gallery || []).filter(g => g && g.thumb);
+// Первый экран на их фото: включаем, только если картинка реально загрузилась
+const heroSrc = D.hero === undefined ? (gal[0] && (gal[0].src || gal[0].thumb)) : D.hero;
+if (heroSrc){
+  const hero = document.querySelector(".hero"), hp = new Image();
+  hp.referrerPolicy = "no-referrer";
+  hp.onload = () => { hero.style.setProperty("--hero-photo", `url("${String(heroSrc).replace(/"/g,"%22")}")`); hero.classList.add("photo"); };
+  hp.src = heroSrc;
+}
+if (gal.length){
+  $("gal-sec").hidden = false;
+  // Сетка без «хвостов»: 4 фото — 2×2, иначе по 3 (на компьютере 4, если делится на 4)
+  const n = gal.length;
+  $("gal").style.setProperty("--cols-m", n === 4 || n === 2 ? 2 : 3);
+  $("gal").style.setProperty("--cols-d", n % 4 === 0 && n > 4 ? 4 : (n === 4 || n === 2 ? 2 : 3));
+  $("gal").innerHTML = gal.map((g,i)=>`<button type="button" data-i="${i}" aria-label="Фото ${i+1}"><img src="${esc(g.thumb)}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join("");
+  $("gal").querySelectorAll("img").forEach(img=>img.addEventListener("error",()=>{ img.parentElement.remove(); if(!$("gal").children.length) $("gal-sec").hidden=true; }));
+  if (D.vk) $("gal-more").innerHTML = `<a class="more" href="${esc(D.vk)}" target="_blank" rel="noopener">Ещё фото во ВКонтакте</a>`;
+  let cur = 0;
+  const show = i => { cur=(i+gal.length)%gal.length; const g=gal[cur]; $("lb-img").src=g.src||g.thumb; $("lb-post").href=g.post||D.vk||"#"; $("lb-post").hidden=!(g.post||D.vk); };
+  const close = () => { $("lb").hidden=true; document.body.style.overflow=""; };
+  $("gal").addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b) return; show(+b.dataset.i); $("lb").hidden=false; document.body.style.overflow="hidden"; });
+  $("lb-prev").onclick=()=>show(cur-1); $("lb-next").onclick=()=>show(cur+1); $("lb-x").onclick=close;
+  $("lb").addEventListener("click", e=>{ if(e.target.id==="lb") close(); });
+  addEventListener("keydown", e=>{ if($("lb").hidden) return; if(e.key==="Escape") close(); if(e.key==="ArrowLeft") show(cur-1); if(e.key==="ArrowRight") show(cur+1); });
+  let x0=null; $("lb").addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});
+  $("lb").addEventListener("touchend",e=>{ if(x0===null) return; const dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50) show(cur+(dx<0?1:-1)); x0=null; });
+}
+
+/* schedule (from their posts) inside the about section */
+if (Array.isArray(D.schedule) && D.schedule.length){
+  $("sched").innerHTML = D.schedule.map(b=>`<div class="card"><h3>${esc(b.title)}</h3><table>${b.rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join("")}</table></div>`).join("")
+    + (D.scheduleNote ? `<p class="src-note" style="margin-top:0">${esc(D.scheduleNote)}</p>` : "");
+  $("sched").hidden = false; $("about-sec").hidden = false;
+  if (!(Array.isArray(D.about) && D.about.length)){ $("about-title").textContent = "Расписание."; }
+}
+/* about: their own words from the VK description */
+if (Array.isArray(D.about) && D.about.length){
+  let html = "", list = [];
+  const flush = () => { if (list.length){ html += `<ul>${list.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`; list = []; } };
+  D.about.forEach(([k, txt]) => { if (k==="li") list.push(txt); else { flush(); html += `<p>${esc(txt)}</p>`; } });
+  flush();
+  $("about").innerHTML = html; $("about-title").textContent = D.name + ".";
+  if (D.vk) $("about-more").innerHTML = `<a class="more" href="${esc(D.vk)}" target="_blank" rel="noopener">Подробнее во ВКонтакте</a>`;
+  $("about-sec").hidden = false;
+}
+
+/* faq */
+const msgr = [D.telegram&&"Telegram", D.max&&"MAX", D.whatsapp&&"WhatsApp", D.vk&&"VK"].filter(Boolean);
+const faq = [
+  [HAS_SLOTS ? "Как записаться?" : D.niche==="cakes" ? "Как оформить заказ?" : "Как оставить заявку?", `Онлайн через форму на этой странице${D.phone?`, по телефону ${D.phone}`:""}${msgr.length?` или в ${msgr.join(", ")}`:""}. ${HAS_SLOTS ? "Вам ответят, чтобы подтвердить время." : "Вам ответят, чтобы уточнить детали."}`],
+  ...(D.faq ?? N.faq ?? []),
+  ["Где вы находитесь?", `${[D.city,D.address].filter(Boolean).join(", ")}${D.metro?", м. "+D.metro:""}.${D.addressHint?" "+D.addressHint+".":""} Маршрут откроется в Яндекс Картах по кнопке в разделе «Как нас найти».`],
+  HAS_SLOTS ? ["Как перенести или отменить запись?", "Напишите или позвоните заранее, чтобы договориться о другом времени."]
+            : [D.niche==="cakes" ? "Можно изменить или отменить заказ?" : "Можно изменить или отменить заявку?", "Напишите или позвоните заранее, чтобы договориться."],
+].filter(q=>q && q[1]);
+$("faq").innerHTML = faq.map((q,i)=>`<details${i===0?" open":""}><summary>${esc(q[0])}</summary><p>${esc(q[1])}</p></details>`).join("");
+
+/* reviews */
+const reviews = D.reviews || [];
+if (reviews.length){
+  $("rev-title").textContent = t("reviewsTitle");
+  $("rev-meta").textContent = D.rating ? `${D.rating} из 5${D.reviewsCount?` по ${D.reviewsCount} ${plural(D.reviewsCount,"отзыву","отзывам","отзывам")}`:""}${D.ratingSource?" в "+D.ratingSource:""}.` : "";
+  $("rail").innerHTML = reviews.map(r=>`<figure class="quote" style="margin:0"><div class="st">${"★".repeat(r.stars||5)}</div><p>${esc(r.text)}</p><span>${esc(r.name)}${r.date?`<i class="when" style="font-style:normal">${esc(r.date)}</i>`:""}</span></figure>`).join("");
+  if (D.reviewsNote){ $("rev-note").textContent = D.reviewsNote; $("rev-note").hidden = false; }
+} else { $("reviews-sec").hidden = true; $("nav-rev").hidden = true; }
+
+/* visit */
+const mapQ = encodeURIComponent([D.city, D.address].filter(Boolean).join(", "));
+const links = [`<a class="more" style="font-size:17px" href="https://yandex.ru/maps/?text=${mapQ}" target="_blank" rel="noopener">Маршрут</a>`];
+if (D.vk) links.push(`<a class="more" href="${esc(D.vk)}" target="_blank" rel="noopener">ВКонтакте</a>`);
+if (D.telegram) links.push(`<a class="more" href="${esc(D.telegram)}" target="_blank" rel="noopener">Telegram</a>`);
+if (D.whatsapp) links.push(`<a class="more" href="${esc(D.whatsapp)}" target="_blank" rel="noopener">WhatsApp</a>`);
+if (D.instagram) links.push(`<a class="more" href="${esc(D.instagram)}" target="_blank" rel="noopener">Instagram</a>`);
+$("addr").innerHTML = `<span style="color:var(--muted)">${esc(D.city||"")}</span><b>${esc(D.address)}</b>${D.metro?`<p>м. ${esc(D.metro)}</p>`:""}${D.addressHint?`<p>${esc(D.addressHint)}</p>`:""}<a href="tel:${esc((D.phone||"").replace(/[^\d+]/g,""))}" style="font-size:21px;font-weight:600;letter-spacing:-.02em" class="num">${esc(D.phone)}</a><div class="acts">${links.join("")}</div>`;
+
+/* live map */
+if (D.address && D.address !== D.city){
+  $("map").innerHTML = `<iframe src="https://yandex.ru/map-widget/v1/?text=${mapQ}&z=16" title="Карта: ${esc(D.address)}" loading="lazy" allowfullscreen></iframe>`;
+} else $("map").hidden = true;
+
+/* quick contact buttons (mobile bar) */
+const digits = (D.phone||"").replace(/\D/g,""), mob = digits.length===11 && digits[1]==="9" ? "7"+digits.slice(1) : null;
+const wa = D.whatsapp || "";
+const ico = {
+  vk:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 18.5c-6.4 0-10-4.4-10.2-11.7h3.2c.1 5.4 2.5 7.6 4.4 8.1V6.8h3v4.6c1.9-.2 3.8-2.3 4.5-4.6h3c-.5 2.8-2.6 4.9-4.1 5.8 1.5.7 3.9 2.6 4.8 5.9h-3.3c-.7-2.2-2.5-3.9-4.9-4.2v4.2z"/></svg>',
+  tel:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>',
+  wa:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.4z"/></svg>',
+  tg:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 3.6 2.9 10.7c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.6zM9.8 14.2l-.4 4 -1.4-4.6 10.6-6.7-8.8 7.3z"/></svg>'
+};
+const quick = [];
+if (D.telegram) quick.push(`<a class="round" href="${esc(D.telegram)}" target="_blank" rel="noopener" aria-label="Написать в Telegram">${ico.tg}</a>`);
+else if (wa) quick.push(`<a class="round" href="${esc(wa)}" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">${ico.wa}</a>`);
+else if (D.vk && /vk\.com\/[\w.]{2,}/.test(D.vk)) quick.push(`<a class="round" href="${esc(D.vk)}" target="_blank" rel="noopener" aria-label="Написать во ВКонтакте">${ico.vk}</a>`);
+if (digits) quick.push(`<a class="round" href="tel:+${digits.replace(/^8/,"7")}" aria-label="Позвонить">${ico.tel}</a>`);
+$("quick").innerHTML = quick.join("");
+
+$("foot-name").textContent = "© " + D.name + (D.city ? ", " + D.city : "");
+// Купленный сайт: без плашки «демо», без пояснений о демо, скромная подпись разработчика
+if (D.live){
+  document.querySelector(".strip")?.remove();
+  $("foot-note").remove();
+}
+$("foot-demo").innerHTML = D.live ? (D.madeBy ? `Сайт сделал: ${esc(D.madeBy)}` : "") : D.madeBy ? `Демо подготовил: ${esc(D.madeBy)}${D.madeByUrl?` · <a href="${esc(D.madeByUrl)}" target="_blank" rel="noopener" style="color:var(--link)">${esc(D.madeByLabel||"написать")}</a>`:""}` : "Демо-версия";
+
+/* mobile sticky CTA hides while the hero button or the form is on screen */
+const fab=document.querySelector(".fab"), seen=new Set();
+new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));fab.classList.toggle("away",seen.size>0);}).observe($("cta"));
+new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));fab.classList.toggle("away",seen.size>0);}).observe($("book"));
+</script>
+</body>
+</html>
