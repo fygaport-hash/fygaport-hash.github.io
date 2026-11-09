@@ -54,7 +54,7 @@ footer{padding:24px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
 </style>
 </head>
 <body>
-<div class="top"><div class="wrap">Пример на вымышленном клубе «Сила утра» · <a href="/">все работы</a></div></div>
+<div class="top"><div class="wrap"><span id="topnote">Пример на вымышленном клубе «Сила утра»</span> · <a href="/">все работы</a></div></div>
 <header><div class="wrap">
   <p class="eyebrow">Для тренеров, нутрициологов, психологов, преподавателей и блогеров</p>
   <h1>Платный канал, который работает без вас.</h1>
@@ -68,25 +68,25 @@ footer{padding:24px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
       <div class="head"><div class="av">СУ</div><div><b>Сила утра · бот</b><span>бот</span></div></div>
       <div class="m out">/start</div>
       <div class="m in"><b>Клуб «Сила утра»</b>
-Тренировки на каждый день, разбор техники и чат участников.
+<span id="desc">Тренировки на каждый день, разбор техники и чат участников.</span>
 
 Выберите тариф — после оплаты сразу пришлю ссылку для входа.</div>
-      <div class="kb"><span>1 месяц — 990 ₽</span><span>3 месяца — 2 490 ₽</span><span>12 месяцев — 7 990 ₽</span></div>
-      <div class="inv"><div><b>Клуб «Сила утра»: 3 месяца</b>Оплата картой через ЮKassa</div><div class="pay">Оплатить 2 490 ₽</div></div>
+      <div class="kb" data-plans="all"><span>1 месяц — 990 ₽</span><span>3 месяца — 2 490 ₽</span><span>12 месяцев — 7 990 ₽</span></div>
+      <div class="inv"><div><b>Клуб «Сила утра»: <span id="invplan">3 месяца</span></b>Оплата картой через ЮKassa</div><div class="pay">Оплатить <span id="invsum">2 490 ₽</span></div></div>
       <div class="m in">Оплата прошла, спасибо! 🎉
 Подписка активна до 10.02.2027.
 Вход в канал: t.me/+…  — нажмите «Подать заявку», я одобрю её сразу.</div>
       <div class="sys">через 87 дней</div>
       <div class="m in">Подписка заканчивается 10.02.2027 (осталось меньше 3 дней). Продлить:</div>
-      <div class="kb"><span>1 месяц — 990 ₽</span><span>3 месяца — 2 490 ₽</span></div>
+      <div class="kb" data-plans="2"><span>1 месяц — 990 ₽</span><span>3 месяца — 2 490 ₽</span></div>
     </div>
   </div>
   <div>
     <p class="label">Владелец</p>
     <div class="chat">
       <div class="head"><div class="av">СУ</div><div><b>Сила утра · бот</b><span>сообщения для владельца</span></div></div>
-      <div class="m in">💰 Новая оплата: Ольга (@olga), 3 месяца, 2 490 ₽</div>
-      <div class="m in">💰 Новая оплата: Иван (@ivan_run), 1 месяц, 990 ₽</div>
+      <div class="m in">💰 Новая оплата: Ольга (@olga), <span class="p2">3 месяца, 2 490 ₽</span></div>
+      <div class="m in">💰 Новая оплата: Иван (@ivan_run), <span class="p1">1 месяц, 990 ₽</span></div>
       <div class="m out">/stats</div>
       <div class="m in">Активных подписчиков: 148
 Заканчиваются за 7 дней: 12
@@ -123,5 +123,26 @@ footer{padding:24px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
   <p class="lead" style="font-size:15px;margin-top:14px">Нужно: закрытый канал и подключённая ЮKassa (подходит и самозанятым — чеки уходят в «Мой налог» автоматически). Уже оплативших переносим без потерь.</p>
 </div></div>
 <footer><div class="wrap">Андрей · сайты и боты для мастеров и экспертов · <a href="/">fygaport-hash.github.io</a></div></footer>
+<script>
+/* Персональное демо: ?n=Название клуба&d=Описание&t=1 месяц:990;3 месяца:2490 */
+(function(){
+  var q=new URLSearchParams(location.search), n=q.get("n"); if(!n) return;
+  var esc=function(x){return String(x).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+  var rub=function(v){return Number(v).toLocaleString("ru-RU")+" ₽"};
+  var plans=(q.get("t")||"1 месяц:990;3 месяца:2490").split(";").map(function(x){var a=x.split(":");return {name:a[0].trim(),price:+a[1]}}).filter(function(p){return p.name&&p.price});
+  if(!plans.length) plans=[{name:"1 месяц",price:990}];
+  var walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),t;
+  while((t=walk.nextNode())){ if(t.nodeValue.indexOf("Сила утра")>=0) t.nodeValue=t.nodeValue.replace(/Клуб «Сила утра»|Сила утра/g, function(m){return m.indexOf("Клуб")===0? n : n}); }
+  document.querySelectorAll(".av").forEach(function(a){a.textContent=n.replace(/[«»"]/g,"").split(/\s+/).filter(Boolean).slice(0,2).map(function(w){return w[0]}).join("").toUpperCase()});
+  document.getElementById("topnote").textContent="Пример бота для «"+n+"» — так он будет выглядеть у вас";
+  if(q.get("d")) document.getElementById("desc").textContent=q.get("d");
+  document.querySelectorAll(".kb[data-plans]").forEach(function(k){var list=k.dataset.plans==="all"?plans:plans.slice(0,2);k.innerHTML=list.map(function(p){return "<span>"+esc(p.name)+" — "+rub(p.price)+"</span>"}).join("")});
+  var p2=plans[Math.min(1,plans.length-1)], p1=plans[0];
+  document.getElementById("invplan").textContent=p2.name; document.getElementById("invsum").textContent=rub(p2.price);
+  document.querySelectorAll(".p2").forEach(function(e){e.textContent=p2.name+", "+rub(p2.price)});
+  document.querySelectorAll(".p1").forEach(function(e){e.textContent=p1.name+", "+rub(p1.price)});
+  document.title="Бот для «"+n+"» — пример";
+})();
+</script>
 </body>
 </html>
