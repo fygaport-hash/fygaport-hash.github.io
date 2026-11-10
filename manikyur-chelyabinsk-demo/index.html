@@ -19,7 +19,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BeautySalon","name":"Студия красоты в Ленинском","telephone":"+7 (995) 850-33-03","address":{"@type":"PostalAddress","addressLocality":"Челябинск","streetAddress":"ул. Гагарина, д. 9, офис 503"},"sameAs":["https://vk.com/beautystudiochelyabinsk"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: Apple-style product page. Alternating white / #f5f5f7 bands, centered display type,
    hero shows the product itself (booking on a phone), bento tiles, iOS-style controls. */
@@ -28,7 +28,9 @@
   --field:#F2F2F4; --ok:#1F9D55; --danger:#D70015;
   --accent:#D6336C;--accent-ink:#FFFFFF;--accent-text:#C2255C;--link:#C2255C;--hero-bg:#FFFFFF;--hero-ink:#1D1D1F;--hero-muted:#6E6E73;--accent-on-hero:#C2255C;--accent-on-dark:#D6336C;--glow:rgba(214,51,108,.22);--star:#FF9F0A;
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter Tight","Helvetica Neue",Arial,sans-serif;
-  --tile-r:28px; --ctl-r:12px;
+  --tile-r:28px; --ctl-r:12px; --btn-r:980px; --btn-r2:14px;
+  --font-display:var(--font); --display-w:700; --display-ls:-.045em; --display-tt:none; --head-w:700;
+  --nav-bg:rgba(255,255,255,.72); --nav-line:rgba(0,0,0,.08); --seg-bg:#E8E8ED; --seg-on:#fff; --field-focus:#fff; --dark-tile:#1D1D1F; --on-ink:#fff;
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -40,21 +42,21 @@ a{color:inherit;text-decoration:none}
 button{font-family:inherit;letter-spacing:inherit}
 :focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 60%,transparent);outline-offset:3px;border-radius:8px}
 .wrap{max-width:1000px;margin:0 auto;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
-h1,h2,h3{margin:0;font-weight:600;text-wrap:balance}
+h1,h2,h3{margin:0;font-weight:600;text-wrap:balance;font-family:var(--font-display)}
 .num{font-variant-numeric:tabular-nums}
 
 /* top strip + glass nav */
 .strip{background:var(--alt);color:var(--muted);font-size:12px;line-height:1.4;text-align:center;padding-block:9px;padding-top:calc(9px + env(safe-area-inset-top,0px))}
 .strip b{color:var(--ink);font-weight:600}
-nav.bar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+nav.bar{position:sticky;top:0;z-index:30;background:var(--nav-bg);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--nav-line)}
 nav.bar .wrap{height:52px;display:flex;align-items:center;gap:22px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;min-width:0;margin-right:auto}
 .brand img,.brand .mono{width:28px;height:28px;border-radius:8px;object-fit:cover;flex:none}
-.brand .mono{display:grid;place-items:center;background:var(--ink);color:#fff;font-size:12px;font-weight:700;letter-spacing:0}
+.brand .mono{display:grid;place-items:center;background:var(--ink);color:var(--on-ink);font-size:12px;font-weight:700;letter-spacing:0}
 .brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 nav.bar .links{display:flex;gap:22px;font-size:13px;color:var(--muted)}
 nav.bar .links a:hover{color:var(--ink)}
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:980px;background:var(--accent);color:var(--accent-ink);font-weight:500;cursor:pointer;white-space:nowrap;transition:filter .2s}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:var(--btn-r);background:var(--accent);color:var(--accent-ink);font-weight:500;cursor:pointer;white-space:nowrap;transition:filter .2s}
 .pill:hover{filter:brightness(1.08)}
 .pill.sm{font-size:13px;padding:6px 14px}
 .pill.lg{font-size:17px;padding:12px 24px}
@@ -65,7 +67,7 @@ nav.bar .links a:hover{color:var(--ink)}
 /* hero */
 .hero{background:var(--hero-bg);color:var(--hero-ink);text-align:center;padding-block:64px 0;overflow:hidden}
 .hero .eyebrow{font-size:17px;font-weight:600;color:var(--accent-on-hero);margin-bottom:6px}
-.hero h1{font-size:clamp(44px,8.4vw,88px);line-height:1.04;letter-spacing:-.045em;font-weight:700}
+.hero h1{font-size:clamp(44px,8.4vw,88px);line-height:1.04;letter-spacing:var(--display-ls);font-weight:var(--display-w);text-transform:var(--display-tt)}
 .hero .tag{font-size:clamp(21px,2.8vw,28px);line-height:1.2;letter-spacing:-.03em;font-weight:500;color:var(--hero-muted);margin:14px auto 0;max-width:22em}
 .hero .acts{display:flex;justify-content:center;align-items:center;gap:26px;flex-wrap:wrap;margin-top:28px}
 .hero .more{color:var(--accent-on-hero)}
@@ -146,7 +148,7 @@ nav.bar .links a:hover{color:var(--ink)}
 @media(max-width:820px){.gal{grid-template-columns:repeat(var(--cols-m,3),1fr);gap:4px}.gal button{border-radius:8px}}
 .head{text-align:center;margin-bottom:48px}
 .head .k{font-size:17px;font-weight:600;color:var(--accent-text);margin-bottom:6px}
-.head h2{font-size:clamp(34px,5.6vw,56px);line-height:1.07;letter-spacing:-.04em;font-weight:700}
+.head h2{font-size:clamp(34px,5.6vw,56px);line-height:1.07;letter-spacing:var(--display-ls);font-weight:var(--head-w);text-transform:var(--display-tt)}
 .head p{font-size:21px;line-height:1.38;color:var(--muted);max-width:30em;margin:14px auto 0;letter-spacing:-.025em}
 
 /* numbers */
@@ -163,7 +165,7 @@ nav.bar .links a:hover{color:var(--ink)}
 .tile{background:var(--bg);border-radius:var(--tile-r);padding:36px 32px;display:flex;flex-direction:column;gap:10px;min-height:240px;grid-column:span 2;min-width:0}
 .tile.wide{grid-column:span 4}
 .tile.half{grid-column:span 3}
-.tile.dark{background:#1D1D1F;color:#F5F5F7}
+.tile.dark{background:var(--dark-tile);color:#F5F5F7}
 .tile.dark p{color:#A1A1A6}
 .tile .big{font-size:clamp(40px,5vw,64px);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--accent-text);margin-top:auto}
 .tile.dark .big{color:var(--accent-on-dark)}
@@ -171,9 +173,9 @@ nav.bar .links a:hover{color:var(--ink)}
 .tile p{margin:0;color:var(--muted);font-size:17px}
 
 /* services */
-.seg{display:inline-flex;background:#E8E8ED;border-radius:10px;padding:2px;gap:2px;max-width:100%;overflow-x:auto}
+.seg{display:inline-flex;background:var(--seg-bg);border-radius:10px;padding:2px;gap:2px;max-width:100%;overflow-x:auto}
 .seg button{border:0;background:transparent;color:var(--ink);font-size:14px;font-weight:500;padding:7px 18px;border-radius:8px;cursor:pointer;white-space:nowrap}
-.seg button[aria-pressed="true"]{background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}
+.seg button[aria-pressed="true"]{background:var(--seg-on);box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}
 .seg-wrap{display:flex;justify-content:center;margin-bottom:36px}
 .list{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
 .row{display:grid;grid-template-columns:1fr auto;gap:2px 24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline;min-width:0}
@@ -188,7 +190,7 @@ nav.bar .links a:hover{color:var(--ink)}
 /* team */
 .team{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
 .person{text-align:center;width:160px}
-.ava{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-size:36px;font-weight:600;letter-spacing:-.03em;background:linear-gradient(160deg,#fff,#E8E8ED);color:var(--ink);object-fit:cover;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.ava{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-size:36px;font-weight:600;letter-spacing:-.03em;background:linear-gradient(160deg,var(--bg),var(--alt));color:var(--ink);object-fit:cover;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
 .person b{display:block;font-size:19px;font-weight:600}
 .person span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
 
@@ -201,15 +203,15 @@ label,.flabel{font-size:14px;font-weight:600;color:var(--ink)}
 input,select,textarea{width:100%;font:400 17px/1.3 var(--font);letter-spacing:-.02em;color:var(--ink);background:var(--field);border:1px solid transparent;border-radius:var(--ctl-r);padding:13px 15px;-webkit-appearance:none;appearance:none}
 select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236E6E73' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
 textarea{min-height:96px;resize:vertical}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent);background:#fff}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent);background:var(--field-focus)}
 .chips{display:inline-flex;flex-wrap:wrap;gap:8px}
 .chips button{border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:15px;padding:9px 16px;border-radius:980px;cursor:pointer}
-.chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
 .slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:8px}
 .slots button{border:0;background:var(--field);color:var(--ink);font-size:15px;font-weight:500;font-variant-numeric:tabular-nums;padding:11px 0;border-radius:10px;cursor:pointer}
 .slots button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
 .slots button:disabled{color:#C7C7CC;text-decoration:line-through;cursor:not-allowed}
-form .pill{grid-column:1/-1;font-size:17px;padding:15px;border-radius:14px}
+form .pill{grid-column:1/-1;font-size:17px;padding:15px;border-radius:var(--btn-r2)}
 .err{grid-column:1/-1;color:var(--danger);font-size:15px;margin:0}
 .fine{grid-column:1/-1;margin:-6px 0 0;text-align:center;font-size:12px;color:var(--faint)}
 .done{grid-column:1/-1;text-align:center;padding:24px 0;display:grid;gap:10px;justify-items:center}
@@ -280,7 +282,7 @@ footer .wrap{display:grid;gap:8px}
 footer .sep{border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 .fab{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none;transition:transform .25s}
-.fab .pill{width:100%;font-size:17px;padding:15px;border-radius:14px;box-shadow:0 10px 30px -8px rgba(0,0,0,.35)}
+.fab .pill{width:100%;font-size:17px;padding:15px;border-radius:var(--btn-r2);box-shadow:0 10px 30px -8px rgba(0,0,0,.35)}
 .fab.away{transform:translateY(130%)}
 
 @media (max-width:820px){
@@ -305,8 +307,40 @@ footer .sep{border-top:1px solid var(--line);padding-top:12px;display:flex;justi
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
+<style id="kit">
+body.hero-split .hero,body.hero-editorial .hero{text-align:left}
+body.hero-split .hero .acts,body.hero-editorial .hero .acts,body.hero-split .hero .facts,body.hero-editorial .hero .facts{justify-content:flex-start}
+body.hero-split .hero .tag,body.hero-editorial .hero .tag{margin-left:0}
+body.hero-editorial{--h1s:clamp(48px,10vw,104px)}body.hero-editorial .hero h1{line-height:.98}
+body.hero-editorial .hero .eyebrow{display:flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:.14em;font-size:12px}
+body.hero-editorial .hero .eyebrow::before{content:"";width:36px;height:1px;background:currentColor}
+body.hero-editorial .device{transform:rotate(-4deg);transform-origin:bottom center}
+@media(min-width:900px){
+  body.hero-split .hero,body.hero-editorial .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:end;column-gap:24px;padding-inline:max(22px,calc((100vw - 1080px)/2));padding-top:72px}
+  body.hero-split .hero .wrap,body.hero-editorial .hero .wrap{padding:0 0 96px;margin:0;max-width:none;align-self:center}
+  body.hero-split .stage,body.hero-editorial .stage{margin-top:0}
+}
+body.hero-full .hero.photo{min-height:min(92svh,860px)}
+body.hero-full .hero{display:flex;flex-direction:column;justify-content:flex-end;text-align:left;padding-top:96px}
+body.hero-full .hero .acts,body.hero-full .hero .facts{justify-content:flex-start}
+body.hero-full .hero .tag{margin-left:0}
+body.hero-full .hero:not(.photo){background:var(--hero-bg)}
+body.hero-full .hero.photo::before{background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.15) 30%,rgba(0,0,0,.7) 70%,rgba(0,0,0,.92) 100%)}
+@media(min-width:900px){
+  body.hero-full .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:end;padding-inline:max(22px,calc((100vw - 1080px)/2))}
+  body.hero-full .hero .wrap{padding:0 0 88px;margin:0;max-width:none}
+  body.hero-full .stage{margin-top:0}
+}
+@media(max-width:899px){body.hero-full .hero.photo .wrap{padding-top:22vh}}
+.hero h1#h1{font-size:min(var(--h1s,clamp(44px,8.4vw,88px)),calc((100vw - 48px) / (var(--lw,8) * var(--cw,.6))));overflow-wrap:break-word}
+.head h2{overflow-wrap:break-word}
+.fab .bar2 .pill{min-width:0;overflow:hidden;text-overflow:ellipsis;letter-spacing:0}
+.head .k{letter-spacing:var(--k-ls,0);text-transform:var(--k-tt,none);font-size:var(--k-size,17px)}
+:root{--bg:#FFFAF8;--alt:#F8EDE9;--ink:#2A1E1C;--muted:#7D6A66;--faint:#A38F8A;--line:#EBD9D3;--field:#F6ECE9;--seg-bg:#F1E2DD;--hero-bg:#FFFAF8;--hero-ink:#2A1E1C;--hero-muted:#7D6A66;--nav-bg:rgba(255,250,248,.8);--font:Manrope,system-ui,sans-serif;--font-display:'Playfair Display',Georgia,serif;--display-w:500;--head-w:500;--display-ls:-.02em;--tile-r:24px;--k-tt:uppercase;--k-ls:.16em;--k-size:12px;}
+.hero h1{font-style:italic}.gal button{border-radius:22px}.quote{background:var(--bg);box-shadow:0 1px 0 var(--line)}
+.head h2 em,.hero h1 em{font-style:italic}</style>
 </head>
-<body>
+<body class="kit-beauty hero-split">
 <div class="strip"><b>Демо-версия сайта</b> для «<span id="demo-name"></span>». Подготовлено как предложение, это не официальный сайт.</div>
 <nav class="bar" aria-label="Навигация"><div class="wrap">
   <a class="brand" href="#top" id="brand"></a>
@@ -326,7 +360,7 @@ footer .sep{border-top:1px solid var(--line);padding-top:12px;display:flex;justi
     <div class="stage"><div class="device" aria-hidden="true"><div class="screen"><div class="island"></div><div class="app" id="app"></div></div></div></div>
   </header>
 
-  <section class="band"><div class="wrap"><div class="stats" id="stats"></div></div></section>
+  <section class="band" id="stats-sec"><div class="wrap"><div class="stats" id="stats"></div></div></section>
 
   <section class="band" id="gal-sec" hidden><div class="wrap">
     <div class="head"><div class="k">Фото</div><h2>Из ленты ВКонтакте.</h2></div>
@@ -397,8 +431,14 @@ footer .sep{border-top:1px solid var(--line);padding-top:12px;display:flex;justi
 
 <script>
 const D = {"madeBy":"Андрей","madeByUrl":"https://vk.ru/id578525802","madeByLabel":"ВКонтакте","pagesRepo":"https://github.com/fygaport-hash/fygaport-hash.github.io","pagesUrl":"https://fygaport-hash.github.io","metrikaId":114151618,"niche":"beauty","label":"Салон красоты","name":"Студия красоты в Ленинском","city":"Челябинск","address":"ул. Гагарина, д. 9, офис 503","phone":"+7 (995) 850-33-03","services":[],"reviews":[],"headline":"Ресницы, брови, маникюр, массаж и косметология в одной студии.","perks":[["Запись онлайн, круглосуточно.","Выберите удобное время в пару касаний даже ночью — не нужно звонить и ждать ответа.","24/7"],["Пишите, где удобно.","Заявка уходит в {channels}, ответ придёт туда же."],["Маршрут в одно касание.","Адрес сразу открывается в картах."],["Запись в календаре.","После заявки визит можно сохранить в календарь телефона.","1 клик"]],"texts":{"perksTitle":"Записаться проще простого.","bookLead":"Заполните заявку и отправьте её в {channels} — одним нажатием.","fine":"Заявка уйдёт в выбранный мессенджер, ответ придёт туда же.","doneText":"с вами свяжутся, чтобы подтвердить. Удобная дата:","servicesTitle":"Услуги и цены."},"compactPerks":true,"faq":[],"stats":[["2,2 тыс.","подписчиков ВКонтакте"]],"vk":"https://vk.com/beautystudiochelyabinsk","logo":"data:image/jpeg;base64,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","gallery":[{"thumb":"img/g00_s.webp","src":"img/g00.webp","post":"https://vk.com/wall-154767534_5431","w":2560,"h":1936},{"thumb":"img/g01_s.webp","src":"img/g01.webp","post":"https://vk.com/wall-154767534_5417","w":1260,"h":1280},{"thumb":"img/g02_s.webp","src":"img/g02.webp","post":"https://vk.com/wall-154767534_5361","w":1440,"h":1440},{"thumb":"img/g03_s.webp","src":"img/g03.webp","post":"https://vk.com/wall-154767534_5403","w":1920,"h":2261},{"thumb":"img/g04_s.webp","src":"img/g04.webp","post":"https://vk.com/wall-154767534_5417","w":2134,"h":2479},{"thumb":"img/g05_s.webp","src":"img/g05.webp","post":"https://vk.com/wall-154767534_5431","w":1920,"h":2560},{"thumb":"img/g06_s.webp","src":"img/g06.webp","post":"https://vk.com/wall-154767534_5417","w":1919,"h":2401},{"thumb":"img/g07_s.webp","src":"img/g07.webp","post":"https://vk.com/wall-154767534_5403","w":1920,"h":2560},{"thumb":"img/g08_s.webp","src":"img/g08.webp","post":"https://vk.com/wall-154767534_5417","w":1919,"h":2401},{"thumb":"img/g09_s.webp","src":"img/g09.webp","post":"https://vk.com/wall-154767534_5361","w":1920,"h":2261},{"thumb":"img/g10_s.webp","src":"img/g10.webp","post":"https://vk.com/wall-154767534_5382","w":1206,"h":1809},{"thumb":"img/g11_s.webp","src":"img/g11.webp","post":"https://vk.com/wall-154767534_5431","w":1920,"h":2560}],"about":[["p","В нашей студии предоставляются услуги:"],["li","Наращивание ресниц"],["li","Ламинирование ресниц"],["li","Коррекция бровей"],["li","Маникюр"],["li","Наращивание афрокос"],["li","Массажи (лечебный, классический, антицеллюлитный и др.)"],["li","Лазерная эпиляция"],["li","Косметология."],["p","Гагарина, 9"],["p","Офис 503"]],"slug":"manikyur-chelyabinsk","hero":"img/hero.webp","icon":"img/icon.png"};
-const N = {"ldType":"BeautySalon","faq":[["Как подготовиться к процедуре?","Мастер подскажет всё при подтверждении записи. Если есть аллергия или противопоказания, напишите об этом в заявке."]],"label":"Салон красоты","theme":{"accent":"#D6336C","accent-ink":"#FFFFFF","accent-text":"#C2255C","link":"#C2255C","hero-bg":"#FFFFFF","hero-ink":"#1D1D1F","hero-muted":"#6E6E73","accent-on-hero":"#C2255C","accent-on-dark":"#D6336C","glow":"rgba(214,51,108,.22)","star":"#FF9F0A"},"texts":{"ctaShort":"Записаться","cta":"Записаться онлайн","pick":"Записаться","appTitle":"Запись на процедуру","appSvc":"Процедура","fromPrice":"самая доступная услуга","reviewsTitle":"Что говорят клиенты.","fine":"Подтвердим запись сообщением. Никакого спама.","doneTitle":"Вы записаны.","doneText":"ждём вас","headline":"Маникюр, который держится. Запись, которая занимает минуту.","servicesTitle":"Все цены сразу. Без «уточняйте в директ».","perksTitle":"Красиво снаружи. Стерильно внутри.","teamTitle":"Мастера","bookTitle":"Выберите время.","bookLead":"Процедура, мастер, свободное окошко. Напомним за день.","submit":"Записаться"},"perks":[["Держится три недели.","Если покрытие сколется в первую неделю, исправим бесплатно.","21 день"],["Стерильно.","Сухожар и крафт-пакеты, которые вскрываем при вас."],["Окошко онлайн.","Свободное время видно сразу. Не нужно ждать ответа мастера.","1 мин"],["Напоминание за день.","Пришлём сообщение, чтобы вы спокойно спланировали день."]],"form":[{"key":"service","label":"Процедура","type":"select","options":"services","full":true},{"key":"master","label":"Мастер","type":"select","options":"team"},{"key":"date","label":"Дата","type":"date","required":true,"err":"выберите дату"},{"key":"time","label":"Время","type":"slots","required":true,"err":"выберите время"},{"key":"name","label":"Имя","placeholder":"Как к вам обращаться","required":true,"err":"укажите имя"},{"key":"phone","label":"Телефон","type":"tel","placeholder":"+7 900 000-00-00","required":true,"err":"введите телефон полностью"}]};
+const N = {"ldType":"BeautySalon","faq":[["Как подготовиться к процедуре?","Мастер подскажет всё при подтверждении записи. Если есть аллергия или противопоказания, напишите об этом в заявке."]],"label":"Салон красоты","theme":{"accent":"#D6336C","accent-ink":"#FFFFFF","accent-text":"#C2255C","link":"#C2255C","hero-bg":"#FFFFFF","hero-ink":"#1D1D1F","hero-muted":"#6E6E73","accent-on-hero":"#C2255C","accent-on-dark":"#D6336C","glow":"rgba(214,51,108,.22)","star":"#FF9F0A"},"texts":{"ctaShort":"Записаться","cta":"Записаться онлайн","pick":"Записаться","appTitle":"Запись на процедуру","appSvc":"Процедура","fromPrice":"самая доступная услуга","reviewsTitle":"Что говорят клиенты.","fine":"Подтвердим запись сообщением. Никакого спама.","doneTitle":"Вы записаны.","doneText":"ждём вас","headline":"Маникюр, который держится. Запись, которая занимает минуту.","servicesTitle":"Все цены сразу. Без «уточняйте в директ».","perksTitle":"Красиво снаружи. Стерильно внутри.","teamTitle":"Мастера","bookTitle":"Выберите время.","bookLead":"Процедура, мастер, свободное окошко. Напомним за день.","submit":"Записаться"},"perks":[["Держится три недели.","Если покрытие сколется в первую неделю, исправим бесплатно.","21 день"],["Стерильно.","Сухожар и крафт-пакеты, которые вскрываем при вас."],["Окошко онлайн.","Свободное время видно сразу. Не нужно ждать ответа мастера.","1 мин"],["Напоминание за день.","Пришлём сообщение, чтобы вы спокойно спланировали день."]],"form":[{"key":"service","label":"Процедура","type":"select","options":"services","full":true},{"key":"master","label":"Мастер","type":"select","options":"team"},{"key":"date","label":"Дата","type":"date","required":true,"err":"выберите дату"},{"key":"time","label":"Время","type":"slots","required":true,"err":"выберите время"},{"key":"name","label":"Имя","placeholder":"Как к вам обращаться","required":true,"err":"укажите имя"},{"key":"phone","label":"Телефон","type":"tel","placeholder":"+7 900 000-00-00","required":true,"err":"введите телефон полностью"}],"kit":{"name":"beauty","order":["gal-sec","services","team-sec","book","reviews-sec","stats-sec","perks-sec","about-sec","faq-sec","visit"],"stripe":true}};
 const $ = id => document.getElementById(id);
+// Порядок блоков под нишу (styles.js → order)
+const KIT = (N && N.kit) || {};
+if (Array.isArray(KIT.order)) { const m = $("top"); KIT.order.forEach(id => { const el = $(id); if (el && el.tagName === "SECTION") m.appendChild(el); }); }
+// Чередование фона секций после перестановки и скрытия пустых блоков
+window.restripe = () => { let alt = false;
+  document.querySelectorAll("#top > section.band").forEach(el => { if (el.hidden) return; el.classList.toggle("alt", KIT.stripe !== false && alt); alt = !alt; }); };
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const initials = s => s.split(/\s+/).filter(w=>/[\p{L}\d]/u.test(w)).slice(0,2).map(w=>w.match(/[\p{L}\d]/u)[0]).join("").toUpperCase();
 const rub = p => p === 0 ? "бесплатно" : typeof p === "number" ? p.toLocaleString("ru-RU") + " ₽" : esc(p);
@@ -420,6 +460,7 @@ $("brand").innerHTML = logoHtml() + `<span>${esc(D.name)}</span>`;
 $("nav-cta").textContent = t("ctaShort"); $("cta").textContent = t("cta"); $("fab").textContent = t("cta");
 $("eyebrow").textContent = [D.label || N.label, D.city].filter(Boolean).join(" · ");
 $("h1").textContent = D.name;
+$("h1").style.setProperty("--lw", Math.max(6, ...D.name.split(/\s+/).map(w => w.length)));
 $("tag").textContent = (D.headline || t("headline")).replace(/\*/g,"");
 
 /* hours / open now */
@@ -638,6 +679,34 @@ if (D.niche==="cakes" && perKg.length){
   upd();
 }
 
+/* area calculator (cleaning / repair): price per m² x area */
+const perM2 = services.filter(s=>typeof s.price==="number" && /м²|м2|кв\.?\s*м/.test(s.duration||""));
+if ((D.niche==="cleaning"||D.niche==="repair") && perM2.length){
+  const c=$("calc"); c.hidden=false;
+  c.innerHTML = `<h3>Сколько будет стоить</h3>
+    <div class="row2"><div class="field"><label for="calc-f">${D.niche==="repair"?"Вид работ":"Тип уборки"}</label><select id="calc-f">${perM2.map((s,i)=>`<option value="${i}">${esc(s.name)}, ${rub(s.price)}/м²</option>`).join("")}</select></div>
+    <div class="field"><label for="calc-a">Площадь, м²</label><input id="calc-a" type="number" inputmode="numeric" min="5" max="1000" value="50"></div></div>
+    <div class="sum"><span>Примерно, ${D.niche==="repair"?"без материалов, точная смета после замера":"точная цена после уточнения"}</span><b id="calc-sum"></b></div>
+    <a class="pill lg" href="#book" style="justify-self:start">${D.niche==="repair"?"Записаться на замер":"Заказать уборку"}</a>`;
+  const upd=()=>{ const a=Math.max(0,Math.min(1000,+$("calc-a").value||0)); $("calc-sum").textContent = rub(Math.round(perM2[+$("calc-f").value].price*a)); };
+  $("calc-f").onchange=upd; $("calc-a").oninput=upd; upd();
+}
+
+/* hourly calculator (rental): price per hour x hours */
+const perHour = services.filter(s=>typeof s.price==="number" && /час/.test(s.duration||""));
+if (D.niche==="rental" && perHour.length){
+  const c=$("calc"); c.hidden=false;
+  c.innerHTML = `<h3>Сколько будет стоить</h3>
+    <div class="row2"><div class="field"><label for="calc-f">Что бронируем</label><select id="calc-f">${perHour.map((s,i)=>`<option value="${i}">${esc(s.name)}, ${rub(s.price)}/час</option>`).join("")}</select></div>
+    <div class="field"><span class="flabel" id="calc-w-l">Часов</span><div class="chips" id="calc-w" role="group" aria-labelledby="calc-w-l">${[2,3,4,5,6].map((w,i)=>`<button type="button" aria-pressed="${i===1}" data-w="${w}">${w} ч</button>`).join("")}</div></div></div>
+    <div class="sum"><span>Примерно, без доп. услуг</span><b id="calc-sum"></b></div>
+    <a class="pill lg" href="#book" style="justify-self:start">Забронировать</a>`;
+  let w=3; const upd=()=>{ $("calc-sum").textContent = rub(Math.round(perHour[+$("calc-f").value].price*w)); };
+  $("calc-f").onchange=upd;
+  $("calc-w").querySelectorAll("button").forEach(b=>b.onclick=()=>{w=+b.dataset.w;$("calc-w").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));upd();});
+  upd();
+}
+
 /* gallery: photos load from VK in the visitor's browser; broken ones are removed */
 const gal = (D.gallery || []).filter(g => g && g.thumb);
 // Первый экран на их фото: включаем, только если картинка реально загрузилась
@@ -748,6 +817,7 @@ $("foot-demo").innerHTML = D.live ? (D.madeBy ? `Сайт сделал: ${esc(D.
 const fab=document.querySelector(".fab"), seen=new Set();
 new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));fab.classList.toggle("away",seen.size>0);}).observe($("cta"));
 new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));fab.classList.toggle("away",seen.size>0);}).observe($("book"));
+restripe(); setTimeout(restripe, 1500);
 </script>
 </body>
 </html>
