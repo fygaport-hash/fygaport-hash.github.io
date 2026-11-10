@@ -1,0 +1,188 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Меню — Наши Соседи</title><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#B04A2F">
+<meta property="og:title" content="Меню «Наши Соседи»"><meta property="og:description" content="Выберите блюда и отправьте заказ одним сообщением.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"><script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114151618,"init",{clickmap:false,trackLinks:true});</script>
+<style>
+:root{--bg:#fff;--soft:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#B04A2F;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--soft:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--card:#1c1c1e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.45 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:110px}
+button{font:inherit;color:inherit}
+.demo{background:var(--soft);color:var(--muted);font-size:12px;text-align:center;padding:8px 16px}
+header{max-width:640px;margin:0 auto;padding:28px 16px 8px}
+.where{color:var(--accent);font-weight:600;font-size:14px;margin:0 0 6px}
+h1{font-size:34px;line-height:1.05;letter-spacing:-.025em;margin:0 0 8px;font-weight:800}
+.sub{color:var(--muted);margin:0}
+.table{display:none;margin-top:14px;background:var(--soft);border-radius:14px;padding:10px 14px;font-weight:600;align-items:center;justify-content:space-between;gap:10px}
+.table.show{display:flex}
+.table button{all:unset;cursor:pointer;color:var(--accent);font-weight:600;font-size:15px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--line)}
+nav div{max-width:640px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav div::-webkit-scrollbar{display:none}
+nav a{flex:none;color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;padding:7px 14px;border-radius:999px;background:var(--soft)}
+nav a.on{background:var(--ink);color:var(--bg)}
+main{max-width:640px;margin:0 auto;padding:0 16px}
+h2{font-size:24px;letter-spacing:-.02em;margin:28px 0 6px}
+.it{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+.tx{min-width:0}.tx b{display:block;font-weight:600}
+.ds{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.mt{display:block;color:var(--muted);font-size:13px;margin-top:4px}.mt:empty{display:none}
+.buy{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.pr{font-weight:600;white-space:nowrap}
+.q{display:flex;align-items:center;background:var(--soft);border-radius:999px}
+.q button{all:unset;cursor:pointer;width:34px;height:34px;display:grid;place-items:center;font-size:20px;border-radius:999px}
+.q .p{background:var(--accent);color:#fff}
+.q .n,.q .m{display:none}
+.it.has .q .n,.it.has .q .m{display:grid}
+.q .n{min-width:22px;text-align:center;font-weight:600;place-items:center}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:9;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 30%);display:none}
+.bar.show{display:block}
+.bar button{all:unset;cursor:pointer;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;max-width:608px;margin:0 auto;background:var(--accent);color:#fff;font-weight:600;border-radius:16px;padding:16px 18px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.sheet{position:fixed;inset:0;z-index:20;display:none;background:rgba(0,0,0,.4)}
+.sheet.show{display:block}
+.pane{position:absolute;left:0;right:0;bottom:0;max-height:92vh;overflow:auto;background:var(--bg);border-radius:22px 22px 0 0;padding:8px 16px calc(20px + env(safe-area-inset-bottom))}
+.pane>div{max-width:608px;margin:0 auto}
+.grab{width:40px;height:5px;border-radius:3px;background:var(--line);margin:4px auto 10px}
+.ph{display:flex;justify-content:space-between;align-items:center}.ph h3{font-size:24px;margin:0;letter-spacing:-.02em}
+.x{all:unset;cursor:pointer;color:var(--muted);font-size:15px}
+.ln{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.tot{display:flex;justify-content:space-between;font-weight:700;font-size:18px;padding:14px 0 4px}
+label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:16px 0 6px}
+.seg{display:flex;background:var(--soft);border-radius:12px;padding:3px;gap:3px}
+.seg button{all:unset;cursor:pointer;flex:1;text-align:center;padding:9px 6px;border-radius:9px;font-size:15px;font-weight:500}
+.seg button.on{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.12);font-weight:600}
+input,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;background:var(--bg);color:var(--ink)}
+textarea{min-height:70px;resize:vertical}
+.send a{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;border-radius:14px;padding:15px;margin-top:10px}
+.send a+a{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.fine{color:var(--muted);font-size:13px;text-align:center;margin-top:12px}
+.note{color:var(--muted);font-size:13px;margin-top:6px}.note:empty{display:none}
+footer{max-width:640px;margin:32px auto 0;padding:0 16px;color:var(--muted);font-size:13px}
+</style></head><body><div class="demo">Демо. Пример QR-меню для «Наши Соседи», подготовлен как предложение. Меню и цены из открытых источников (меню по ссылке в Taplink кофейни) на 09.11.2026, могут отличаться.</div>
+<header><p class="where">Кофейня · Уфа</p><h1>Наши Соседи</h1>
+<p class="sub">Соседи — не по прописке, а по любви. Кофе, завтраки весь день, блины и фреши.</p>
+<div class="table" id="tbl"><span id="tbl-t"></span><button id="waiter">Позвать официанта</button></div></header>
+<nav><div id="nav"><a href="#c0">Классика</a><a href="#c1">Согревающие</a><a href="#c2">Матча</a><a href="#c3">Освежающие</a><a href="#c4">Чай</a><a href="#c5">Фреши</a><a href="#c6">Завтрак</a><a href="#c7">Блины</a><a href="#c8">Салаты и на скорую руку</a><a href="#c9">Для маленьких соседей</a></div></nav>
+<main><section id="c0"><h2>Классика</h2><div class="it" data-i="0"><div class="tx"><b>Эспрессо</b><span class="mt">60 мл</span></div>
+<div class="buy"><span class="pr">210 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="1"><div class="tx"><b>Фильтр</b><span class="ds">300 мл — 259 ₽, 400 мл — 299 ₽</span><span class="mt">200 мл</span></div>
+<div class="buy"><span class="pr">209 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="2"><div class="tx"><b>Американо</b><span class="ds">300 мл — 230 ₽</span><span class="mt">200 мл</span></div>
+<div class="buy"><span class="pr">210 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="3"><div class="tx"><b>Флэт уайт</b><span class="mt">180 мл</span></div>
+<div class="buy"><span class="pr">280 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="4"><div class="tx"><b>Капучино</b><span class="ds">300 мл — 300 ₽, 400 мл — 340 ₽</span><span class="mt">200 мл</span></div>
+<div class="buy"><span class="pr">260 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="5"><div class="tx"><b>Латте</b><span class="ds">400 мл — 340 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">300 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="6"><div class="tx"><b>Раф</b><span class="ds">400 мл — 390 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">350 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="7"><div class="tx"><b>Эспрессо-тоник</b><span class="ds">400 мл — 370 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">325 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="8"><div class="tx"><b>Бамбл на апельсиновом фреше</b><span class="ds">400 мл — 490 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">450 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="9"><div class="tx"><b>Растительное молоко Planto</b><span class="ds">Кокосовое / банановое / миндальное. Безлактозное молоко и сироп — бесплатно</span><span class="mt"></span></div>
+<div class="buy"><span class="pr">60 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c1"><h2>Согревающие</h2><div class="it" data-i="10"><div class="tx"><b>Сырный латте</b><span class="ds">400 мл — 420 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">360 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="11"><div class="tx"><b>Ореховый раф</b><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">390 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="12"><div class="tx"><b>Горячий шоколад</b><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">380 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="13"><div class="tx"><b>Какао</b><span class="ds">400 мл — 380 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">340 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c2"><h2>Матча</h2><div class="it" data-i="14"><div class="tx"><b>Матча-латте</b><span class="ds">400 мл — 340 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">300 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="15"><div class="tx"><b>Матча-тоник</b><span class="ds">400 мл — 390 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">350 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="16"><div class="tx"><b>Матча на апельсиновом фреше</b><span class="ds">400 мл — 490 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">450 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c3"><h2>Освежающие</h2><div class="it" data-i="17"><div class="tx"><b>Малиновый фильтр</b><span class="ds">400 мл — 390 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">360 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="18"><div class="tx"><b>Банановый крем-латте</b><span class="ds">400 мл — 430 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">390 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="19"><div class="tx"><b>Ягодный смузи</b><span class="ds">400 мл — 430 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">390 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="20"><div class="tx"><b>Сливочный персик</b><span class="ds">400 мл — 430 ₽</span><span class="mt">300 мл</span></div>
+<div class="buy"><span class="pr">390 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c4"><h2>Чай</h2><div class="it" data-i="21"><div class="tx"><b>Чёрный чай</b><span class="ds">Ассам / Эрл грей / Пуэр / Ройбуш / Татарский. 600 мл — 360 ₽</span><span class="mt">400 мл</span></div>
+<div class="buy"><span class="pr">260 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="22"><div class="tx"><b>Зелёный чай</b><span class="ds">Генпаудер / Сенча / Молочный улун. 600 мл — 360 ₽</span><span class="mt">400 мл</span></div>
+<div class="buy"><span class="pr">260 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="23"><div class="tx"><b>Травяной чай</b><span class="ds">Целебные травы / Сказатель Алтая. 600 мл — 360 ₽</span><span class="mt">400 мл</span></div>
+<div class="buy"><span class="pr">260 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="24"><div class="tx"><b>Малиновый чай</b><span class="ds">600 мл — 460 ₽</span><span class="mt">400 мл</span></div>
+<div class="buy"><span class="pr">360 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="25"><div class="tx"><b>Облепиховый чай</b><span class="ds">600 мл — 460 ₽</span><span class="mt">400 мл</span></div>
+<div class="buy"><span class="pr">360 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c5"><h2>Фреши</h2><div class="it" data-i="26"><div class="tx"><b>Апельсиновый фреш</b><span class="ds">350 мл — 420 ₽</span><span class="mt">250 мл</span></div>
+<div class="buy"><span class="pr">380 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="27"><div class="tx"><b>Яблочный фреш</b><span class="ds">350 мл — 350 ₽</span><span class="mt">250 мл</span></div>
+<div class="buy"><span class="pr">310 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="28"><div class="tx"><b>Сельдереевый фреш</b><span class="ds">350 мл — 350 ₽</span><span class="mt">250 мл</span></div>
+<div class="buy"><span class="pr">310 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="29"><div class="tx"><b>Морковный фреш</b><span class="ds">350 мл — 320 ₽</span><span class="mt">250 мл</span></div>
+<div class="buy"><span class="pr">280 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c6"><h2>Завтрак</h2><div class="it" data-i="30"><div class="tx"><b>Яичница / Омлет из 3-х яиц</b><span class="ds">Добавим вкуса: томаты / шампиньоны / сыр +60 ₽, авокадо / лосось +100 ₽</span><span class="mt"></span></div>
+<div class="buy"><span class="pr">310 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="31"><div class="tx"><b>Сырники</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">390 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="32"><div class="tx"><b>Овсяная каша</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">290 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="33"><div class="tx"><b>Рисовая каша</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">290 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="34"><div class="tx"><b>Яйца Бенедикт</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">590 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="35"><div class="tx"><b>Большой соседский завтрак</b><span class="mt">фирменное</span></div>
+<div class="buy"><span class="pr">590 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c7"><h2>Блины</h2><div class="it" data-i="36"><div class="tx"><b>Блины 3 шт</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">260 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="37"><div class="tx"><b>Блины с сыром и ветчиной</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">340 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="38"><div class="tx"><b>Блины с курицей и грибами</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">360 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="39"><div class="tx"><b>Блины с лососем и сливочным сыром</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">420 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="40"><div class="tx"><b>Блины с творогом и вишней</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">340 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="41"><div class="tx"><b>Блины с ягодным соусом и сметаной</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">340 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="42"><div class="tx"><b>Блины с бананом и нутеллой</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">360 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c8"><h2>Салаты и на скорую руку</h2><div class="it" data-i="43"><div class="tx"><b>Зелёный овощной салат</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">420 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="44"><div class="tx"><b>Цезарь с цыплёнком</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">490 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="45"><div class="tx"><b>Сэндвич по-соседски</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">420 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="46"><div class="tx"><b>Круассан с сыром и ветчиной</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">460 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="47"><div class="tx"><b>Феттучини с курицей и грибами</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">490 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c9"><h2>Для маленьких соседей</h2><div class="it" data-i="48"><div class="tx"><b>Банановые панкейки</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">290 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="49"><div class="tx"><b>Сырники</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">390 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="50"><div class="tx"><b>Какао</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">290 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="51"><div class="tx"><b>Babyccino</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">210 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section></main>
+<footer>ул. Энтузиастов, 7 · ежедневно 7:30–21:30<br>Пример. Меню и цены из открытых источников (меню по ссылке в Taplink кофейни) на 09.11.2026, могут отличаться. Оплата на кассе.</footer>
+<div class="bar" id="bar"><button id="open"><span id="bar-n"></span><span id="bar-s"></span></button></div>
+<div class="sheet" id="sheet"><div class="pane"><div>
+  <div class="grab"></div><div class="ph"><h3>Ваш заказ</h3><button class="x" id="close">Закрыть</button></div>
+  <div id="lines"></div><div class="tot"><span>Итого</span><span id="sum"></span></div>
+  <label>Как получить</label><div class="seg" id="mode"></div>
+  <div id="f-time"><label for="time">Ко времени</label><input id="time" type="time"></div>
+  <div id="f-addr"><label for="addr">Адрес доставки</label><input id="addr" autocomplete="street-address" placeholder="Улица, дом, квартира"></div>
+  <div id="f-name"><label for="nm">Имя и телефон</label><input id="nm" autocomplete="name" placeholder="Анна, +7 900 000-00-00"></div>
+  <label for="cm">Комментарий</label><textarea id="cm" placeholder="Без сахара, на овсяном молоке…"></textarea>
+  <p class="note" id="note"></p>
+  <div class="send" id="send"></div>
+  <p class="fine">Заказ придёт нам сообщением. Оплата — как обычно, на кассе или курьеру.</p>
+</div></div></div>
+<script>
+const D={"slug": "nashi-sosedi-ufa", "name": "Наши Соседи", "items": [{"n": "Эспрессо", "p": 210}, {"n": "Фильтр", "p": 209}, {"n": "Американо", "p": 210}, {"n": "Флэт уайт", "p": 280}, {"n": "Капучино", "p": 260}, {"n": "Латте", "p": 300}, {"n": "Раф", "p": 350}, {"n": "Эспрессо-тоник", "p": 325}, {"n": "Бамбл на апельсиновом фреше", "p": 450}, {"n": "Растительное молоко Planto", "p": 60}, {"n": "Сырный латте", "p": 360}, {"n": "Ореховый раф", "p": 390}, {"n": "Горячий шоколад", "p": 380}, {"n": "Какао", "p": 340}, {"n": "Матча-латте", "p": 300}, {"n": "Матча-тоник", "p": 350}, {"n": "Матча на апельсиновом фреше", "p": 450}, {"n": "Малиновый фильтр", "p": 360}, {"n": "Банановый крем-латте", "p": 390}, {"n": "Ягодный смузи", "p": 390}, {"n": "Сливочный персик", "p": 390}, {"n": "Чёрный чай", "p": 260}, {"n": "Зелёный чай", "p": 260}, {"n": "Травяной чай", "p": 260}, {"n": "Малиновый чай", "p": 360}, {"n": "Облепиховый чай", "p": 360}, {"n": "Апельсиновый фреш", "p": 380}, {"n": "Яблочный фреш", "p": 310}, {"n": "Сельдереевый фреш", "p": 310}, {"n": "Морковный фреш", "p": 280}, {"n": "Яичница / Омлет из 3-х яиц", "p": 310}, {"n": "Сырники", "p": 390}, {"n": "Овсяная каша", "p": 290}, {"n": "Рисовая каша", "p": 290}, {"n": "Яйца Бенедикт", "p": 590}, {"n": "Большой соседский завтрак", "p": 590}, {"n": "Блины 3 шт", "p": 260}, {"n": "Блины с сыром и ветчиной", "p": 340}, {"n": "Блины с курицей и грибами", "p": 360}, {"n": "Блины с лососем и сливочным сыром", "p": 420}, {"n": "Блины с творогом и вишней", "p": 340}, {"n": "Блины с ягодным соусом и сметаной", "p": 340}, {"n": "Блины с бананом и нутеллой", "p": 360}, {"n": "Зелёный овощной салат", "p": 420}, {"n": "Цезарь с цыплёнком", "p": 490}, {"n": "Сэндвич по-соседски", "p": 420}, {"n": "Круассан с сыром и ветчиной", "p": 460}, {"n": "Феттучини с курицей и грибами", "p": 490}, {"n": "Банановые панкейки", "p": 290}, {"n": "Сырники", "p": 390}, {"n": "Какао", "p": 290}, {"n": "Babyccino", "p": 210}], "telegram": "https://t.me/sosedi_coffe", "whatsapp": "", "max": "", "phone": "+79174645458", "delivery": false, "minDelivery": 0};
+const goal=n=>{try{if(window.ym)ym(114151618,"reachGoal",n)}catch(_){}};
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toLocaleString("ru-RU")+"\u00a0₽";
+const table=(new URLSearchParams(location.search).get("t")||"").replace(/[^\w-]/g,"").slice(0,6);
+const KEY="qrmenu:"+D.slug;
+let cart={};try{cart=JSON.parse(sessionStorage.getItem(KEY)||"{}")||{}}catch(_){}
+const save=()=>{try{sessionStorage.setItem(KEY,JSON.stringify(cart))}catch(_){}};
+const modes=[];if(table)modes.push(["table","За столом "+table]);modes.push(["take","С собой"]);if(D.delivery)modes.push(["deliv","Доставка"]);
+let mode=modes[0][0];
+if(table){$("tbl").classList.add("show");$("tbl-t").textContent="Вы за столом "+table;}
+const rows=[...document.querySelectorAll(".it")];
+function render(){
+  let n=0,s=0;
+  rows.forEach(r=>{const i=+r.dataset.i,q=cart[i]||0;r.classList.toggle("has",q>0);r.querySelector(".n").textContent=q;n+=q;s+=q*D.items[i].p;});
+  $("bar").classList.toggle("show",n>0);
+  $("bar-n").textContent="Заказ · "+n+" "+(n%10==1&&n%100!=11?"позиция":(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?"позиции":"позиций"));
+  $("bar-s").textContent=fmt(s);
+  $("lines").innerHTML=Object.keys(cart).filter(i=>cart[i]>0).map(i=>`<div class="ln"><span>${D.items[i].n} × ${cart[i]}</span><span>${fmt(cart[i]*D.items[i].p)}</span></div>`).join("");
+  $("sum").textContent=fmt(s);
+  $("mode").innerHTML=modes.map(m=>`<button data-m="${m[0]}" class="${m[0]==mode?"on":""}">${m[1]}</button>`).join("");
+  $("mode").querySelectorAll("button").forEach(b=>b.onclick=()=>{mode=b.dataset.m;render()});
+  $("f-time").hidden=mode!="take";$("f-addr").hidden=mode!="deliv";$("f-name").hidden=mode=="table";
+  $("note").textContent=mode=="deliv"&&D.minDelivery&&s<D.minDelivery?"Минимальный заказ на доставку — "+fmt(D.minDelivery):"";
+  save();
+}
+rows.forEach(r=>{const i=+r.dataset.i;
+  r.querySelector(".p").onclick=()=>{cart[i]=(cart[i]||0)+1;goal("menu_add");render()};
+  r.querySelector(".m").onclick=()=>{cart[i]=Math.max(0,(cart[i]||0)-1);if(!cart[i])delete cart[i];render()};});
+$("open").onclick=()=>{$("sheet").classList.add("show");goal("menu_open_cart")};
+$("close").onclick=()=>$("sheet").classList.remove("show");
+$("sheet").onclick=ev=>{if(ev.target.id=="sheet")$("sheet").classList.remove("show")};
+function text(){
+  const L=Object.keys(cart).filter(i=>cart[i]>0).map(i=>`• ${D.items[i].n} × ${cart[i]} — ${fmt(cart[i]*D.items[i].p)}`);
+  const s=Object.keys(cart).reduce((a,i)=>a+cart[i]*D.items[i].p,0);
+  const head=mode=="table"?`Заказ, стол ${table}`:mode=="take"?`Заказ с собой${$("time").value?" к "+$("time").value:""}`:`Заказ на доставку: ${$("addr").value||"адрес уточню"}`;
+  return [head,...L,`Итого: ${fmt(s)}`,mode!="table"&&$("nm").value?`Имя/телефон: ${$("nm").value}`:"",$("cm").value?`Комментарий: ${$("cm").value}`:""].filter(Boolean).join("\n");
+}
+function via(link,t,copy){if(copy&&navigator.clipboard)navigator.clipboard.writeText(t).catch(()=>{});return link}
+const outs=[];
+if(D.whatsapp)outs.push(["Отправить в WhatsApp",t=>D.whatsapp+(D.whatsapp.includes("?")?"&":"?")+"text="+encodeURIComponent(t)]);
+if(D.telegram)outs.push(["Отправить в Telegram",t=>via(D.telegram,t,true)]);
+if(D.max)outs.push(["Отправить в MAX",t=>via(D.max,t,true)]);
+if(!outs.length&&D.phone)outs.push(["Позвонить",()=>"tel:"+D.phone.replace(/[^+\d]/g,"")]);
+$("send").innerHTML=outs.map((o,i)=>`<a href="#" data-i="${i}">${o[0]}</a>`).join("")+(outs.some(o=>/Telegram|MAX/.test(o[0]))?'<p class="fine">В Telegram и MAX текст заказа скопирован — вставьте его в чат.</p>':"");
+$("send").querySelectorAll("a").forEach(a=>a.onclick=ev=>{ev.preventDefault();goal("menu_order");location.href=outs[+a.dataset.i][1](text());});
+$("waiter").onclick=()=>{goal("menu_waiter");const t=`Стол ${table}: подойдите, пожалуйста`;if(outs.length)location.href=outs[0][1](t);};
+const navs=[...document.querySelectorAll("#nav a")],secs=[...document.querySelectorAll("main section")];
+let cur="";const spy=()=>{let id=secs[0].id;secs.forEach(x=>{if(x.getBoundingClientRect().top<90)id=x.id});if(innerHeight+scrollY>=document.body.scrollHeight-4)id=secs[secs.length-1].id;if(id==cur)return;cur=id;
+  navs.forEach(a=>a.classList.toggle("on",a.getAttribute("href")=="#"+id));const a=navs.find(a=>a.classList.contains("on"));
+  if(a){const box=a.parentNode;box.scrollTo({left:a.offsetLeft-box.clientWidth/2+a.clientWidth/2,behavior:"smooth"})}};
+addEventListener("scroll",spy,{passive:true});spy();
+render();
+</script></body></html>

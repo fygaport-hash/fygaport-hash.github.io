@@ -1,0 +1,216 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Меню — Новый Акцент</title><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#8B3A2B">
+<meta property="og:title" content="Меню «Новый Акцент»"><meta property="og:description" content="Выберите блюда и отправьте заказ одним сообщением.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"><script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114151618,"init",{clickmap:false,trackLinks:true});</script>
+<style>
+:root{--bg:#fff;--soft:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#8B3A2B;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--soft:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--card:#1c1c1e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.45 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:110px}
+button{font:inherit;color:inherit}
+.demo{background:var(--soft);color:var(--muted);font-size:12px;text-align:center;padding:8px 16px}
+header{max-width:640px;margin:0 auto;padding:28px 16px 8px}
+.where{color:var(--accent);font-weight:600;font-size:14px;margin:0 0 6px}
+h1{font-size:34px;line-height:1.05;letter-spacing:-.025em;margin:0 0 8px;font-weight:800}
+.sub{color:var(--muted);margin:0}
+.table{display:none;margin-top:14px;background:var(--soft);border-radius:14px;padding:10px 14px;font-weight:600;align-items:center;justify-content:space-between;gap:10px}
+.table.show{display:flex}
+.table button{all:unset;cursor:pointer;color:var(--accent);font-weight:600;font-size:15px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--line)}
+nav div{max-width:640px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav div::-webkit-scrollbar{display:none}
+nav a{flex:none;color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;padding:7px 14px;border-radius:999px;background:var(--soft)}
+nav a.on{background:var(--ink);color:var(--bg)}
+main{max-width:640px;margin:0 auto;padding:0 16px}
+h2{font-size:24px;letter-spacing:-.02em;margin:28px 0 6px}
+.it{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+.tx{min-width:0}.tx b{display:block;font-weight:600}
+.ds{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.mt{display:block;color:var(--muted);font-size:13px;margin-top:4px}.mt:empty{display:none}
+.buy{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.pr{font-weight:600;white-space:nowrap}
+.q{display:flex;align-items:center;background:var(--soft);border-radius:999px}
+.q button{all:unset;cursor:pointer;width:34px;height:34px;display:grid;place-items:center;font-size:20px;border-radius:999px}
+.q .p{background:var(--accent);color:#fff}
+.q .n,.q .m{display:none}
+.it.has .q .n,.it.has .q .m{display:grid}
+.q .n{min-width:22px;text-align:center;font-weight:600;place-items:center}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:9;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 30%);display:none}
+.bar.show{display:block}
+.bar button{all:unset;cursor:pointer;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;max-width:608px;margin:0 auto;background:var(--accent);color:#fff;font-weight:600;border-radius:16px;padding:16px 18px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.sheet{position:fixed;inset:0;z-index:20;display:none;background:rgba(0,0,0,.4)}
+.sheet.show{display:block}
+.pane{position:absolute;left:0;right:0;bottom:0;max-height:92vh;overflow:auto;background:var(--bg);border-radius:22px 22px 0 0;padding:8px 16px calc(20px + env(safe-area-inset-bottom))}
+.pane>div{max-width:608px;margin:0 auto}
+.grab{width:40px;height:5px;border-radius:3px;background:var(--line);margin:4px auto 10px}
+.ph{display:flex;justify-content:space-between;align-items:center}.ph h3{font-size:24px;margin:0;letter-spacing:-.02em}
+.x{all:unset;cursor:pointer;color:var(--muted);font-size:15px}
+.ln{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.tot{display:flex;justify-content:space-between;font-weight:700;font-size:18px;padding:14px 0 4px}
+label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:16px 0 6px}
+.seg{display:flex;background:var(--soft);border-radius:12px;padding:3px;gap:3px}
+.seg button{all:unset;cursor:pointer;flex:1;text-align:center;padding:9px 6px;border-radius:9px;font-size:15px;font-weight:500}
+.seg button.on{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.12);font-weight:600}
+input,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;background:var(--bg);color:var(--ink)}
+textarea{min-height:70px;resize:vertical}
+.send a{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;border-radius:14px;padding:15px;margin-top:10px}
+.send a+a{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.fine{color:var(--muted);font-size:13px;text-align:center;margin-top:12px}
+.note{color:var(--muted);font-size:13px;margin-top:6px}.note:empty{display:none}
+footer{max-width:640px;margin:32px auto 0;padding:0 16px;color:var(--muted);font-size:13px}
+</style></head><body><div class="demo">Демо. Пример QR-меню для «Новый Акцент», подготовлен как предложение. Меню и цены из открытых источников (Zoon) на 09.11.2026, могут отличаться.</div>
+<header><p class="where">Кафе · Казань</p><h1>Новый Акцент</h1>
+<p class="sub">Блюда на углях, кавказская кухня, салаты и закуски.</p>
+<div class="table" id="tbl"><span id="tbl-t"></span><button id="waiter">Позвать официанта</button></div></header>
+<nav><div id="nav"><a href="#c0">На углях: баранина</a><a href="#c1">На углях: свинина</a><a href="#c2">На углях: телятина</a><a href="#c3">На углях: курица</a><a href="#c4">На углях: рыба</a><a href="#c5">Ассорти на углях</a><a href="#c6">Национальные блюда</a><a href="#c7">Супы</a><a href="#c8">Салаты</a><a href="#c9">Холодные закуски</a><a href="#c10">Гарниры</a><a href="#c11">Соусы</a><a href="#c12">Хлеб</a><a href="#c13">Десерты</a><a href="#c14">Горячие напитки</a><a href="#c15">Кофе</a><a href="#c16">Холодные напитки</a></div></nav>
+<main><section id="c0"><h2>На углях: баранина</h2><div class="it" data-i="0"><div class="tx"><b>Баранья мякоть</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">870 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="1"><div class="tx"><b>Баранье сердце</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">450 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="2"><div class="tx"><b>Люля-кебаб из баранины</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">570 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="3"><div class="tx"><b>Бараньи почки</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">350 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="4"><div class="tx"><b>Баранья корейка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">800 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="5"><div class="tx"><b>Ти-бон из баранины «Яблочко»</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">850 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c1"><h2>На углях: свинина</h2><div class="it" data-i="6"><div class="tx"><b>Свиная корейка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">590 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="7"><div class="tx"><b>Люля-кебаб из свинины</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">450 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="8"><div class="tx"><b>Свиные рёбрышки</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">560 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="9"><div class="tx"><b>Свиная шейка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">610 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c2"><h2>На углях: телятина</h2><div class="it" data-i="10"><div class="tx"><b>Хан-кебаб из печени</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">590 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="11"><div class="tx"><b>Телячья мякоть</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">870 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c3"><h2>На углях: курица</h2><div class="it" data-i="12"><div class="tx"><b>Куриная грудка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">550 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="13"><div class="tx"><b>Перепёлки</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">450 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="14"><div class="tx"><b>Индейка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">570 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="15"><div class="tx"><b>Курица (ассорти)</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">520 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="16"><div class="tx"><b>Люля-кебаб из курицы</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">570 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="17"><div class="tx"><b>Куриные крылышки</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">470 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c4"><h2>На углях: рыба</h2><div class="it" data-i="18"><div class="tx"><b>Скумбрия</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">630 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="19"><div class="tx"><b>Дорадо на мангале</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">850 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="20"><div class="tx"><b>Сом</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">630 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="21"><div class="tx"><b>Форель</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">850 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c5"><h2>Ассорти на углях</h2><div class="it" data-i="22"><div class="tx"><b>Садж (ассорти)</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">3 500 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c6"><h2>Национальные блюда</h2><div class="it" data-i="23"><div class="tx"><b>Довга</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">150 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="24"><div class="tx"><b>Долма</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">480 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="25"><div class="tx"><b>Буглама</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">480 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="26"><div class="tx"><b>Бозбаш</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">480 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="27"><div class="tx"><b>Пити</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">480 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c7"><h2>Супы</h2><div class="it" data-i="28"><div class="tx"><b>Пельмени</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">300 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="29"><div class="tx"><b>Куриная суп-лапша</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">360 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="30"><div class="tx"><b>Солянка (Сборная)</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">460 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c8"><h2>Салаты</h2><div class="it" data-i="31"><div class="tx"><b>Салат Греческий</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">520 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="32"><div class="tx"><b>Тёплый салат «Акцент»</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">560 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="33"><div class="tx"><b>Цезарь с Курицей</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">520 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="34"><div class="tx"><b>Салат &quot;Тбилиси&quot;</b><span class="ds">Отварная говядина, фасоль, красный лук, кинза, перец болгарский, орех греческий, соль, перец, оливковое</span><span class="mt"></span></div>
+<div class="buy"><span class="pr">620 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="35"><div class="tx"><b>Цезарь с креветками</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">560 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c9"><h2>Холодные закуски</h2><div class="it" data-i="36"><div class="tx"><b>Лимонная нарезка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">100 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="37"><div class="tx"><b>Мясная тарелка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">700 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="38"><div class="tx"><b>Овощная нарезка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">350 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="39"><div class="tx"><b>Оливки и Маслины</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">280 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="40"><div class="tx"><b>Ассорти из свежей зелени</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">240 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="41"><div class="tx"><b>Брынза</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">220 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="42"><div class="tx"><b>Рыбная тарелка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">750 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="43"><div class="tx"><b>Русская закуска</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">500 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="44"><div class="tx"><b>Ассорти из Солений</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">420 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="45"><div class="tx"><b>Сырная тарелка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">650 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c10"><h2>Гарниры</h2><div class="it" data-i="46"><div class="tx"><b>Овощи на Мангале</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">380 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="47"><div class="tx"><b>Картофель по Деревенски</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">250 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="48"><div class="tx"><b>Картофель Фри</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">250 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="49"><div class="tx"><b>Наггетсы</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">250 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="50"><div class="tx"><b>Грибы на Мангале</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">330 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="51"><div class="tx"><b>Картофель на Мангале</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">230 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c11"><h2>Соусы</h2><div class="it" data-i="52"><div class="tx"><b>Соус Кисло-Сладкий</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">90 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="53"><div class="tx"><b>Соус Барбекю</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">90 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="54"><div class="tx"><b>Соус Карри</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">90 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="55"><div class="tx"><b>Соус Сырный</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">90 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="56"><div class="tx"><b>Сюзьма</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">90 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="57"><div class="tx"><b>Наршараб</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">90 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="58"><div class="tx"><b>Аджика</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">90 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c12"><h2>Хлеб</h2><div class="it" data-i="59"><div class="tx"><b>Лепёшка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">80 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="60"><div class="tx"><b>Лаваш</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">30 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c13"><h2>Десерты</h2><div class="it" data-i="61"><div class="tx"><b>Фруктовая тарелка</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">600 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="62"><div class="tx"><b>Варенье</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">250 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="63"><div class="tx"><b>Мороженное</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">350 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="64"><div class="tx"><b>Чизкейк (в ассорти)</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">350 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c14"><h2>Горячие напитки</h2><div class="it" data-i="65"><div class="tx"><b>Чайник чая (с чабрецом) / 1.2л</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">400 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="66"><div class="tx"><b>Чайник чая (в ассортименте)/ 1.2л</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">350 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c15"><h2>Кофе</h2><div class="it" data-i="67"><div class="tx"><b>Капучино</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">200 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="68"><div class="tx"><b>Латте</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">200 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="69"><div class="tx"><b>Эспрессо</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">130 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="70"><div class="tx"><b>Американо</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">150 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section><section id="c16"><h2>Холодные напитки</h2><div class="it" data-i="71"><div class="tx"><b>Адреналин / 0,5л</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">280 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="72"><div class="tx"><b>Сок (в ассортименте) / 1л</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">300 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="73"><div class="tx"><b>Сок (в ассортименте) /0,2.</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">80 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="74"><div class="tx"><b>Молочный коктейль</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">300 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="75"><div class="tx"><b>Минеральная вода г/б.г 0,5л</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">120 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="76"><div class="tx"><b>Кола, 1л</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">300 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="77"><div class="tx"><b>Натахтари</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">190 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="78"><div class="tx"><b>Лимонад (в ассортименте) / 0,5л</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">180 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div><div class="it" data-i="79"><div class="tx"><b>Компот</b><span class="mt"></span></div>
+<div class="buy"><span class="pr">450 ₽</span><div class="q"><button class="m" aria-label="Убрать">−</button><span class="n">0</span><button class="p" aria-label="Добавить">+</button></div></div></div></section></main>
+<footer>пр. Ибрагимова, 9 к1 · ежедневно 11:00–24:00<br>Пример. Меню и цены из открытых источников (Zoon) на 09.11.2026, могут отличаться. Оплата на кассе.</footer>
+<div class="bar" id="bar"><button id="open"><span id="bar-n"></span><span id="bar-s"></span></button></div>
+<div class="sheet" id="sheet"><div class="pane"><div>
+  <div class="grab"></div><div class="ph"><h3>Ваш заказ</h3><button class="x" id="close">Закрыть</button></div>
+  <div id="lines"></div><div class="tot"><span>Итого</span><span id="sum"></span></div>
+  <label>Как получить</label><div class="seg" id="mode"></div>
+  <div id="f-time"><label for="time">Ко времени</label><input id="time" type="time"></div>
+  <div id="f-addr"><label for="addr">Адрес доставки</label><input id="addr" autocomplete="street-address" placeholder="Улица, дом, квартира"></div>
+  <div id="f-name"><label for="nm">Имя и телефон</label><input id="nm" autocomplete="name" placeholder="Анна, +7 900 000-00-00"></div>
+  <label for="cm">Комментарий</label><textarea id="cm" placeholder="Без сахара, на овсяном молоке…"></textarea>
+  <p class="note" id="note"></p>
+  <div class="send" id="send"></div>
+  <p class="fine">Заказ придёт нам сообщением. Оплата — как обычно, на кассе или курьеру.</p>
+</div></div></div>
+<script>
+const D={"slug": "novyj-akcent-kazan", "name": "Новый Акцент", "items": [{"n": "Баранья мякоть", "p": 870}, {"n": "Баранье сердце", "p": 450}, {"n": "Люля-кебаб из баранины", "p": 570}, {"n": "Бараньи почки", "p": 350}, {"n": "Баранья корейка", "p": 800}, {"n": "Ти-бон из баранины «Яблочко»", "p": 850}, {"n": "Свиная корейка", "p": 590}, {"n": "Люля-кебаб из свинины", "p": 450}, {"n": "Свиные рёбрышки", "p": 560}, {"n": "Свиная шейка", "p": 610}, {"n": "Хан-кебаб из печени", "p": 590}, {"n": "Телячья мякоть", "p": 870}, {"n": "Куриная грудка", "p": 550}, {"n": "Перепёлки", "p": 450}, {"n": "Индейка", "p": 570}, {"n": "Курица (ассорти)", "p": 520}, {"n": "Люля-кебаб из курицы", "p": 570}, {"n": "Куриные крылышки", "p": 470}, {"n": "Скумбрия", "p": 630}, {"n": "Дорадо на мангале", "p": 850}, {"n": "Сом", "p": 630}, {"n": "Форель", "p": 850}, {"n": "Садж (ассорти)", "p": 3500}, {"n": "Довга", "p": 150}, {"n": "Долма", "p": 480}, {"n": "Буглама", "p": 480}, {"n": "Бозбаш", "p": 480}, {"n": "Пити", "p": 480}, {"n": "Пельмени", "p": 300}, {"n": "Куриная суп-лапша", "p": 360}, {"n": "Солянка (Сборная)", "p": 460}, {"n": "Салат Греческий", "p": 520}, {"n": "Тёплый салат «Акцент»", "p": 560}, {"n": "Цезарь с Курицей", "p": 520}, {"n": "Салат \"Тбилиси\"", "p": 620}, {"n": "Цезарь с креветками", "p": 560}, {"n": "Лимонная нарезка", "p": 100}, {"n": "Мясная тарелка", "p": 700}, {"n": "Овощная нарезка", "p": 350}, {"n": "Оливки и Маслины", "p": 280}, {"n": "Ассорти из свежей зелени", "p": 240}, {"n": "Брынза", "p": 220}, {"n": "Рыбная тарелка", "p": 750}, {"n": "Русская закуска", "p": 500}, {"n": "Ассорти из Солений", "p": 420}, {"n": "Сырная тарелка", "p": 650}, {"n": "Овощи на Мангале", "p": 380}, {"n": "Картофель по Деревенски", "p": 250}, {"n": "Картофель Фри", "p": 250}, {"n": "Наггетсы", "p": 250}, {"n": "Грибы на Мангале", "p": 330}, {"n": "Картофель на Мангале", "p": 230}, {"n": "Соус Кисло-Сладкий", "p": 90}, {"n": "Соус Барбекю", "p": 90}, {"n": "Соус Карри", "p": 90}, {"n": "Соус Сырный", "p": 90}, {"n": "Сюзьма", "p": 90}, {"n": "Наршараб", "p": 90}, {"n": "Аджика", "p": 90}, {"n": "Лепёшка", "p": 80}, {"n": "Лаваш", "p": 30}, {"n": "Фруктовая тарелка", "p": 600}, {"n": "Варенье", "p": 250}, {"n": "Мороженное", "p": 350}, {"n": "Чизкейк (в ассорти)", "p": 350}, {"n": "Чайник чая (с чабрецом) / 1.2л", "p": 400}, {"n": "Чайник чая (в ассортименте)/ 1.2л", "p": 350}, {"n": "Капучино", "p": 200}, {"n": "Латте", "p": 200}, {"n": "Эспрессо", "p": 130}, {"n": "Американо", "p": 150}, {"n": "Адреналин / 0,5л", "p": 280}, {"n": "Сок (в ассортименте) / 1л", "p": 300}, {"n": "Сок (в ассортименте) /0,2.", "p": 80}, {"n": "Молочный коктейль", "p": 300}, {"n": "Минеральная вода г/б.г 0,5л", "p": 120}, {"n": "Кола, 1л", "p": 300}, {"n": "Натахтари", "p": 190}, {"n": "Лимонад (в ассортименте) / 0,5л", "p": 180}, {"n": "Компот", "p": 450}], "telegram": "", "whatsapp": "", "max": "", "phone": "+79520321916", "delivery": false, "minDelivery": 0};
+const goal=n=>{try{if(window.ym)ym(114151618,"reachGoal",n)}catch(_){}};
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toLocaleString("ru-RU")+"\u00a0₽";
+const table=(new URLSearchParams(location.search).get("t")||"").replace(/[^\w-]/g,"").slice(0,6);
+const KEY="qrmenu:"+D.slug;
+let cart={};try{cart=JSON.parse(sessionStorage.getItem(KEY)||"{}")||{}}catch(_){}
+const save=()=>{try{sessionStorage.setItem(KEY,JSON.stringify(cart))}catch(_){}};
+const modes=[];if(table)modes.push(["table","За столом "+table]);modes.push(["take","С собой"]);if(D.delivery)modes.push(["deliv","Доставка"]);
+let mode=modes[0][0];
+if(table){$("tbl").classList.add("show");$("tbl-t").textContent="Вы за столом "+table;}
+const rows=[...document.querySelectorAll(".it")];
+function render(){
+  let n=0,s=0;
+  rows.forEach(r=>{const i=+r.dataset.i,q=cart[i]||0;r.classList.toggle("has",q>0);r.querySelector(".n").textContent=q;n+=q;s+=q*D.items[i].p;});
+  $("bar").classList.toggle("show",n>0);
+  $("bar-n").textContent="Заказ · "+n+" "+(n%10==1&&n%100!=11?"позиция":(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?"позиции":"позиций"));
+  $("bar-s").textContent=fmt(s);
+  $("lines").innerHTML=Object.keys(cart).filter(i=>cart[i]>0).map(i=>`<div class="ln"><span>${D.items[i].n} × ${cart[i]}</span><span>${fmt(cart[i]*D.items[i].p)}</span></div>`).join("");
+  $("sum").textContent=fmt(s);
+  $("mode").innerHTML=modes.map(m=>`<button data-m="${m[0]}" class="${m[0]==mode?"on":""}">${m[1]}</button>`).join("");
+  $("mode").querySelectorAll("button").forEach(b=>b.onclick=()=>{mode=b.dataset.m;render()});
+  $("f-time").hidden=mode!="take";$("f-addr").hidden=mode!="deliv";$("f-name").hidden=mode=="table";
+  $("note").textContent=mode=="deliv"&&D.minDelivery&&s<D.minDelivery?"Минимальный заказ на доставку — "+fmt(D.minDelivery):"";
+  save();
+}
+rows.forEach(r=>{const i=+r.dataset.i;
+  r.querySelector(".p").onclick=()=>{cart[i]=(cart[i]||0)+1;goal("menu_add");render()};
+  r.querySelector(".m").onclick=()=>{cart[i]=Math.max(0,(cart[i]||0)-1);if(!cart[i])delete cart[i];render()};});
+$("open").onclick=()=>{$("sheet").classList.add("show");goal("menu_open_cart")};
+$("close").onclick=()=>$("sheet").classList.remove("show");
+$("sheet").onclick=ev=>{if(ev.target.id=="sheet")$("sheet").classList.remove("show")};
+function text(){
+  const L=Object.keys(cart).filter(i=>cart[i]>0).map(i=>`• ${D.items[i].n} × ${cart[i]} — ${fmt(cart[i]*D.items[i].p)}`);
+  const s=Object.keys(cart).reduce((a,i)=>a+cart[i]*D.items[i].p,0);
+  const head=mode=="table"?`Заказ, стол ${table}`:mode=="take"?`Заказ с собой${$("time").value?" к "+$("time").value:""}`:`Заказ на доставку: ${$("addr").value||"адрес уточню"}`;
+  return [head,...L,`Итого: ${fmt(s)}`,mode!="table"&&$("nm").value?`Имя/телефон: ${$("nm").value}`:"",$("cm").value?`Комментарий: ${$("cm").value}`:""].filter(Boolean).join("\n");
+}
+function via(link,t,copy){if(copy&&navigator.clipboard)navigator.clipboard.writeText(t).catch(()=>{});return link}
+const outs=[];
+if(D.whatsapp)outs.push(["Отправить в WhatsApp",t=>D.whatsapp+(D.whatsapp.includes("?")?"&":"?")+"text="+encodeURIComponent(t)]);
+if(D.telegram)outs.push(["Отправить в Telegram",t=>via(D.telegram,t,true)]);
+if(D.max)outs.push(["Отправить в MAX",t=>via(D.max,t,true)]);
+if(!outs.length&&D.phone)outs.push(["Позвонить",()=>"tel:"+D.phone.replace(/[^+\d]/g,"")]);
+$("send").innerHTML=outs.map((o,i)=>`<a href="#" data-i="${i}">${o[0]}</a>`).join("")+(outs.some(o=>/Telegram|MAX/.test(o[0]))?'<p class="fine">В Telegram и MAX текст заказа скопирован — вставьте его в чат.</p>':"");
+$("send").querySelectorAll("a").forEach(a=>a.onclick=ev=>{ev.preventDefault();goal("menu_order");location.href=outs[+a.dataset.i][1](text());});
+$("waiter").onclick=()=>{goal("menu_waiter");const t=`Стол ${table}: подойдите, пожалуйста`;if(outs.length)location.href=outs[0][1](t);};
+const navs=[...document.querySelectorAll("#nav a")],secs=[...document.querySelectorAll("main section")];
+let cur="";const spy=()=>{let id=secs[0].id;secs.forEach(x=>{if(x.getBoundingClientRect().top<90)id=x.id});if(innerHeight+scrollY>=document.body.scrollHeight-4)id=secs[secs.length-1].id;if(id==cur)return;cur=id;
+  navs.forEach(a=>a.classList.toggle("on",a.getAttribute("href")=="#"+id));const a=navs.find(a=>a.classList.contains("on"));
+  if(a){const box=a.parentNode;box.scrollTo({left:a.offsetLeft-box.clientWidth/2+a.clientWidth/2,behavior:"smooth"})}};
+addEventListener("scroll",spy,{passive:true});spy();
+render();
+</script></body></html>
