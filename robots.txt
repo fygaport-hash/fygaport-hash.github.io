@@ -4,5 +4,6 @@ Allow: /p/
 Allow: /bot/
 Allow: /avito/
 Allow: /tenders/
+Allow: /vk-oformlenie/
 Disallow: /
 Sitemap: https://fygaport-hash.github.io/sitemap.xml
