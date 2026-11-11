@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <!-- portfolio: publish.js не перезаписывает этот файл -->
 <title>Андрей — сайты для мастеров и студий</title>
-<meta name="description" content="Сайты с онлайн-записью для салонов, барбершопов, кондитерских и студий. Сначала показываю готовый вариант на ваших данных, платите только если понравилось. От 5 500 ₽, 1–2 дня.">
-<meta property="og:title" content="Сайты для мастеров и студий за 1–2 дня">
-<meta property="og:description" content="Онлайн-запись, заявки в Telegram и ВКонтакте, прайс и фото. Сначала демо на ваших данных — платите, только если понравилось.">
+<meta name="description" content="Сайт с онлайн-записью для мастеров, салонов и студий за 990 ₽ в месяц: без оплаты на старте, хостинг и правки включены. Ответьте на 4 вопроса — пришлю готовый сайт на ваших данных.">
+<meta property="og:title" content="Сайт для вашего бизнеса за 990 ₽ в месяц">
+<meta property="og:description" content="Онлайн-запись, прайс, фото и заявки в мессенджер. Без оплаты на старте: первый платёж — когда сайт готов и вас устроит.">
 <meta property="og:image" content="https://fygaport-hash.github.io/p/saharnaya-pudra-perm.webp">
 <meta name="theme-color" content="#111111">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,8 @@ nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 82%,t
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
 nav b{font-weight:600}
 .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;border-radius:980px;padding:12px 22px;font-size:16px}
-.btn.sm{padding:7px 15px;font-size:14px}
+.btn.sm{padding:7px 15px;font-size:14px;white-space:nowrap}
+#zayavka,#qdone{scroll-margin-top:72px}
 .link{font-weight:500}
 section{padding:72px 0}
 .alt{background:var(--soft)}
@@ -80,18 +81,42 @@ summary::after{content:"+";float:right;color:var(--muted);font-weight:400}
 details[open] summary::after{content:"–"}
 details p{color:var(--muted);margin:10px 0 0}
 .final{text-align:center}
+/* квиз-заявка */
+.quiz{max-width:720px;margin:30px auto 0;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px}
+.qstep{display:grid;gap:12px;padding:18px 0;border-top:1px solid var(--line)}
+.qstep:first-of-type{border-top:0;padding-top:0}
+.qstep h3{margin:0;font-size:18px;letter-spacing:-.01em;display:flex;gap:10px;align-items:baseline}
+.qstep h3 small{color:var(--muted);font-weight:500;font-size:14px}
+.qn{flex:none;width:26px;height:26px;border-radius:50%;background:var(--soft);color:var(--ink);font-size:14px;font-weight:700;display:inline-grid;place-items:center}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font:inherit;font-size:15px;color:var(--ink);background:var(--soft);border:1px solid transparent;border-radius:980px;padding:8px 15px;cursor:pointer}
+.opt[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.opt:focus-visible,.quiz input:focus-visible,.quiz button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.quiz input{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%;min-width:0}
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.qrow{grid-template-columns:1fr}}
+.qsend{display:grid;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.qsend .btn{border:0;cursor:pointer;font-family:inherit;text-align:center}
+.qsend .btn[disabled]{opacity:.45;cursor:not-allowed}
+.qhint{color:var(--muted);font-size:14px;margin:0}
+.qdone{display:grid;gap:12px}
+.qdone pre{white-space:pre-wrap;font:inherit;font-size:15px;background:var(--soft);border-radius:14px;padding:14px;margin:0}
+.qbtns{display:flex;flex-wrap:wrap;gap:10px}
+.qbtns .btn{border:0;cursor:pointer;font-family:inherit}
+.btn.ghost{background:var(--soft);color:var(--ink)}
 footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
 </style>
+<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114151618,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/114151618" style="position:absolute;left:-9999px;" alt=""></div></noscript>
 </head>
 <body>
-<nav><div class="wrap"><b>Андрей · сайты для мастеров</b><a class="btn sm" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Написать</a></div></nav>
+<nav><div class="wrap"><b>Андрей · сайты для мастеров</b><a class="btn sm" href="#zayavka">Оставить заявку</a></div></nav>
 
 <header class="hero"><div class="wrap">
   <p class="eyebrow">Салоны · барбершопы · кондитерские · студии</p>
-  <h1>Сайт с онлайн-записью для вашего бизнеса. За 1–2 дня.</h1>
-  <p class="lead">Сначала делаю готовый вариант на ваших данных — название, фото, адрес, контакты. Смотрите с телефона и платите, только если понравилось.</p>
-  <div class="cta"><a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Написать во ВКонтакте</a><a class="link" href="#examples">Посмотреть примеры ›</a></div>
-  <div class="chips"><span>от 5 500 ₽ разово</span><span>без абонентской платы</span><span>оплата после одобрения</span><span>чек самозанятого</span></div>
+  <h1>Сайт с онлайн-записью для вашего бизнеса. 990 ₽ в месяц.</h1>
+  <p class="lead">Ответьте на 4 вопроса — в течение дня пришлю готовый сайт на ваших данных: услуги, фото, адрес, запись. Без оплаты на старте: первый платёж — когда сайт вас устроит.</p>
+  <div class="cta"><a class="btn" href="#zayavka">Получить свой сайт</a><a class="link" href="#examples">Посмотреть примеры ›</a></div>
+  <div class="chips"><span>990 ₽/мес</span><span>без оплаты на старте</span><span>хостинг и правки включены</span><span>отключить можно в любой момент</span><span>чек самозанятого</span></div>
   <div class="shots">
     <img src="p/britva-i-nozhnicy-kazan.webp" alt="Пример: барбершоп" loading="lazy">
     <img src="p/saharnaya-pudra-perm.webp" alt="Пример: кондитерская">
@@ -101,12 +126,12 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
 
 <section class="alt"><div class="wrap">
   <h2>Как это работает.</h2>
-  <p class="lead">Никаких созвонов и технических заданий. От вас нужен только прайс.</p>
+  <p class="lead">Никаких созвонов, технических заданий и конструкторов. От вас — 4 ответа и ссылка на группу.</p>
   <div class="steps">
-    <div class="step"><i>1</i><h3>Делаю демо</h3><p>Собираю сайт на ваших открытых данных: фото из ленты, адрес, часы, контакты. Бесплатно.</p></div>
-    <div class="step"><i>2</i><h3>Вы смотрите</h3><p>Открываете ссылку с телефона, пробуете записаться. Говорите, что поправить.</p></div>
-    <div class="step"><i>3</i><h3>Доделываю</h3><p>Вношу ваш прайс, фото и тексты, подключаю заявки в ваш мессенджер. 1–2 дня, до двух кругов правок.</p></div>
-    <div class="step"><i>4</i><h3>Оплата и запуск</h3><p>Платите после одобрения, получаете чек. Убираю пометку «демо», подключаю ваш адрес сайта.</p></div>
+    <div class="step"><i>1</i><h3>Заявка</h3><p>Отвечаете на 4 вопроса внизу страницы и даёте ссылку на группу или карточку на картах. Минута.</p></div>
+    <div class="step"><i>2</i><h3>Ваш сайт</h3><p>В течение дня присылаю ссылку на готовый сайт: ваши услуги, фото, адрес и запись. Бесплатно.</p></div>
+    <div class="step"><i>3</i><h3>Правки</h3><p>Говорите, что поменять: цены, фото, тексты. Подключаю заявки в ваш Telegram, ВКонтакте или MAX.</p></div>
+    <div class="step"><i>4</i><h3>Запуск</h3><p>Первый платёж 990 ₽ — только когда всё устроит. Дальше раз в месяц, отключить можно в любой момент.</p></div>
   </div>
 </div></section>
 
@@ -169,19 +194,19 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
 
 <section><div class="wrap">
   <h2>Цены.</h2>
-  <p class="lead">Разово, без абонентской платы. Оплата — после того, как сайт вас устроит.</p>
+  <p class="lead">Без оплаты на старте. Платите, только когда готовый сайт вас устроит.</p>
   <div class="prices">
-    <div class="price"><div class="tag"></div><h3>Сайт</h3><div class="sum">5 500 ₽</div>
-      <ul><li>Ваш прайс, тексты, логотип и фото</li><li>Онлайн-запись или заказ</li><li>Заявки в Telegram, ВКонтакте или MAX</li><li>Карта, часы работы, контакты</li><li>Готово за 1–2 дня</li></ul>
-      <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Хочу сайт</a></div>
-    <div class="price top"><div class="tag">Чаще выбирают</div><h3>Сайт + свой адрес</h3><div class="sum">9 900 ₽</div>
-      <ul><li>Всё из тарифа «Сайт»</li><li>Помогу оформить домен на вас и подключу</li><li>Бот: заявки приходят вам автоматически</li><li>Месяц правок цен и фото бесплатно</li></ul>
-      <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Хочу с адресом</a></div>
-    <div class="price"><div class="tag"></div><h3>Под ключ</h3><div class="sum">14 900 ₽</div>
-      <ul><li>Всё из «Сайт + свой адрес»</li><li>Автопостинг в группу ВКонтакте: свободные окошки и акции</li><li>Помощь с карточками на Яндекс Картах и в 2ГИС</li></ul>
-      <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Обсудить</a></div>
+    <div class="price top"><div class="tag">Чаще выбирают</div><h3>Подписка</h3><div class="sum">990 ₽<small style="font-size:17px;font-weight:600;color:var(--muted)"> /мес</small></div>
+      <ul><li>Сайт с вашим прайсом, фото и онлайн-записью</li><li>Заявки в Telegram, ВКонтакте или MAX</li><li>Хостинг включён</li><li>Правки цен, фото и акций — когда нужно</li><li>Без договора на год: отключить можно в любой момент</li><li>Выкуп сайта в любой момент — 4 500 ₽</li></ul>
+      <a class="btn" href="#zayavka" data-plan="Подписка 990 ₽/мес">Получить сайт</a></div>
+    <div class="price"><div class="tag"></div><h3>Разово</h3><div class="sum">5 500 ₽</div>
+      <ul><li>Тот же сайт, полностью ваш</li><li>Без абонентской платы</li><li>Правки после запуска — от 500 ₽/мес по желанию</li></ul>
+      <a class="btn" href="#zayavka" data-plan="Разово 5 500 ₽">Хочу разово</a></div>
+    <div class="price"><div class="tag"></div><h3>Свой адрес и бот</h3><div class="sum">9 900 ₽</div>
+      <ul><li>Сайт полностью ваш</li><li>Домен на ваше имя: imya-salona.ru</li><li>Бот: заявки приходят вам автоматически</li><li>Месяц правок бесплатно</li></ul>
+      <a class="btn" href="#zayavka" data-plan="Свой адрес и бот 9 900 ₽">Обсудить</a></div>
   </div>
-  <p class="note">Поддержка после запуска — 500–1 000 ₽ в месяц: обновляю цены, фото, акции. Домен оплачиваете вы напрямую регистратору, обычно 200–900 ₽ в год.</p>
+  <p class="note">Домен оплачиваете вы напрямую регистратору, обычно 200–900 ₽ в год. Автопостинг окошек и акций в группу ВКонтакте — +5 000 ₽.</p>
 </div></section>
 
 <section class="alt"><div class="wrap">
@@ -207,18 +232,125 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
   <h2>Вопросы.</h2>
   <div class="faq">
     <details><summary>Что нужно от меня?</summary><p>Только актуальный прайс — можно фотографией. Остальное я возьму из вашей группы или карточки на картах, а вы поправите, если что-то не так.</p></details>
-    <details><summary>А если не понравится?</summary><p>Ничего не платите. Демо просто удаляю. Оплата только после того, как вы одобрили финальную версию.</p></details>
+    <details><summary>А если не понравится?</summary><p>Ничего не платите — сайт просто удаляю вместе с вашими данными. Оплата только после того, как вы одобрили готовый сайт.</p></details>
     <details><summary>У меня есть Instagram или Taplink. Зачем сайт?</summary><p>Сайт находят в Яндексе и Google, а Instagram и Taplink там почти не показываются. И записаться на сайте можно без переписки.</p></details>
-    <details><summary>Как платить?</summary><p>Переводом после одобрения сайта. Я работаю как самозанятый и сразу присылаю чек из «Мой налог».</p></details>
+    <details><summary>Как платить?</summary><p>Первый платёж — когда готовый сайт вас устроит. Дальше раз в месяц в тот же день, накануне пришлю напоминание. Я работаю как самозанятый и на каждый платёж присылаю чек из «Мой налог».</p></details>
+    <details><summary>Что будет, если перестану платить?</summary><p>Сайт просто отключится, никаких долгов и штрафов. Договора на год нет. Захотите вернуться — включу обратно. А если хотите, чтобы сайт был полностью вашим, его можно выкупить в любой момент за 4 500 ₽.</p></details>
+    <details><summary>Чем это лучше Tilda или Taplink?</summary><p>Там сайт нужно собирать самому: выбирать шаблон, писать тексты, настраивать форму. Здесь вы отвечаете на 4 вопроса, а готовый сайт под вашу нишу — с записью, ценами и расчётом стоимости — собираю я. Правки тоже делаю я, вам не нужно разбираться в настройках.</p></details>
     <details><summary>Сколько клиентов принесёт сайт?</summary><p>Честно — точное число не обещаю. Сайт делает вас заметнее в поиске и убирает лишнюю переписку при записи, а это обычно окупается за одного-двух клиентов.</p></details>
   </div>
 </div></section>
 
-<section class="final"><div class="wrap">
+<section class="final" id="zayavka"><div class="wrap">
   <h2>Покажу, как будет выглядеть ваш сайт.</h2>
-  <p class="lead" style="margin-left:auto;margin-right:auto">Напишите название вашего бизнеса или ссылку на группу — пришлю демо бесплатно.</p>
-  <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+  <p class="lead" style="margin-left:auto;margin-right:auto">Ответьте на 4 вопроса — в течение дня пришлю готовый сайт на ваших данных. Смотреть бесплатно, платить — только если понравится.</p>
+  <form class="quiz" id="quiz" novalidate>
+    <div class="qstep"><h3><span class="qn">1</span>Чем занимаетесь?</h3>
+      <div class="opts" data-q="niche" data-single>
+        <button type="button" class="opt">Маникюр, ресницы, брови</button><button type="button" class="opt">Парикмахер, барбер</button><button type="button" class="opt">Косметолог, массаж</button><button type="button" class="opt">Торты на заказ</button><button type="button" class="opt">Клининг, химчистка</button><button type="button" class="opt">Ремонт, потолки, окна</button><button type="button" class="opt">Фотограф</button><button type="button" class="opt">Психолог, репетитор, школа</button><button type="button" class="opt">Груминг, ветеринар</button><button type="button" class="opt">Другое</button>
+      </div>
+      <input id="q-other" placeholder="Что именно? Например: аренда бани" hidden>
+    </div>
+    <div class="qstep"><h3><span class="qn">2</span>Где вас сейчас находят? <small>можно несколько</small></h3>
+      <div class="opts" data-q="now">
+        <button type="button" class="opt">Группа ВКонтакте</button><button type="button" class="opt">Telegram-канал</button><button type="button" class="opt">Instagram</button><button type="button" class="opt">Taplink</button><button type="button" class="opt">Яндекс Карты, 2ГИС</button><button type="button" class="opt">Авито</button><button type="button" class="opt">Пока нигде</button>
+      </div>
+    </div>
+    <div class="qstep"><h3><span class="qn">3</span>Что важнее всего? <small>можно несколько</small></h3>
+      <div class="opts" data-q="need">
+        <button type="button" class="opt">Онлайн-запись</button><button type="button" class="opt">Прайс и фото работ</button><button type="button" class="opt">Расчёт цены на сайте</button><button type="button" class="opt">Чтобы находили в Яндексе</button><button type="button" class="opt">Свой адрес сайта</button><button type="button" class="opt">Меньше переписки</button>
+      </div>
+    </div>
+    <div class="qstep"><h3><span class="qn">4</span>Откуда взять данные для демо?</h3>
+      <input id="q-link" placeholder="Ссылка на группу или название и город" autocomplete="off">
+      <div class="qrow"><input id="q-name" placeholder="Как к вам обращаться" autocomplete="given-name"><input id="q-contact" placeholder="Телефон или ник в Telegram (необязательно)" autocomplete="tel"></div>
+    </div>
+    <div class="qsend">
+      <button type="submit" class="btn" id="q-go" disabled>Получить свой сайт</button>
+      <p class="qhint" id="q-hint">Выберите, чем занимаетесь, и укажите ссылку или название.</p>
+      <p class="qhint">Не хочется заполнять — <a href="https://vk.ru/id578525802" target="_blank" rel="noopener">напишите мне во ВКонтакте</a> название бизнеса или ссылку на группу.</p>
+      <p class="qhint">Отправляя заявку, вы разрешаете взять фото, услуги и контакты из указанной группы или карточки для демо. Не понравится — удалю.</p>
+    </div>
+  </form>
+  <div class="quiz qdone" id="qdone" hidden>
+    <h3 style="margin:0;font-size:21px">Почти готово — осталось отправить.</h3>
+    <p class="qhint">Нажмите кнопку: текст заявки скопируется, откроется чат — вставьте его и отправьте. Отвечаю в течение дня.</p>
+    <pre id="q-text"></pre>
+    <div class="qbtns">
+      <a class="btn" id="q-vk" href="https://vk.me/id578525802" target="_blank" rel="noopener">Скопировать и открыть ВКонтакте</a>
+      <a class="btn" id="q-tg" href="#" target="_blank" rel="noopener" hidden>Отправить в Telegram</a>
+      <button type="button" class="btn ghost" id="q-edit">Изменить ответы</button>
+    </div>
+    <p class="qhint" id="q-copied" hidden>Текст скопирован. Если не вставляется — выделите его выше и скопируйте вручную.</p>
+  </div>
 </div></section>
+<script>
+(() => {
+  const VK = "https://vk.me/id578525802";
+  const TG = ""; // ник Telegram без @ — если заполнить, появится кнопка «Отправить в Telegram»
+  const goal = n => { try { window.ym && ym(114151618, "reachGoal", n); } catch (_) {} };
+  const $ = id => document.getElementById(id);
+  // источник: ?src=avito, utm_source или сайт, с которого пришли; запоминаем первое касание
+  let src = "";
+  try {
+    const u = new URLSearchParams(location.search);
+    src = u.get("src") || u.get("utm_source") || "";
+    if (!src && document.referrer && !document.referrer.includes(location.host)) src = new URL(document.referrer).hostname.replace(/^www\./, "");
+    const saved = sessionStorage.getItem("src");
+    if (saved) src = saved; else if (src) sessionStorage.setItem("src", src);
+  } catch (_) {}
+  const ans = { niche: [], now: [], need: [] };
+  let plan = "", started = false;
+  document.querySelectorAll('a[data-plan]').forEach(a => a.addEventListener("click", () => { plan = a.dataset.plan; goal("plan_click"); }));
+  const form = $("quiz");
+  const check = () => {
+    const nicheOk = ans.niche.length && (ans.niche[0] !== "Другое" || $("q-other").value.trim());
+    const ok = nicheOk && $("q-link").value.trim();
+    $("q-go").disabled = !ok;
+    $("q-hint").hidden = !!ok;
+  };
+  const start = () => { if (!started) { started = true; goal("quiz_start"); } };
+  form.querySelectorAll(".opts").forEach(box => box.addEventListener("click", e => {
+    const b = e.target.closest(".opt"); if (!b) return; start();
+    const q = box.dataset.q, single = box.hasAttribute("data-single"), v = b.textContent.trim();
+    if (single) { box.querySelectorAll(".opt").forEach(x => x.setAttribute("aria-pressed", x === b)); ans[q] = [v]; }
+    else { const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on); ans[q] = on ? [...ans[q], v] : ans[q].filter(x => x !== v); }
+    if (q === "niche") $("q-other").hidden = v !== "Другое";
+    check();
+  }));
+  form.addEventListener("input", () => { start(); check(); });
+  form.addEventListener("submit", e => {
+    e.preventDefault(); check(); if ($("q-go").disabled) return;
+    const niche = ans.niche[0] === "Другое" ? $("q-other").value.trim() : ans.niche[0];
+    const lines = [
+      "Здравствуйте! Хочу сайт.",
+      "Чем занимаюсь: " + niche,
+      ans.now.length && "Где находят сейчас: " + ans.now.join(", "),
+      ans.need.length && "Важно: " + ans.need.join(", "),
+      "Данные для демо: " + $("q-link").value.trim(),
+      $("q-name").value.trim() && "Имя: " + $("q-name").value.trim(),
+      $("q-contact").value.trim() && "Связь: " + $("q-contact").value.trim(),
+      plan && "Тариф: " + plan,
+      "Откуда узнал(а): " + (src || "сайт")
+    ].filter(Boolean);
+    $("q-text").textContent = lines.join("\n");
+    if (TG) { $("q-tg").hidden = false; $("q-tg").href = "https://t.me/" + TG + "?text=" + encodeURIComponent(lines.join("\n")); }
+    form.hidden = true; $("qdone").hidden = false; $("qdone").scrollIntoView({ block: "start", behavior: "smooth" });
+    goal("quiz_done");
+  });
+  const copy = () => {
+    const t = $("q-text").textContent; let ok = false;
+    try { const ta = document.createElement("textarea"); ta.value = t; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (_) {}
+    try { navigator.clipboard && navigator.clipboard.writeText(t).catch(() => {}); ok = true; } catch (_) {}
+    $("q-copied").hidden = false;
+    return ok;
+  };
+  $("q-vk").addEventListener("click", () => { copy(); goal("quiz_send_vk"); });
+  $("q-tg").addEventListener("click", () => goal("quiz_send_tg"));
+  $("q-edit").addEventListener("click", () => { $("qdone").hidden = true; form.hidden = false; });
+  check();
+})();
+</script>
 
 <footer><div class="wrap">Андрей · сайты для мастеров и студий · работаю как самозанятый</div></footer>
 </body>
