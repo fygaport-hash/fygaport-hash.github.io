@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Сайт для гостевого дома с бронью дат — от 5 500 ₽ за 1–2 дня</title>
-<meta name="description" content="Сайт для гостевого дома: домики и номера с ценами, расчёт по ночам, бронь дат без звонков и агрегаторов. Сначала бесплатное демо на ваших данных, платите только если понравилось.">
+<title>Сайт для гостевого дома с бронью дат — 990 ₽ в месяц</title>
+<meta name="description" content="Сайт для гостевого дома: домики и номера с ценами, расчёт по ночам, бронь дат без звонков и агрегаторов. Готовый сайт на ваших данных в течение дня, без оплаты на старте.">
 <link rel="canonical" href="https://fygaport-hash.github.io/p/sayt-dlya-gostevogo-doma/">
-<meta property="og:title" content="Сайт для гостевого дома с бронью дат — от 5 500 ₽ за 1–2 дня"><meta property="og:description" content="Сайт для гостевого дома: домики и номера с ценами, расчёт по ночам, бронь дат без звонков и агрегаторов. Сначала бесплатное демо на ваших данных, платите только если понравилось.">
+<meta property="og:title" content="Сайт для гостевого дома с бронью дат — 990 ₽ в месяц"><meta property="og:description" content="Сайт для гостевого дома: домики и номера с ценами, расчёт по ночам, бронь дат без звонков и агрегаторов. Готовый сайт на ваших данных в течение дня, без оплаты на старте.">
 <meta property="og:url" content="https://fygaport-hash.github.io/p/sayt-dlya-gostevogo-doma/"><meta property="og:image" content="https://fygaport-hash.github.io/p/sosnovyy-bereg-kazan.webp"><meta property="og:type" content="website">
 <meta name="theme-color" content="#111111">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,8 @@ nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 82%,t
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
 nav b{font-weight:600}
 .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;border-radius:980px;padding:12px 22px;font-size:16px}
-.btn.sm{padding:7px 15px;font-size:14px}
+.btn.sm{padding:7px 15px;font-size:14px;white-space:nowrap}
+#zayavka,#qdone{scroll-margin-top:72px}
 .link{font-weight:500}
 section{padding:72px 0}
 .alt{background:var(--soft)}
@@ -79,6 +80,29 @@ summary::after{content:"+";float:right;color:var(--muted);font-weight:400}
 details[open] summary::after{content:"–"}
 details p{color:var(--muted);margin:10px 0 0}
 .final{text-align:center}
+/* квиз-заявка */
+.quiz{max-width:720px;margin:30px auto 0;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px}
+.qstep{display:grid;gap:12px;padding:18px 0;border-top:1px solid var(--line)}
+.qstep:first-of-type{border-top:0;padding-top:0}
+.qstep h3{margin:0;font-size:18px;letter-spacing:-.01em;display:flex;gap:10px;align-items:baseline}
+.qstep h3 small{color:var(--muted);font-weight:500;font-size:14px}
+.qn{flex:none;width:26px;height:26px;border-radius:50%;background:var(--soft);color:var(--ink);font-size:14px;font-weight:700;display:inline-grid;place-items:center}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font:inherit;font-size:15px;color:var(--ink);background:var(--soft);border:1px solid transparent;border-radius:980px;padding:8px 15px;cursor:pointer}
+.opt[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.opt:focus-visible,.quiz input:focus-visible,.quiz button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.quiz input{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%;min-width:0}
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.qrow{grid-template-columns:1fr}}
+.qsend{display:grid;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.qsend .btn{border:0;cursor:pointer;font-family:inherit;text-align:center}
+.qsend .btn[disabled]{opacity:.45;cursor:not-allowed}
+.qhint{color:var(--muted);font-size:14px;margin:0}
+.qdone{display:grid;gap:12px}
+.qdone pre{white-space:pre-wrap;font:inherit;font-size:15px;background:var(--soft);border-radius:14px;padding:14px;margin:0}
+.qbtns{display:flex;flex-wrap:wrap;gap:10px}
+.qbtns .btn{border:0;cursor:pointer;font-family:inherit}
+.btn.ghost{background:var(--soft);color:var(--ink)}
 footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
 
 .crumbs{font-size:14px;color:var(--muted);padding-top:18px}.crumbs a{color:var(--muted)}
@@ -97,13 +121,13 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-goal]");if(a&&window.ym)ym(114151618,"reachGoal",a.dataset.goal);});</script>
 </head>
 <body>
-<nav><div class="wrap"><a href="/" style="color:inherit"><b>Андрей · сайты для мастеров</b></a><a class="btn sm" href="https://vk.ru/id578525802" target="_blank" rel="noopener" data-goal="cta">Написать</a></div></nav>
+<nav><div class="wrap"><a href="/" style="color:inherit"><b>Андрей · сайты для мастеров</b></a><a class="btn sm" href="https://fygaport-hash.github.io/?src=seo-gostevogo-doma#zayavka" data-goal="cta">Оставить заявку</a></div></nav>
 <div class="wrap crumbs"><a href="/">Главная</a> › <a href="/p/sayty/">Сайты по нишам</a> › Гостевой дом и глэмпинг</div>
 <section class="hero" style="padding-top:40px"><div class="wrap">
   <p class="eyebrow">Гостевой дом и глэмпинг</p>
   <h1>Сайт для гостевого дома с бронью без комиссии.</h1>
   <p class="lead">Гость выбирает домик и даты, видит стоимость за все ночи и отправляет бронь вам — без комиссии агрегаторов.</p>
-  <div class="cta"><a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener" data-goal="cta">Получить демо бесплатно</a>
+  <div class="cta"><a class="btn" href="https://fygaport-hash.github.io/?src=seo-gostevogo-doma#zayavka" data-goal="cta">Получить свой сайт</a>
   <a class="link" href="/sosnovyy-bereg-kazan-demo/" target="_blank" rel="noopener" data-goal="example">Открыть пример ›</a></div>
   <div class="chips"><span>Бронь дат</span><span>Расчёт по ночам</span><span>Фото домиков</span><span>Без комиссии</span></div>
 </div></section>
@@ -120,37 +144,37 @@ document.addEventListener("click",function(e){var a=e.target.closest&&e.target.c
 <section class="alt"><div class="wrap">
   <h2>Как это работает.</h2>
   <div class="steps">
-    <div class="step"><i>1</i><h3>Пришлите ссылку</h3><p>На группу ВКонтакте, Taplink или карточку на картах.</p></div>
-    <div class="step"><i>2</i><h3>Получите демо</h3><p>За день соберу сайт на ваших данных — бесплатно.</p></div>
-    <div class="step"><i>3</i><h3>Поправим</h3><p>Ваш прайс, фото, тексты. Сколько нужно правок.</p></div>
-    <div class="step"><i>4</i><h3>Оплата и запуск</h3><p>Платите, только когда всё устроило. Чек из «Мой налог».</p></div>
+    <div class="step"><i>1</i><h3>Заявка</h3><p>4 вопроса и ссылка на группу ВКонтакте или карточку на картах. Минута.</p></div>
+    <div class="step"><i>2</i><h3>Ваш сайт</h3><p>В течение дня пришлю готовый сайт на ваших данных. Бесплатно.</p></div>
+    <div class="step"><i>3</i><h3>Правки</h3><p>Ваш прайс, фото, тексты. Подключу заявки в ваш мессенджер.</p></div>
+    <div class="step"><i>4</i><h3>Запуск</h3><p>Первый платёж 990 ₽ — только когда всё устроит. Чек из «Мой налог».</p></div>
   </div>
 </div></section>
 <section><div class="wrap">
   <h2>Цены.</h2>
-  <p class="lead">Разово, без абонентской платы. Оплата — после того, как сайт вас устроит.</p>
+  <p class="lead">Без оплаты на старте. Платите, только когда готовый сайт вас устроит.</p>
   <div class="prices">
-    <div class="price"><div class="tag"></div><h3>Сайт</h3><div class="sum">5 500 ₽</div>
-      <ul><li>Ваш прайс, тексты, логотип и фото</li><li>Онлайн-запись или заявка</li><li>Заявки в Telegram, ВКонтакте или MAX</li><li>Карта, часы работы, контакты</li><li>Готово за 1–2 дня</li></ul>
-      <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener" data-goal="cta">Хочу сайт</a></div>
-    <div class="price top"><div class="tag">Чаще выбирают</div><h3>Сайт + свой адрес</h3><div class="sum">9 900 ₽</div>
-      <ul><li>Всё из тарифа «Сайт»</li><li>Домен на ваше имя и подключение</li><li>Бот: заявки приходят автоматически</li><li>Месяц правок бесплатно</li></ul>
-      <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener" data-goal="cta">Хочу с адресом</a></div>
-    <div class="price"><div class="tag"></div><h3>Под ключ</h3><div class="sum">14 900 ₽</div>
-      <ul><li>Всё из «Сайт + свой адрес»</li><li>Автопостинг окошек и акций</li><li>Помощь с Яндекс Картами и 2ГИС</li></ul>
-      <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener" data-goal="cta">Обсудить</a></div>
+    <div class="price top"><div class="tag">Чаще выбирают</div><h3>Подписка</h3><div class="sum">990 ₽<small style="font-size:17px;font-weight:600;color:var(--muted)"> /мес</small></div>
+      <ul><li>Сайт с вашим прайсом, фото и онлайн-записью</li><li>Заявки в Telegram, ВКонтакте или MAX</li><li>Хостинг и правки включены</li><li>Без договора на год, выкуп сайта — 4 500 ₽</li></ul>
+      <a class="btn" href="https://fygaport-hash.github.io/?src=seo-gostevogo-doma#zayavka" data-goal="cta">Получить сайт</a></div>
+    <div class="price"><div class="tag"></div><h3>Разово</h3><div class="sum">5 500 ₽</div>
+      <ul><li>Тот же сайт, полностью ваш</li><li>Без абонентской платы</li><li>Правки после запуска — от 500 ₽/мес по желанию</li></ul>
+      <a class="btn" href="https://fygaport-hash.github.io/?src=seo-gostevogo-doma#zayavka" data-goal="cta">Хочу разово</a></div>
+    <div class="price"><div class="tag"></div><h3>Свой адрес и бот</h3><div class="sum">9 900 ₽</div>
+      <ul><li>Сайт полностью ваш</li><li>Домен на ваше имя</li><li>Бот: заявки приходят автоматически</li><li>Месяц правок бесплатно</li></ul>
+      <a class="btn" href="https://fygaport-hash.github.io/?src=seo-gostevogo-doma#zayavka" data-goal="cta">Обсудить</a></div>
   </div>
 </div></section>
 <section class="alt"><div class="wrap">
   <h2>Вопросы.</h2>
-  <div class="faq"><details><summary>Что нужно от меня?</summary><p>Только актуальный прайс — можно фотографией. Остальное возьму из вашей группы или карточки на картах.</p></details><details><summary>А если не понравится?</summary><p>Ничего не платите, демо просто удаляю. Оплата только после того, как вы одобрили финальную версию.</p></details><details><summary>У меня есть группа ВКонтакте или Taplink. Зачем сайт?</summary><p>Сайт находят в Яндексе и Google, а группы и Taplink там почти не показываются. И записаться на сайте можно без переписки.</p></details><details><summary>Сколько клиентов принесёт сайт?</summary><p>Точное число честно не обещаю. Сайт делает вас заметнее в поиске и убирает лишнюю переписку — обычно окупается за одного-двух клиентов.</p></details></div>
+  <div class="faq"><details><summary>Что нужно от меня?</summary><p>Только актуальный прайс — можно фотографией. Остальное возьму из вашей группы или карточки на картах.</p></details><details><summary>А если не понравится?</summary><p>Ничего не платите — сайт удаляю вместе с вашими данными. Оплата только после того, как вы одобрили готовый сайт.</p></details><details><summary>Что будет, если перестану платить?</summary><p>Сайт просто отключится, без долгов и штрафов. Договора на год нет, а выкупить сайт можно в любой момент за 4 500 ₽.</p></details><details><summary>У меня есть группа ВКонтакте или Taplink. Зачем сайт?</summary><p>Сайт находят в Яндексе и Google, а группы и Taplink там почти не показываются. И записаться на сайте можно без переписки.</p></details><details><summary>Сколько клиентов принесёт сайт?</summary><p>Точное число честно не обещаю. Сайт делает вас заметнее в поиске и убирает лишнюю переписку — обычно окупается за одного-двух клиентов.</p></details></div>
 </div></section>
 <section class="final"><div class="wrap">
   <h2>Покажу, как будет выглядеть ваш сайт.</h2>
-  <p class="lead" style="margin-left:auto;margin-right:auto">Пришлите ссылку на группу или карточку — соберу демо бесплатно.</p>
-  <a class="btn" href="https://vk.ru/id578525802" target="_blank" rel="noopener" data-goal="cta">Написать во ВКонтакте</a>
+  <p class="lead" style="margin-left:auto;margin-right:auto">Ответьте на 4 вопроса — в течение дня пришлю готовый сайт на ваших данных.</p>
+  <a class="btn" href="https://fygaport-hash.github.io/?src=seo-gostevogo-doma#zayavka" data-goal="cta">Получить свой сайт</a>
 </div></section>
-<section><div class="wrap"><h2 style="font-size:28px">Другие ниши.</h2><div class="nlist"><a href="/p/sayt-dlya-barbershopa/">Барбершоп<span>запись к мастеру на время</span></a><a href="/p/sayt-dlya-salona-krasoty/">Маникюр и салон красоты<span>процедуры, мастера, окошки</span></a><a href="/p/sayt-dlya-permanentnogo-makiyazha/">Перманентный макияж<span>зона, консультация, коррекция</span></a><a href="/p/sayt-dlya-avtoservisa/">Автосервис<span>марка авто и что беспокоит</span></a><a href="/p/sayt-dlya-uchebnogo-centra/">Учебный центр и репетиторы<span>направление, класс, пробное</span></a><a href="/p/sayt-dlya-massazha-i-spa/">Массаж и СПА<span>процедура, длительность, сертификат</span></a><a href="/p/sayt-dlya-konditera/">Торты на заказ<span>калькулятор «начинка × вес»</span></a><a href="/p/sayt-dlya-tatu-studii/">Тату-студия<span>заявка с идеей и размером</span></a><a href="/p/sayt-dlya-klininga/">Клининг<span>калькулятор «уборка × площадь»</span></a><a href="/p/sayt-dlya-remonta-kvartir/">Ремонт квартир<span>расчёт по м², запись на замер</span></a><a href="/p/sayt-dlya-bani-i-sauny/">Баня и сауна<span>почасовая бронь и расчёт</span></a><a href="/p/sayt-dlya-stomatologii/">Стоматология<span>запись к врачу, срочный приём</span></a><a href="/p/sayt-dlya-grumera/">Груминг<span>порода, размер, запись питомца</span></a><a href="/p/sayt-dlya-avtomoyki/">Автомойка и детейлинг<span>класс авто и слот</span></a><a href="/p/sayt-dlya-remonta-telefonov/">Ремонт телефонов и ноутбуков<span>устройство, модель, поломка</span></a><a href="/p/sayt-dlya-cvetochnogo-magazina/">Цветы и флористы<span>повод, бюджет, доставка</span></a><a href="/p/sayt-dlya-fotografa/">Фотограф<span>бронь даты съёмки</span></a><a href="/p/sayt-dlya-psihologa/">Психолог<span>очно или онлайн</span></a><a href="/p/sayt-dlya-yazykovoy-shkoly/">Языковая школа<span>язык, уровень, пробное</span></a><a href="/p/sayt-dlya-natyazhnyh-potolkov/">Натяжные потолки<span>калькулятор по м² и замер</span></a><a href="/p/sayt-dlya-plastikovyh-okon/">Окна и балконы<span>расчёт окон и вызов замерщика</span></a><a href="/p/sayt-dlya-mebeli-na-zakaz/">Мебель на заказ<span>расчёт по погонному метру</span></a><a href="/p/sayt-dlya-mastera-na-chas/">Мастер на час<span>вызов мастера на сегодня</span></a><a href="/p/sayt-dlya-atele/">Ателье<span>заявка с ценой и сроком</span></a><a href="/p/sayt-dlya-himchistki-mebeli/">Химчистка мебели и ковров<span>калькулятор ковров и заказ на дом</span></a><a href="/p/sayt-dlya-shinomontazha/">Шиномонтаж<span>запись без очереди</span></a><a href="/p/sayt-dlya-detskogo-centra/">Детский центр<span>запись на пробное занятие</span></a><a href="/p/sayt-dlya-fitnes-studii/">Фитнес и единоборства<span>пробная тренировка онлайн</span></a><a href="/p/sayt-dlya-veduschego/">Ведущий и события<span>проверка свободной даты</span></a><a href="/p/sayt-dlya-kosmetologa/">Косметология<span>запись к косметологу на время</span></a><a href="/p/sayt-dlya-veterinarnoy-kliniki/">Ветклиника<span>запись к ветеринару и вызов на дом</span></a><a href="/p/sayt-dlya-avtoshkoly/">Автошкола<span>запись на обучение и пробное</span></a><a href="/p/sayt-dlya-gruzoperevozok/">Грузоперевозки<span>калькулятор «машина × часы × грузчики»</span></a><a href="/p/sayt-dlya-kvestov/">Квесты и студии<span>почасовая бронь</span></a><a href="/p/sayt-dlya-keyteringa/">Кейтеринг<span>калькулятор «формат × гости»</span></a><a href="/p/sayt-dlya-detskih-prazdnikov/">Детские праздники и Дед Мороз<span>бронь даты и программы</span></a><a href="/p/qr-menyu-dlya-kafe/">QR-меню для кафе<span>заказ со стола в WhatsApp</span></a></div></div></section>
+<section><div class="wrap"><h2 style="font-size:28px">Другие ниши.</h2><div class="nlist"><a href="/p/sayt-dlya-barbershopa/">Барбершоп<span>запись к мастеру на время</span></a><a href="/p/sayt-dlya-salona-krasoty/">Маникюр и салон красоты<span>процедуры, мастера, окошки</span></a><a href="/p/sayt-dlya-permanentnogo-makiyazha/">Перманентный макияж<span>зона, консультация, коррекция</span></a><a href="/p/sayt-dlya-avtoservisa/">Автосервис<span>марка авто и что беспокоит</span></a><a href="/p/sayt-dlya-uchebnogo-centra/">Учебный центр и репетиторы<span>направление, класс, пробное</span></a><a href="/p/sayt-dlya-massazha-i-spa/">Массаж и СПА<span>процедура, длительность, сертификат</span></a><a href="/p/sayt-dlya-konditera/">Торты на заказ<span>калькулятор «начинка × вес»</span></a><a href="/p/sayt-dlya-tatu-studii/">Тату-студия<span>заявка с идеей и размером</span></a><a href="/p/sayt-dlya-klininga/">Клининг<span>калькулятор «уборка × площадь»</span></a><a href="/p/sayt-dlya-remonta-kvartir/">Ремонт квартир<span>расчёт по м², запись на замер</span></a><a href="/p/sayt-dlya-bani-i-sauny/">Баня и сауна<span>почасовая бронь и расчёт</span></a><a href="/p/sayt-dlya-stomatologii/">Стоматология<span>запись к врачу, срочный приём</span></a><a href="/p/sayt-dlya-grumera/">Груминг<span>порода, размер, запись питомца</span></a><a href="/p/sayt-dlya-avtomoyki/">Автомойка и детейлинг<span>класс авто и слот</span></a><a href="/p/sayt-dlya-remonta-telefonov/">Ремонт телефонов и ноутбуков<span>устройство, модель, поломка</span></a><a href="/p/sayt-dlya-cvetochnogo-magazina/">Цветы и флористы<span>повод, бюджет, доставка</span></a><a href="/p/sayt-dlya-fotografa/">Фотограф<span>бронь даты съёмки</span></a><a href="/p/sayt-dlya-psihologa/">Психолог<span>очно или онлайн</span></a><a href="/p/sayt-dlya-yazykovoy-shkoly/">Языковая школа<span>язык, уровень, пробное</span></a><a href="/p/sayt-dlya-natyazhnyh-potolkov/">Натяжные потолки<span>калькулятор по м² и замер</span></a><a href="/p/sayt-dlya-plastikovyh-okon/">Окна и балконы<span>расчёт окон и вызов замерщика</span></a><a href="/p/sayt-dlya-mebeli-na-zakaz/">Мебель на заказ<span>расчёт по погонному метру</span></a><a href="/p/sayt-dlya-mastera-na-chas/">Мастер на час<span>вызов мастера на сегодня</span></a><a href="/p/sayt-dlya-atele/">Ателье<span>заявка с ценой и сроком</span></a><a href="/p/sayt-dlya-himchistki-mebeli/">Химчистка мебели и ковров<span>калькулятор ковров и заказ на дом</span></a><a href="/p/sayt-dlya-shinomontazha/">Шиномонтаж<span>запись без очереди</span></a><a href="/p/sayt-dlya-detskogo-centra/">Детский центр<span>запись на пробное занятие</span></a><a href="/p/sayt-dlya-fitnes-studii/">Фитнес и единоборства<span>пробная тренировка онлайн</span></a><a href="/p/sayt-dlya-veduschego/">Ведущий и события<span>проверка свободной даты</span></a><a href="/p/sayt-dlya-kosmetologa/">Косметология<span>запись к косметологу на время</span></a><a href="/p/sayt-dlya-veterinarnoy-kliniki/">Ветклиника<span>запись к ветеринару и вызов на дом</span></a><a href="/p/sayt-dlya-avtoshkoly/">Автошкола<span>запись на обучение и пробное</span></a><a href="/p/sayt-dlya-gruzoperevozok/">Грузоперевозки<span>калькулятор «машина × часы × грузчики»</span></a><a href="/p/sayt-dlya-kvestov/">Квесты и студии<span>почасовая бронь</span></a><a href="/p/sayt-dlya-keyteringa/">Кейтеринг<span>калькулятор «формат × гости»</span></a><a href="/p/sayt-dlya-detskih-prazdnikov/">Детские праздники и Дед Мороз<span>бронь даты и программы</span></a><a href="/p/sayt-dlya-parikmahera/">Сайт для парикмахера и колориста<span>стрижки, окрашивание, запись</span></a><a href="/p/sayt-dlya-vizazhista/">Сайт для визажиста<span>бронь даты, выезд</span></a><a href="/p/sayt-dlya-yurista/">Сайт для юриста<span>консультации по записи</span></a><a href="/p/sayt-dlya-buhgaltera/">Сайт для бухгалтера<span>ведение ИП и ООО, заявки</span></a><a href="/p/sayt-dlya-rieltora/">Сайт для риелтора<span>продажа, покупка, ипотека</span></a><a href="/p/sayt-dlya-studii-tancev/">Сайт для студии танцев и йоги<span>пробное занятие, абонементы</span></a><a href="/p/sayt-dlya-muzykalnoy-studii/">Сайт для музыкальной студии<span>вокал, гитара, пробный урок</span></a><a href="/p/sayt-dlya-evakuatora/">Сайт для эвакуатора<span>цена до подачи, заявка</span></a><a href="/p/sayt-dlya-remonta-bytovoy-tehniki/">Сайт для ремонта бытовой техники<span>вызов мастера на дом</span></a><a href="/p/sayt-dlya-vyvoza-musora/">Сайт для вывоза мусора<span>объём, цена до приезда</span></a><a href="/p/sayt-dlya-stroitelstva-ban/">Сайт для строительства бань и домов<span>проекты, расчёт, замер</span></a><a href="/p/sayt-dlya-spila-derevev/">Сайт для спила деревьев<span>цена по фото, благоустройство</span></a><a href="/p/sayt-dlya-nutriciologa/">Сайт для нутрициолога и консультанта<span>консультации онлайн</span></a><a href="/p/sayt-dlya-perederzhki/">Сайт для передержки и выгула<span>бронь дат, цены</span></a><a href="/p/qr-menyu-dlya-kafe/">QR-меню для кафе<span>заказ со стола в WhatsApp</span></a></div></div></section>
 <footer><div class="wrap">Андрей · сайты для малого бизнеса · работаю как самозанятый · <a href="/p/sayty/">Все ниши</a></div></footer>
 </body>
 </html>
